@@ -297,4 +297,34 @@
         </div>
     </div>
 </section>
+<div class="sc-DdshD section">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_1-mc0Hy4Sp.png" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_2-RlRwE6th.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_3-VvERGk7i.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_4-YfdR9_hu.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_5-U2mFURCN.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_6-KOIDvTyl.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_7-S7uvxQ7h.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_8-KU12EZws.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_9-NlFxEIDi.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_10-lvYJu-HK.jpg" alt="slider-img"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<section>
+    <div>
+        <div class="sc-join" style="padding: 60px 0px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/join_image.png') center center / cover no-repeat; ">
+            <div class="container">
+                <div class="join-container">
+                    <h2 class="join-title">JOIN THE <span>COMMUNITY</span></h2>
+                    <p class="join-lead">Join our Discord community which is in the making and made by gamers for gamers. All are we welcome to join no matter the game you play,we're here to have a good</p>
+                    <button class="join-btn">Join Discord</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
