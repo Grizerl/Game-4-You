@@ -206,7 +206,7 @@ img {
     flex-direction: column;
 }
 
-.upxXb {
+.upxXb,.genres-title {
     padding: 12px 0px;
     text-align: center;
     font-weight: 800;
@@ -286,6 +286,7 @@ img {
     font-weight: 700;
     font-size: 14px;
     padding: 0px 10px;
+    z-index: 9999;
 }
 
 .st-1 {
@@ -440,4 +441,82 @@ img {
     color: var(--clr-white);
     cursor: pointer;
 }
+/* Top Genres */
+.sc-genres {
+    position: relative;
+    padding: 60px 0px;
+    background-color: var(--clr-violet-dark-active);
+}
 
+.genres-title {
+    padding: 12px 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    color: var(--clr-white);
+    margin-top: 0;
+    font-family: var(--font-family-poppins);
+}
+
+.genres-title span {
+    padding-left: 5px;
+    color: rgb(239, 151, 232);
+}
+
+.sc-DfghF {
+    padding-top: 5rem;
+}
+
+.container-genres {
+    display: flex;
+    justify-content: center;
+    padding-left: 4rem;
+}
+
+.list-genres {
+    position: absolute;
+    left: 0;
+    z-index: 9999;
+}
+
+.genres-item {
+    padding: 12px 30px;
+    font-family: Barlow;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    width: 100%;
+    text-align: start;
+}
+
+.genres-item a {
+    color: var(--clr-white);
+}
+
+.sc-ktwOf {
+    width: 330px;
+}
+
+.card-top::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.15;
+}
+
+.sc-grasf {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    flex-direction: column;
+}
+
+.sc-sfks {
+    margin-top: 20px;
+}
