@@ -15,29 +15,29 @@
                 <div class="container w-100">
                     <div class="navbar-content">
                 <div class="brand-toggle">
-                    <a class="navbar-brand" href="">Games 4 <span>You</span></a>
+                    <a class="navbar-brand" href="{{route('home')}}">Games 4 <span>You</span></a>
                 </div>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="">Home</a>
+                            <a class="nav-link" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a  class="nav-link" href="">Creators</a>
+                            <a  class="nav-link" href="{{route('creators')}}">Creators</a>
                         </li>
                         <li class="nav-item">
-                            <a  class="nav-link" href="">Stores</a>
+                            <a  class="nav-link" href="{{route('stores')}}">Stores</a>
                         </li>
                         <li class="nav-item">
-                            <a  class="nav-link" href="">Games</a>
+                            <a  class="nav-link" href="{{route('games')}}">Games</a>
                         </li>
                     </ul>
                     <ul class="connect-list">
                         <li class="connect-item">
-                            <a class="connect-link" href="">Connect</a>
+                            <a class="connect-link">Connect</a>
                         </li>
                         <li class="connect-item">
-                            <a class="connect-link" href="">
+                            <a class="connect-link" href="https://www.spotify.com/ua-uk/free/">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.4em" width="1.4em" version="1.1" viewBox="0 0 64 64"
                                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" 
                                     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -50,7 +50,7 @@
                             </a>
                         </li>
                         <li class="connect-item">
-                            <a class="connect-link" href="">
+                            <a class="connect-link" href="https://store.steampowered.com/?l=russian">
                                 <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g>
                                     <path d="M0 0H24V24H0z" fill="none"/>
                                     <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/></g>
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li class="connect-item">
-                            <a class="connect-link" href="">
+                            <a class="connect-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk">
                                 <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" version="1.1" viewBox="0 0 512 512" 
                                     xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li class="connect-item">
-                            <a class="connect-link" href="">
+                            <a class="connect-link" href="https://www.twitch.tv/">
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.1em" width="1.1em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/>
                                     <path d="M2.089 0L.525 4.175v16.694h5.736V24h3.132l3.127-3.132h4.695l6.26-6.258V0H2.089zm2.086 2.085H21.39v11.479l-3.652 3.652H12l-3.127 3.127v-3.127H4.175V2.085zM9.915 12.522H12v-6.26H9.915v6.26zm5.735 0h2.086v-6.26H15.65v6.26z"/>
                                 </svg>
@@ -80,6 +80,65 @@
             @yield('media_content')
         </div>
     </div>
+<footer>
+    <div style="padding: 40px 0px;">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-item">
+                    <a class="footer-brand" href="{{route('home')}}">Games 4 <span class="footer-brand-aside">You</span></a>
+                    <p class="footer-lead">Lorem ipsum dolor sitamt consectue adispicing duis soolici tudin ague suisomid. Nulla vullam dolor.</p>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-title">quick links</h5>
+                    <ul class="footer-list">
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Gaming</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Product</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Social Network</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Community</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-title">Supports</h5>
+                    <ul class="footer-list">
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Setting & Privacy</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Help & Support</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Live Actions</a>
+                        </li>
+                        <li class="footer-nav-item">
+                            <a class="footer-nav-link" href="">Our News</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h5 class="footer-title">newsletter</h5>
+                    <p class="footer-lead">Subscribe our newsletter to get our latest update & news.</p>
+                    <div class="pole-container">
+                        <input class="input-email" name="email" type="email" placeholder="Your email address">
+                        <button class="svg-btn">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" style="enable-background:new 0 0 24 24;" height="24" width="24" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="info"/><g id="icons"><path d="M21.5,11.1l-17.9-9C2.7,1.7,1.7,2.5,2.1,3.4l2.5,6.7L16,12L4.6,13.9l-2.5,6.7c-0.3,0.9,0.6,1.7,1.5,1.2l17.9-9   C22.2,12.5,22.2,11.5,21.5,11.1z" id="send"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/swiper/swiper.js"></script>
 </body>

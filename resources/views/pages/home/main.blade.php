@@ -290,7 +290,7 @@
                 </div>
                 <div style="display: flex; align-items: center; margin-top: 50px;">
                     <div class="container">
-                        <a class="card-button btn-card" href="#"><span>See More Games</span></a>
+                        <a class="card-button btn-card" href="{{route('games')}}"><span>See More Games</span></a>
                     </div>
                 </div>
             </div>
@@ -321,7 +321,7 @@
                 <div class="join-container">
                     <h2 class="join-title">JOIN THE <span>COMMUNITY</span></h2>
                     <p class="join-lead">Join our Discord community which is in the making and made by gamers for gamers. All are we welcome to join no matter the game you play,we're here to have a good</p>
-                    <button class="join-btn">Join Discord</button>
+                    <button class="join-btn"><a href="https://discord.com/">Join Discord</a></button>
                 </div>
             </div>
         </div>
@@ -573,6 +573,426 @@
                         </div>
                     </div>  
                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="sc-store">
+        <h3>our <span class="aside-title">game stores</span></h3>
+        <div style="margin-bottom: 30px;" class="line"></div>
+        <div class="container">
+            <div class="sc-FgFhjg">
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/618c2031a07bbff6b4f611f10b6bcdbcd.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Steam</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">store.steampowered.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">104644</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Grand Theft Auto V</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/3106b0e012271c5ffb16497b070be739.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">PlayStation Store</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">store.playstation.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">8009</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Grand Theft Auto V</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/26d4437715bee60138dab4a7c8c59c92.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Xbox Store</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">microsoft.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">4903</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Grand Theft Auto V</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Red Dead Redemption 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">BioShock Infinite</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Borderlands 2</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/7a45e4cdc5b07f316d49cf147b083b27.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">App Store</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">apps.apple.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">75577</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">BioShock Infinite</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Borderlands 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Life is Strange</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">BioShock</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Limbo</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/8a02f84a5916ede2f923b88d5f8217ba.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">GOG</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">gog.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">6532</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Life is Strange</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">God of War (2018)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Limbo</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Cyberpunk 2077</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Terraria</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/25c4776ab5723d5d735d8bf617ca12d9.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Nintendo Store</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">nintendo.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">9099</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">BioShock Infinite</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">PAYDAY 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Limbo</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">DOOM (2016)</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Xbox 360 Store</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">marketplace.xbox.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">1915</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Grand Theft Auto V</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Left 4 Dead 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Google Play</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">play.google.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">17107</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Portal</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Borderlands 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Life is Strange</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Limbo</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Half-Life 2</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/d1f872a48286b6b751670817d5c1e1be.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">itch.io</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">itch.io</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">654161</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Bastion</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Brutal Legend</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Transistor</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Among Us</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Dead Cells</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Papers, Please</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="card-store">
+                    <div class="card-img">
+                    <img src="assets/images/stores/3106b0e012271c5ffb16497b070be739.jpg" alt="Games Store" loading="lazy">
+                    </div>
+                    <div class="card-container">
+                    <h5 class="card-store-title">
+                        <a class="text-white" href="">Epic Games</a>
+                    </h5>
+                    <ul class="card-store-info">
+                        <li>
+                            <span class="text-white">Domain:</span>
+                            <a href="">epicgames.com</a>
+                        </li>
+                        <li>
+                            <span class="text-white">Games Count:</span>
+                            <a href="">1365</a>
+                        </li>
+                    </ul>
+                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                    <ul class="card-store-games">
+                        <li>
+                            <a class="game-name" href="">Grand Theft Auto V</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Red Dead Redemption 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">BioShock Infinite</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">Destiny 2</a>
+                        </li>
+                        <li>
+                            <a class="game-name" href="">PAYDAY 2</a>
+                        </li>
+                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
