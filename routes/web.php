@@ -17,5 +17,7 @@ Route::prefix('games-4-you')->group(function(){
     
     Route::get('/games', [App\Http\Controllers\ViewsControllers\PageController::class, 'game'])->name('games');
 
+    Route::get('/games/{id}', [App\Http\Controllers\ViewsControllers\PageController::class, 'details'])->name('detail');
+
 });
 

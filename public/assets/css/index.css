@@ -835,3 +835,45 @@ footer {
 .sc-games {
     margin-bottom: 45px;
 }
+
+/* Pagination */
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.pagination li {
+    font-size: 1.7rem;
+    margin: 0 25px;
+}
+
+.pagination li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.pagination li a:hover {
+    color: #fff;
+}
+
+.pagination li.disabled span {
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pagination li a, .pagination li.disabled span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+

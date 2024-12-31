@@ -1,0 +1,174 @@
+@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Righteous&display=swap";:root {
+    --clr-white: #fff;
+    --clr-black: #000;
+    --clr-dark: #04020e;
+    --clr-violet-normal: #0f0a3c;
+    --clr-violet-dark-hover: #090624;
+    --clr-violet-dark-active: rgb(7, 5, 27);
+    --clr-violet-darker: #050415;
+    --clr-violet-light: #100e2b;
+    --clr-green-normal: #009f9d;
+    --clr-pink-normal: #b9198e;
+    --font-family-barlow: "Barlow", sans-serif;
+    --font-family-poppins: "Poppins", sans-serif;
+    --font-family-right: "Righteous", cursive;
+    --transition-default: all .3s ease-in-out
+}
+
+.section-details {
+    padding: 60px 0px;
+    background: linear-gradient(0deg, rgba(16, 14, 43, 0.8), rgba(16, 14, 43, 0.8)), url(/assets/images/game_details_image-Tn-6toIG.png) center center / cover no-repeat;
+}
+
+.category {
+    margin: 15px 0px 35px;
+}
+
+.category-nav {
+    display: flex;
+}
+
+.category-item {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.category-link {
+    display: flex;
+    align-items: center;
+    color: var(--clr-white);
+}
+
+.sc-CatIcon {
+    margin: 0px 8px;
+}
+
+.details-container {
+    padding: 60px 42px;
+    background: rgba(0, 0, 0, 0.16);
+    color: var(--clr-white);
+}
+
+.details-title {
+    text-transform: uppercase;
+    font-size: 42px;
+    letter-spacing: 0.04em;
+    font-family: var(--font-family-poppins);
+    margin-bottom: 40px;
+}
+
+.details-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.details-left img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.details-right-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.details-right-title span {
+    color: rgb(239, 151, 232);
+}
+
+.details-right-lead {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffffe6;
+    margin: 24px 0;
+}
+
+.details-right-items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sc-dfGc {
+    margin: 15px 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.item-icon {
+    margin-right: 10px;
+}
+
+.details-right-items > span {
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 12px;
+}
+/* Bottom button */
+.detail-bottom-btn-container {
+    background: rgba(0, 0, 0, 0.16);
+}
+
+.btn-navbar {
+    display: flex;
+    align-items: center;
+    margin: 0px 24px;
+    border-bottom: 1.5px solid var(--clr-white);
+}
+
+.btn-items {
+    display: inline-block;
+    padding: 6px 0px;
+    margin-right: 3rem;
+}
+
+.btn-link {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.08em;
+    padding: 10px 32px;
+}
+
+/* Description */
+.page-description {
+    padding: 35px 42px;
+    color: var(--clr-white);
+}
+
+.description-title {
+  margin-bottom: 20px;
+}
+
+/* Platform */
+.page-platform {
+    padding: 35px 42px;
+    color: var(--clr-white);
+}
+
+.chunk {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+#description-info, #platform-info, #stores-info {
+    display: none; /* Всі картки приховані за замовчуванням */
+}
+
+#description-info.show, #platform-info.show, #stores-info.show {
+    display: block; /* Відображає картки, коли додається клас 'show' */
+}
+
+.btn-link.active {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    
+}
