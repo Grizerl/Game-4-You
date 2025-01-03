@@ -5,11 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 30,
         autoplay: true,
         autoplaySpeed: 2000,
-            speed: 1000,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
         },
-    });
-});
+    });   
 
+    
+});
+ 

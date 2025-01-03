@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('developers');
             $table->string('genres');
             $table->string('publishers');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

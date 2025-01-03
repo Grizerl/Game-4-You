@@ -258,7 +258,7 @@ img {
 .card-list,.creators-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    gap: 50px;
     margin-top: 50px;
 }
 
@@ -488,6 +488,7 @@ img {
 /* Top Genres */
 .sc-genres {
     position: relative;
+    min-height: 1300px;
     padding: 60px 0px;
     background-color: var(--clr-violet-dark-active);
 }
@@ -768,7 +769,7 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 360px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     padding: 0px 32px 24px;
 }
 
@@ -876,4 +877,3 @@ footer {
     align-items: center;
     gap: 8px;
 }
-
