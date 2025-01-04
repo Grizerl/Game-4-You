@@ -28,9 +28,6 @@ class PageController extends Controller
         return view('pages.home.main', compact('categories', 'category_id'));
     }
     
-
-    
-   
     public function creator() {
 
         $creators=Creators::paginate(14);

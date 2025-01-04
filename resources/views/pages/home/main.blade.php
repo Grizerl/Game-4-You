@@ -334,57 +334,51 @@
         <div class="container sc-DfghF">
             <div class="container-genres">
             <div class="tabs-content">
-    <ul class="list-genres">
-        @foreach ($categories as $category)
-            <li class="genres-item">
-                <a href="{{ route('home', ['category_id' => $category->id]) }}">
-                    {{ $category->title }}
-                </a>
-            </li>
-        @endforeach
-    </ul>
-</div>
-
-<div class="tabs-body">
-        <div class="sc-fsfFfa"> 
-            <div class="card-list">  
-                @foreach ($categories as $category)
-                @foreach ($category->games as $game)
-                    <!-- Виводимо ігри лише для вибраної категорії або для всіх категорій, якщо не вибрана категорія -->
-                    @if (!$category_id || $category->id == $category_id)
-                        <div class="sc-ktwOf card">
-                            <div class="card-top">
-                                <img src="{{ $game->images}}" alt="{{ $game->title }}" loading="lazy">
-                                <div class="card-rating">
-                                    {{ $game->rating }}
-                                </div>
-                            </div>
-                            <div class="card-bottom">
-                                <h4 class="card-title">{{ $game->name }}</h4>
-                                <div class="group-detaile sc-grasf">
-                                    <div>
-                                        <div class="detaile-item">
-                                            <p class="detaile-name">Release Date:</p>
-                                            <p class="detaile-value">{{ $game->release_date }}</p>
+                <ul class="list-genres">
+                    @foreach ($categories as $category)
+                        <li class="genres-item">
+                            <a href="{{ route('home', ['category_id' => $category->id]) }}">{{ $category->title }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="tabs-body">
+                <div class="sc-fsfFfa"> 
+                    <div class="card-list">  
+                        @foreach ($categories as $category)
+                            @foreach ($category->games as $game)
+                                <!-- Виводимо ігри лише для вибраної категорії або для всіх категорій, якщо не вибрана категорія -->
+                                @if (!$category_id || $category->id == $category_id)
+                                    <div class="sc-ktwOf card">
+                                        <div class="card-top">
+                                            <img src="{{ $game->images}}" alt="{{ $game->title }}" loading="lazy">
+                                            <div class="card-rating">
+                                                {{ $game->rating }}
+                                            </div>
                                         </div>
-                                        <div class="detaile-item">
-                                            <p class="detaile-name">Updated:</p>
-                                            <p class="detaile-value">{{ $game->updated_at }}</p>
+                                        <div class="card-bottom">
+                                            <h4 class="card-title">{{ $game->name }}</h4>
+                                        <div class="group-detaile sc-grasf">
+                                            <div>
+                                                <div class="detaile-item">
+                                                    <p class="detaile-name">Release Date:</p>
+                                                    <p class="detaile-value">{{ $game->release_date }}</p>
+                                                </div>
+                                                <div class="detaile-item">
+                                                    <p class="detaile-name">Updated:</p>
+                                                    <p class="detaile-value">{{ $game->updated_at }}</p>
+                                                </div>
+                                            </div>
+                                            <a href="{{route('detail',$game->id)}}" class="detaile-btn-custom sc-sfks">See More</a>
+                                        </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="detaile-btn-custom sc-sfks">See More</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-                @endforeach
+                                @endif
+                            @endforeach
+                        @endforeach
+                    </div>
+                </div>
             </div>
-        </div>
-</div>
-
-                </div>
-                </div>
             </div>
         </div>
     </div>

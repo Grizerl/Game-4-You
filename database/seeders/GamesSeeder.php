@@ -339,5 +339,140 @@ class GamesSeeder extends Seeder
             'publishers' => 'Square Enix, Microsoft Studios, Feral Interactive'
         ]);
 
+        Games::create([
+            'name' => 'Hollow Knight', 
+            'description' => 'Hollow Knight is a Metroidvania-type game developed by an indie studio named Team Cherry.
+                Most of the games story is told through the in-world items, tablets, and thoughts of other characters. Many plot aspects are told to the player indirectly or through the secret areas that provide a bit of lore in addition to an upgrade. At the beginning of the game, the player visits a town of Dirtmouth. A town built above the ruins of Hallownest. The players descend down into the ruins to find some answers to his questions.
+                The game revolves mainly around the exploration of the in-game world, which requires the players to have some platforming skills. The players have to find secrets that are scattered around the level and battle their enemies. There is a certain degree of backtracking in the game as some areas are locked until the player defeats a certain boss or picks up a specific item. Each area changes as the plot advances so it may be surprising to come back in a certain area.
+                The Protagonist uses a nail which serves as a replacement for a sword. Players can attack in four directions. The nail is upgradable.', 
+            'images' => '/assets/images/games/4cfc6b7f1850590a4634b08bfab308ab.jpg',
+            'release_date' => '2017-02-03',
+            'updated' => '2025-01-03',
+            'cursing' => '2549',
+            'platforms' => 'PlayStation 4, Linux, macOS, PC, Nintendo Switch, Xbox One',
+            'developers' => 'Team Cherry',
+            'genres' => 'Indie, Platformer',
+            'publishers' => 'Team Cherry',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => 'Rocket League', 
+            'description' => 'Highly competitive soccer game with rocket-cars is the most comprehensive way to describe this game. Technically a sequel to Psyonix’ previous game - Supersonic Acrobatic Rocket-Powered Battle-Cars; Rocket League successfully became a standalone sensation, that can be enjoyed by anyone. Easy to learn, hard to master game mechanics are perfect for the tight controls. Players are invited to maneuver the different fields within several game modes, from arcade to ranked game either 1v1, or in 2v2 and 3v3 teams. Using boosters will not only speed up the car but will allow the car to propel itself into the air.
+                Rocket League provides several levels of customization, where not only the color of your car can be adjusted, but the colors and form of the booster flame, different hats, and little flags. Or players can pick a completely different car. Collaboration with different franchises brought not only original transport but some famous cars, including Batmobile or Delorian from Back to the Future.', 
+            'images' => '/assets/images/games/8cce7c0e99dcc43d66c8efd42f9d03e3 (1).jpg',
+            'release_date' => '2015-07-07',
+            'updated' => '2025-01-03',
+            'cursing' => '2802',
+            'platforms' => 'Nintendo Switch, Linux, macOS, Xbox One, PC, PlayStation 4',
+            'developers' => 'Psyonix',
+            'genres' => 'Sports, Racing, Indie',
+            'publishers' => 'Psyonix',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => 'Outlast', 
+            'description' => 'Cinematic gameplay is used to make a stylistic point, and this psychological horror game performs just that. Outlast follows the story of investigative journalist Miles Upshur, that got the lead on the inhuman experiments, performed on the asylum patients. Outlast forces players to run away from danger, simply because there is no combat system. All Miles can do is to document what is happening inside the Mount Massive Asylum. Players do not have a flashlight, only a night vision camera, which constantly requires batteries in order to function. Miles will be pursued through the halls, rooms, yards and enclosed laboratories by distressed and aggressive inhabitants. Over the course of the game, players will have to solve puzzles by locating and collecting items and travel through the Asylum with realistic movement animation and horror sting sound effect, in order to make players sympathize with the protagonists.', 
+            'images' => '/assets/images/games/9ddabb34840ea9227556670606cf8ea3.jpg',
+            'release_date' => '2013-09-03',
+            'updated' => '2025-01-03',
+            'cursing' => '1782',
+            'platforms' => 'Linux, macOS, Nintendo Switch, PC, Xbox One, PlayStation 4',
+            'developers' => 'Red Barrels',
+            'genres' => 'Action, Indie',
+            'publishers' => 'Red Barrels',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => 'Hotline Miami', 
+            'description' => 'Several chapters of top-down shooter action, Hotline Miami is a violent game, where the player takes control of the unnamed man, that receives orders to clear out stages from bandits and mobsters, using every weapon he can get. Over the course of the game, the player will be able to collect the masks that provide buffs and abilities. Fluid and tight combat includes various melee and ranged weapons, that can be used as intended or just thrown at the enemy. Once Jacket, dubbed so for his distinct letterman jacket by fans, arrives at the mission, players will have to clear out every floor from the enemies, using rooms and doors for cover or ambushes. As the story moves on, Jackets mental health will visibly deteriorate, and he will be shown to suffer from hallucinations, which is in tone with acid 80’s theme.', 
+            'images' => '/assets/images/games/9fa63622543e5d4f6d99aa9d73b043de.jpg',
+            'release_date' => '2012-10-22',
+            'updated' => '2025-01-04',
+            'cursing' => '2583',
+            'platforms' => 'Linux, Nintendo Switch, Xbox One, PlayStation 4, PS Vita, PC',
+            'developers' => 'Devolver Digital, Dennaton Games',
+            'genres' => 'Action, Shooter, Arcade, Indie',
+            'publishers' => 'Devolver Digital',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => 'Limbo', 
+            'description' => 'This popular 2D puzzle-platformer creates the atmosphere of isolation, where the player alone can guide the nameless protagonist to his destination. Hostile environments and one-hit deaths may seem difficult, but the game implements a fair amount of checkpoints. The monochrome color palette showcases cartoony proportions of every living thing while making lack of details threatening. Limbo shows you exactly what you encounter, but never how it looks.
+                Limbo uses the atmosphere and sound design of the horror genre while avoiding tropes of the modern horror games. The overarching theme and unique style compensated for the rather short game with an abrupt ending, making Limbo one of the most impactful games for the genre.
+                The simple controls and easy-to-pick-up mechanics help to make a clear distinction, which part of the stage players can interact with, and which part can lead to the quick death. Even though the game is in black and white, this separation is intuitive and natural, so the player would know exactly where to go or what to do.', 
+            'images' => '/assets/images/games/9424d6bb763dc38d9378b488603c87fa.jpg',
+            'release_date' => '2010-07-21',
+            'updated' => '2025-01-03',
+            'cursing' => '3923',
+            'platforms' => 'PC, Android, PS Vita, PlayStation 4, PlayStation 3, Xbox 360, Linux, macOS, iOS, Xbox One, Nintendo Switch',
+            'developers' => 'Double Eleven, Playdead, 鱼俞',
+            'genres' => 'Action, Adventure, Indie, Puzzle, Platformer',
+            'publishers' => 'Microsoft Studios, Playdead, 鱼俞',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => 'Terraria', 
+            'description' => 'Terraria is a 2D action adventure sandbox game, where players create a character and gather resources in order to gradually craft stronger weapons and armor. Players create randomly generated maps that contain different locations within it, and by gathering specific resources and triggering special events, players will fight one of the many in-game bosses. Created characters can be played on different maps.
+                The game introduces hundreds of unique items that can be found across the entirety of the map, some of which may not even be encountered.
+                Terraria have many different Biomes and areas with distinct visuals, containing resources and enemies unique to this biome. After gathering materials, players can craft furniture, and build settlements and houses, since after completing events or finding specific items NPCs will start to arrive, and will require player’s protection. Terraria can be played on three difficulties and has a large modding community.', 
+            'images' => '/assets/images/games/f466571d536f2e3ea9e815ad17177501 (1).jpg',
+            'release_date' => '2011-05-16',
+            'updated' => '2025-01-03',
+            'cursing' => '2384',
+            'platforms' => 'Xbox 360, Wii U, Nintendo 3DS, Xbox One, PlayStation 4, iOS, PC, macOS, Linux, Nintendo Switch, PlayStation 3, PS Vita, Android',
+            'developers' => 'Engine Software, Codeglue, Pipeworks Studio, Re-Logic',
+            'genres' => 'Action, Indie, Platformer',
+            'publishers' => '505 Games, Headup Games, Spike Chunsoft, Re-Logic',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => '', 
+            'description' => '', 
+            'images' => '',
+            'release_date' => '',
+            'updated' => '',
+            'cursing' => '',
+            'platforms' => '',
+            'developers' => '',
+            'genres' => '',
+            'publishers' => '',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => '', 
+            'description' => '', 
+            'images' => '',
+            'release_date' => '',
+            'updated' => '',
+            'cursing' => '',
+            'platforms' => '',
+            'developers' => '',
+            'genres' => '',
+            'publishers' => '',
+            'category_id ' => '2',
+        ]);
+
+        Games::create([
+            'name' => '', 
+            'description' => '', 
+            'images' => '',
+            'release_date' => '',
+            'updated' => '',
+            'cursing' => '',
+            'platforms' => '',
+            'developers' => '',
+            'genres' => '',
+            'publishers' => '',
+            'category_id ' => '2',
+        ]);
+
+
     }
 }
