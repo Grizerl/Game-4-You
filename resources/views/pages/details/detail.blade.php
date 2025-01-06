@@ -75,9 +75,6 @@
                             <li class="btn-items">
                                 <a id="btn-platform" class="btn-link" href="javascript:void(0)">Platform</a>
                             </li>
-                            <li class="btn-items">
-                                <a id="btn-stores" class="btn-link" href="javascript:void(0)">Stores</a>
-                            </li>
                         </ul>
                         <div id="description-info"  class="page-description show">
                             <h4 class="description-title">Game Description</h4>
@@ -105,9 +102,6 @@
                             @endforeach
                             </div>
                             @endforeach    
-                        </div>
-                        <div id="stores-info" class="page-stores">
-                            <h4 class="stores-title">Game Stores</h4>
                         </div>
                     </div>
                 </div>

@@ -12,20 +12,26 @@ class PageController extends Controller
 {
     public function index(Request $request)
     {
-        // Отримуємо параметр category_id з запиту
         $category_id = $request->get('category_id');
-    
-        // Завантажуємо категорії з іграми, пагінуючи ігри для кожної категорії
+
         $categories = Category::with(['games' => function($query) use ($category_id) {
-            // Якщо категорія вибрана, фільтруємо по category_id, інакше виводимо всі ігри
-            if ($category_id) {
-                $query->where('category_id', $category_id);
-            }
-            // Пагінуємо ігри по 10 на сторінку
-            $query->paginate(6);
-        }])->get();
+
+        if ($category_id) {$query->where('category_id', $category_id);}
+        
+        $query->paginate(6);}])->get();
     
         return view('pages.home.main', compact('categories', 'category_id'));
+    }
+
+    public function getGames(Request $request)
+    {
+        $category_id = $request->get('category_id');
+
+        $games = Games::when($category_id, function ($query) use ($category_id) {
+            return $query->where('category_id', $category_id);
+        })->paginate(6); 
+        
+        return view('partials.games-list', compact('games'))->render();
     }
     
     public function creator() {

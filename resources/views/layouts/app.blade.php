@@ -8,7 +8,7 @@
     <link rel="stylesheet" crossorigin href="/assets/css/details.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
    
-    <title>Games 4 You 2222</title>
+    <title>Games 4 You</title>
 </head>
 <body>
     <div>
@@ -31,7 +31,7 @@
                             <a  class="nav-link" href="{{route('stores')}}">Stores</a>
                         </li>
                         <li class="nav-item">
-                            <a  class="nav-link" href="{{route('games')}}">Games</a>
+                            <a  class="nav-link" href="{{route('all.games')}}">Games</a>
                         </li>
                     </ul>
                     <ul class="connect-list">

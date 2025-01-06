@@ -631,7 +631,7 @@ class GamesSeeder extends Seeder
         Games::create([
             'name' => 'Brutal Legend', 
             'description' => 'Heavy Metal is a way of life and a world in itself, but Eddie Riggs found the real one, after the accident during a concert left him crushed by the scenery and making the involuntary blood sacrifice to the Ormagöden. The action adventure game with the real-time strategy elements in the open world introduced a star voice cast, compiled by musicians that became prototypes for some of the characters players will encounter during the game. Aside from the main story, players will be able to encounter dozens of side missions that may vary from the defense battles to a race. When using his V-guitar named Clementine, Eddie can cast spells, called Solos, by a simple rhythm game, reminiscent of Guitar Hero. Some story missions are so-called Battles of the Bands, where players will fight the armies in a real-time strategy fashion, and winning by outperforming the enemy band and destroying the stage.', 
-            'images' => '/assets/images/games/af7a831001c5c32c46e950cc883b8cb7.jpgz',
+            'images' => '/assets/images/games/af7a831001c5c32c46e950cc883b8cb7.jpg',
             'release_date' => '2009-10-12',
             'updated' => '2024-12-30',
             'cursing' => rand(450, 7500),

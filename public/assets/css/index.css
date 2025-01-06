@@ -259,7 +259,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .card {
@@ -527,7 +527,6 @@ img {
 }
 
 .genres-item {
-    padding: 12px 30px;
     font-family: Barlow;
     font-weight: 500;
     font-size: 18px;
@@ -536,8 +535,13 @@ img {
     text-align: start;
 }
 
-.genres-item a {
+.genres-item a { 
+    padding: 1rem 8rem 1rem 3rem;
     color: var(--clr-white);
+}
+
+.active-category {
+    background: var(--clr-pink-normal); 
 }
 
 .sc-ktwOf {
@@ -877,3 +881,4 @@ footer {
     align-items: center;
     gap: 8px;
 }
+

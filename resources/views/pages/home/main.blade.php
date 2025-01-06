@@ -27,35 +27,6 @@
                 <div class="card-list">
                         <div class="sc-ktwOfi card">
                         <div class="card-top">
-                            <img src="assets/images/games/20aa03a10cda45239fe22d035c0ebe64.jpg" alt="Grand Theft Auto V" loading="lazy">
-                            <div class="card-rating">
-                                6957
-                                <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
-                                    <g data-name="1" id="_1">
-                                    <path d="M370.24,425.59a14.89,14.89,0,0,1-7-1.72L257,368,150.74,423.87A15,15,0,0,1,129,408.06l20.3-118.32-86-83.8a15,15,0,0,1,8.31-25.59l118.81-17.26L243.55,55.43a15,15,0,0,1,26.9,0l53.13,107.66,118.8,17.26a15,15,0,0,1,8.32,25.59l-86,83.8L385,408.06a15,15,0,0,1-14.78,17.53ZM106,205.67l69.85,68.09A15,15,0,0,1,180.17,287l-16.49,96.14L250,337.78a15,15,0,0,1,14,0l86.34,45.39L333.83,287a15,15,0,0,1,4.31-13.27L408,205.67l-96.53-14a15,15,0,0,1-11.29-8.2L257,96l-43.17,87.47a15,15,0,0,1-11.3,8.2Z"/>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-bottom">
-                            <h4 class="card-title">Grand Theft Auto V</h4>
-                            <div class="group-detaile">
-                                <div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">Release Date:</p>
-                                        <p class="detaile-value">2013-09-17</p>
-                                    </div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-17T10:53:09</p>
-                                    </div>
-                                </div>
-                                    <a class="detaile-btn-custom">See More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sc-ktwOfi card">
-                        <div class="card-top">
                             <img src="assets/images/games/618c2031a07bbff6b4f611f10b6bcdbc.jpg" alt="The Witcher 3: Wild Hunt" loading="lazy">
                             <div class="card-rating">
                                 6726
@@ -79,7 +50,7 @@
                                         <p class="detaile-value">2024-12-17T08:16:38</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[0])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +79,7 @@
                                         <p class="detaile-value">2024-12-16T19:20:51</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[1])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +108,7 @@
                                         <p class="detaile-value">2024-12-16T19:19:47</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[2])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +137,7 @@
                                         <p class="detaile-value">2024-12-15T13:02:43</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[3])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +166,7 @@
                                         <p class="detaile-value">2024-12-16T19:20:40</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[4])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -224,36 +195,7 @@
                                         <p class="detaile-value">2024-12-16T19:20:26</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sc-ktwOfi card">
-                        <div class="card-top">
-                            <img src="assets/images/games/7cfc9220b401b7a300e409e539c9afd5.jpg" alt="The Elder Scrolls V: Skyrim" loading="lazy">
-                            <div class="card-rating">
-                                3684
-                                <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
-                                    <g data-name="1" id="_1">
-                                    <path d="M370.24,425.59a14.89,14.89,0,0,1-7-1.72L257,368,150.74,423.87A15,15,0,0,1,129,408.06l20.3-118.32-86-83.8a15,15,0,0,1,8.31-25.59l118.81-17.26L243.55,55.43a15,15,0,0,1,26.9,0l53.13,107.66,118.8,17.26a15,15,0,0,1,8.32,25.59l-86,83.8L385,408.06a15,15,0,0,1-14.78,17.53ZM106,205.67l69.85,68.09A15,15,0,0,1,180.17,287l-16.49,96.14L250,337.78a15,15,0,0,1,14,0l86.34,45.39L333.83,287a15,15,0,0,1,4.31-13.27L408,205.67l-96.53-14a15,15,0,0,1-11.29-8.2L257,96l-43.17,87.47a15,15,0,0,1-11.3,8.2Z"/>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card-bottom">
-                            <h4 class="card-title">The Elder Scrolls V: Skyrim</h4>
-                            <div class="group-detaile">
-                                <div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">Release Date:</p>
-                                        <p class="detaile-value">2011-11-11</p>
-                                    </div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-17T08:16:47</p>
-                                    </div>
-                                </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[5])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -282,7 +224,65 @@
                                         <p class="detaile-value">2024-12-17T10:05:48</p>
                                     </div>
                                 </div>
-                                    <a class="detaile-btn-custom">See More</a>
+                                    <a href="{{route('detail',$categories[6])}}" class="detaile-btn-custom">See More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sc-ktwOfi card">
+                        <div class="card-top">
+                            <img src="assets/images/games/fc1307a2774506b5bd65d7e8424664a7.jpg" alt="BioShock Infinite" loading="lazy">
+                            <div class="card-rating">
+                                4059
+                                <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="1" id="_1">
+                                    <path d="M370.24,425.59a14.89,14.89,0,0,1-7-1.72L257,368,150.74,423.87A15,15,0,0,1,129,408.06l20.3-118.32-86-83.8a15,15,0,0,1,8.31-25.59l118.81-17.26L243.55,55.43a15,15,0,0,1,26.9,0l53.13,107.66,118.8,17.26a15,15,0,0,1,8.32,25.59l-86,83.8L385,408.06a15,15,0,0,1-14.78,17.53ZM106,205.67l69.85,68.09A15,15,0,0,1,180.17,287l-16.49,96.14L250,337.78a15,15,0,0,1,14,0l86.34,45.39L333.83,287a15,15,0,0,1,4.31-13.27L408,205.67l-96.53-14a15,15,0,0,1-11.29-8.2L257,96l-43.17,87.47a15,15,0,0,1-11.3,8.2Z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <h4 class="card-title">BioShock Infinite</h4>
+                            <div class="group-detaile">
+                                <div>
+                                    <div class="detaile-item">
+                                        <p class="detaile-name">Release Date:</p>
+                                        <p class="detaile-value">2013-03-26</p>
+                                    </div>
+                                    <div class="detaile-item">
+                                        <p class="detaile-name">Updated:</p>
+                                        <p class="detaile-value">2024-12-30</p>
+                                    </div>
+                                </div>
+                                    <a href="{{route('detail',$categories[7])}}" class="detaile-btn-custom">See More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sc-ktwOfi card">
+                        <div class="card-top">
+                            <img src="assets/images/games/49c3dfa4ce2f6f140cc4825868e858cb.jpg" alt="Borderlands 2" loading="lazy">
+                            <div class="card-rating">
+                                3214
+                                <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="1" id="_1">
+                                    <path d="M370.24,425.59a14.89,14.89,0,0,1-7-1.72L257,368,150.74,423.87A15,15,0,0,1,129,408.06l20.3-118.32-86-83.8a15,15,0,0,1,8.31-25.59l118.81-17.26L243.55,55.43a15,15,0,0,1,26.9,0l53.13,107.66,118.8,17.26a15,15,0,0,1,8.32,25.59l-86,83.8L385,408.06a15,15,0,0,1-14.78,17.53ZM106,205.67l69.85,68.09A15,15,0,0,1,180.17,287l-16.49,96.14L250,337.78a15,15,0,0,1,14,0l86.34,45.39L333.83,287a15,15,0,0,1,4.31-13.27L408,205.67l-96.53-14a15,15,0,0,1-11.29-8.2L257,96l-43.17,87.47a15,15,0,0,1-11.3,8.2Z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-bottom">
+                            <h4 class="card-title">Borderlands 2</h4>
+                            <div class="group-detaile">
+                                <div>
+                                    <div class="detaile-item">
+                                        <p class="detaile-name">Release Date:</p>
+                                        <p class="detaile-value">2012-09-18</p>
+                                    </div>
+                                    <div class="detaile-item">
+                                        <p class="detaile-name">Updated:</p>
+                                        <p class="detaile-value">2024-12-30</p>
+                                    </div>
+                                </div>
+                                    <a href="{{route('detail',$categories[8])}}" class="detaile-btn-custom">See More</a>
                                 </div>
                             </div>
                         </div>
@@ -335,47 +335,19 @@
             <div class="container-genres">
             <div class="tabs-content">
                 <ul class="list-genres">
-                    @foreach ($categories as $category)
+                     @foreach ($categories as $category)
                         <li class="genres-item">
-                            <a href="{{ route('home', ['category_id' => $category->id]) }}">{{ $category->title }}</a>
+                            <a href="{{ route('home', ['category_id' => $category->id]) }}" class="category-link {{ $category->id == $category_id ? 'active-category' : '' }}">
+                                {{ $category->title }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>
             </div>
             <div class="tabs-body">
                 <div class="sc-fsfFfa"> 
-                    <div class="card-list">  
-                        @foreach ($categories as $category)
-                            @foreach ($category->games as $game)
-                                <!-- Виводимо ігри лише для вибраної категорії або для всіх категорій, якщо не вибрана категорія -->
-                                @if (!$category_id || $category->id == $category_id)
-                                    <div class="sc-ktwOf card">
-                                        <div class="card-top">
-                                            <img src="{{ $game->images}}" alt="{{ $game->title }}" loading="lazy">
-                                            <div class="card-rating">
-                                                {{ $game->rating }}
-                                            </div>
-                                        </div>
-                                        <div class="card-bottom">
-                                            <h4 class="card-title">{{ $game->name }}</h4>
-                                        <div class="group-detaile sc-grasf">
-                                            <div>
-                                                <div class="detaile-item">
-                                                    <p class="detaile-name">Release Date:</p>
-                                                    <p class="detaile-value">{{ $game->release_date }}</p>
-                                                </div>
-                                                <div class="detaile-item">
-                                                    <p class="detaile-name">Updated:</p>
-                                                    <p class="detaile-value">{{ $game->updated_at }}</p>
-                                                </div>
-                                            </div>
-                                            <a href="{{route('detail',$game->id)}}" class="detaile-btn-custom sc-sfks">See More</a>
-                                        </div>
-                                        </div>
-                                    </div>
-                                @endif
-                            @endforeach
-                        @endforeach
+                    <div class="card-list" id="games-container">
+                        @include('partials.games-list', ['games' => $categories->first()->games ?? []])
                     </div>
                 </div>
             </div>
@@ -395,37 +367,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Steam</a>
+                        <a class="text-white">Steam</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">store.steampowered.com</a>
+                            <a href="https://store.steampowered.com/?l=russian">store.steampowered.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">104644</a>
+                            <a>104644</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Grand Theft Auto V</a>
+                            <a class="game-name">Grand Theft Auto V</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                            <a class="game-name">The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal 2</a>
+                            <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike: Global Offensive</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal</a>
+                            <a class="game-name">Portal</a>
                         </li>
                     </ul>
                     </div>
@@ -436,37 +408,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">PlayStation Store</a>
+                        <a class="text-white">PlayStation Store</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">store.playstation.com</a>
+                            <a href="https://store.playstation.com/ru-ua/pages/latest">store.playstation.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">8009</a>
+                            <a>8009</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Grand Theft Auto V</a>
+                            <a class="game-name">Grand Theft Auto V</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                            <a class="game-name">The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal 2</a>
+                            <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike: Global Offensive</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name">The Elder Scrolls V: Skyrim</a>
                         </li>
                     </ul>
                     </div>
@@ -477,37 +449,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Xbox Store</a>
+                        <a class="text-white">Xbox Store</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">microsoft.com</a>
+                            <a href="https://www.xbox.com/ru-RU/games/xbox-360">microsoft.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">4903</a>
+                            <a>4903</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Grand Theft Auto V</a>
+                            <a class="game-name">Grand Theft Auto V</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                            <a class="game-name">The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal 2</a>
+                            <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Red Dead Redemption 2</a>
+                            <a class="game-name">Red Dead Redemption 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">BioShock Infinite</a>
+                            <a class="game-name">BioShock Infinite</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Borderlands 2</a>
+                            <a class="game-name">Borderlands 2</a>
                         </li>
                     </ul>
                     </div>
@@ -518,37 +490,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">App Store</a>
+                        <a class="text-white">App Store</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">apps.apple.com</a>
+                            <a href="https://www.recraft.ai/auth/login?callbackUrl=%2Fprojects">apps.apple.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">75577</a>
+                            <a>75577</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">BioShock Infinite</a>
+                            <a class="game-name">BioShock Infinite</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Borderlands 2</a>
+                            <a class="game-name">Borderlands 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Life is Strange</a>
+                            <a class="game-name">Life is Strange</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">BioShock</a>
+                            <a class="game-name">BioShock</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Limbo</a>
+                            <a class="game-name">Limbo</a>
                         </li>
                     </ul>
                     </div>
@@ -559,37 +531,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">GOG</a>
+                        <a class="text-white">GOG</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">gog.com</a>
+                            <a href="https://www.gog.com/">gog.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">6532</a>
+                            <a>6532</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                            <a class="game-name">The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Life is Strange</a>
+                            <a class="game-name">Life is Strange</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">God of War (2018)</a>
+                            <a class="game-name">God of War (2018)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Limbo</a>
+                            <a class="game-name">Limbo</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Cyberpunk 2077</a>
+                            <a class="game-name">Cyberpunk 2077</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Terraria</a>
+                            <a class="game-name">Terraria</a>
                         </li>
                     </ul>
                     </div>
@@ -600,37 +572,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Nintendo Store</a>
+                        <a class="text-white">Nintendo Store</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">nintendo.com</a>
+                            <a href="https://www.nintendo.com/us/store/">nintendo.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">9099</a>
+                            <a>9099</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">The Witcher 3: Wild Hunt</a>
+                            <a class="game-name">The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name">The Elder Scrolls V: Skyrim</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">BioShock Infinite</a>
+                            <a class="game-name">BioShock Infinite</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">PAYDAY 2</a>
+                            <a class="game-name">PAYDAY 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Limbo</a>
+                            <a class="game-name">Limbo</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">DOOM (2016)</a>
+                            <a class="game-name">DOOM (2016)</a>
                         </li>
                     </ul>
                     </div>
@@ -641,37 +613,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Xbox 360 Store</a>
+                        <a class="text-white">Xbox 360 Store</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">marketplace.xbox.com</a>
+                            <a href="https://www.xbox.com/ru-RU/games/xbox-360">marketplace.xbox.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">1915</a>
+                            <a>1915</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Grand Theft Auto V</a>
+                            <a class="game-name">Grand Theft Auto V</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal 2</a>
+                            <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike: Global Offensive</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Left 4 Dead 2</a>
+                            <a class="game-name">Left 4 Dead 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name">The Elder Scrolls V: Skyrim</a>
                         </li>
                     </ul>
                     </div>
@@ -682,37 +654,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Google Play</a>
+                        <a class="text-white">Google Play</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">play.google.com</a>
+                            <a href="https://play.google.com/store/games?hl=uk">play.google.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">17107</a>
+                            <a>17107</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Portal</a>
+                            <a class="game-name">Portal</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Borderlands 2</a>
+                            <a class="game-name">Borderlands 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Life is Strange</a>
+                            <a class="game-name">Life is Strange</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Limbo</a>
+                            <a class="game-name">Limbo</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Half-Life 2</a>
+                            <a class="game-name">Half-Life 2</a>
                         </li>
                     </ul>
                     </div>
@@ -723,37 +695,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">itch.io</a>
+                        <a class="text-white">itch.io</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">itch.io</a>
+                            <a href="https://itch.io/">itch.io</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">654161</a>
+                            <a>654161</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Bastion</a>
+                            <a class="game-name">Bastion</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Brutal Legend</a>
+                            <a class="game-name">Brutal Legend</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Transistor</a>
+                            <a class="game-name">Transistor</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Among Us</a>
+                            <a class="game-name">Among Us</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Dead Cells</a>
+                            <a class="game-name">Dead Cells</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Papers, Please</a>
+                            <a class="game-name">Papers, Please</a>
                         </li>
                     </ul>
                     </div>
@@ -764,37 +736,37 @@
                     </div>
                     <div class="card-container">
                     <h5 class="card-store-title">
-                        <a class="text-white" href="">Epic Games</a>
+                        <a class="text-white">Epic Games</a>
                     </h5>
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="">epicgames.com</a>
+                            <a href="https://store.epicgames.com/en-US/">epicgames.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>
-                            <a href="">1365</a>
+                            <a>1365</a>
                         </li>
                     </ul>
                     <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
                     <ul class="card-store-games">
                         <li>
-                            <a class="game-name" href="">Grand Theft Auto V</a>
+                            <a class="game-name">Grand Theft Auto V</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Tomb Raider (2013)</a>
+                            <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Red Dead Redemption 2</a>
+                            <a class="game-name">Red Dead Redemption 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">BioShock Infinite</a>
+                            <a class="game-name">BioShock Infinite</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">Destiny 2</a>
+                            <a class="game-name">Destiny 2</a>
                         </li>
                         <li>
-                            <a class="game-name" href="">PAYDAY 2</a>
+                            <a class="game-name">PAYDAY 2</a>
                         </li>
                     </ul>
                     </div>
@@ -803,4 +775,35 @@
         </div>
     </div>
 </section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Обробка вибору категорії
+    $(document).on('click', '.category-link', function(e) {
+        e.preventDefault(); // Запобігає переходу за посиланням
+
+        let categoryId = $(this).attr('href').split('category_id=')[1]; // Отримуємо category_id з URL
+
+        // Видаляємо клас active-category від усіх категорій
+        $('.category-link').removeClass('active-category');
+        
+        // Додаємо клас active-category до вибраної категорії
+        $(this).addClass('active-category');
+
+        // Завантажуємо ігри для вибраної категорії
+        $.ajax({
+            url: "{{ route('games') }}",
+            type: "GET",
+            data: { category_id: categoryId },
+            success: function(response) {
+                $('#games-container').html(response); // Оновлюємо блок ігор
+            },
+            error: function(xhr) {
+                console.error("Помилка AJAX:", xhr.responseText); // Виводимо помилку
+            }
+        });
+    });
+});
+
+</script>
 @endsection
