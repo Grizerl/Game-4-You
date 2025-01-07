@@ -881,4 +881,105 @@ footer {
     align-items: center;
     gap: 8px;
 }
+/* Burger menu */
+.btn-menu {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: var(--clr-white);
+    cursor: pointer;
+}
 
+.burger-navbar {
+    display: none;
+}
+
+.menu-nav,.menu-list {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+
+    .navbar-nav,.connect-list {
+        display: none;
+    }
+
+    .btn-menu {
+        display: flex;
+    }
+
+    .close-btn {
+        position: absolute;
+        right: 40px;
+        background-color: transparent;
+        border: none;
+        color: var(--clr-black);
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .burger-navbar.active {
+        transform: translateX(0%);
+    }
+
+    .burger-navbar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        width: 280px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 20px 20px 16px;
+        text-align: center;
+        background-color: var(--clr-white);
+        transform: translateX(100%);
+        transition: var(--transition-default);
+        z-index: 999;
+    }
+
+    .menu-nav {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .menu-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .menu-item {
+        padding: 15px 45px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .connect-menu {
+        margin-bottom: 10px;
+    }
+
+    .w-100{
+        width: 100%;
+    }
+
+    .sc-Conect {
+        font-weight: 700;
+        color: var(--clr-black);
+    }
+
+    .menu-link,.sc-Conec {
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        padding-right: 8px;
+        padding-left: 8px;
+        color: var(--clr-black);
+        transition: var(--transition-default);
+    }
+    
+}
