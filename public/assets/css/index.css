@@ -544,10 +544,6 @@ img {
     background: var(--clr-pink-normal); 
 }
 
-.sc-ktwOf {
-    width: 330px;
-}
-
 .card-top::after{
     content: "";
     position: absolute;
@@ -898,6 +894,10 @@ footer {
     display: none;
 }
 
+.burger {
+    display: none;
+}
+
 @media (max-width: 1400px) {
 
     .navbar-nav,.connect-list {
@@ -981,5 +981,117 @@ footer {
         color: var(--clr-black);
         transition: var(--transition-default);
     }
-    
+    /* Next menu category */
+    .burger {
+        display: block;
+        border: none;
+        background-color: var(--clr-pink-normal);
+        margin-bottom: 10px;
+        color: var(--clr-white);
+        cursor: pointer;
+    }
+
+    .list-genres {
+        background-color: var(--clr-violet-dark-hover);
+    }
+
+    .burger-container {
+        opacity: 0;
+        display: none; 
+        transition: var(--transition-default);
+    }
+
+    .burger-container.active {
+        opacity: 1;
+        display: block;
+       
+    }
+
+    .container-genres {
+        padding-left: 0rem;
+        padding-right: 4rem;
+    }
+
+    .tabs-content {
+        margin: 0px auto;
+    }
+
+    .card-list {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .card-list, .creators-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+    }
+
+    .footer-top {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:850px) {
+
+    .sc-FgFhjg{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+   
+}
+
+@media (max-width:725px) {
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .tabs-content {
+        margin: 0px;
+    }
+}
+
+@media (max-width:550px) {
+    .card-list,.creators-card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .tabs-content {
+        margin: 0px;
+    }
+
+    .banner-content {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-top {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-lead {
+        display: inline-block;
+    }
+
+    .pole-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 435px) {
+    .game-name {
+        font-size: 13px;
+        font-weight: 600;
+    }
 }

@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-17T08:16:38</p>
+                                        <p class="detaile-value">2024-12-17</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[0])}}" class="detaile-btn-custom">See More</a>
@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-16T19:20:51</p>
+                                        <p class="detaile-value">2024-12-16</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[1])}}" class="detaile-btn-custom">See More</a>
@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-16T19:19:47</p>
+                                        <p class="detaile-value">2024-12-16</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[2])}}" class="detaile-btn-custom">See More</a>
@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-15T13:02:43</p>
+                                        <p class="detaile-value">2024-12-15</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[3])}}" class="detaile-btn-custom">See More</a>
@@ -163,7 +163,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-16T19:20:40</p>
+                                        <p class="detaile-value">2024-12-16</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[4])}}" class="detaile-btn-custom">See More</a>
@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-16T19:20:26</p>
+                                        <p class="detaile-value">2024-12-16</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[5])}}" class="detaile-btn-custom">See More</a>
@@ -221,7 +221,7 @@
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">Updated:</p>
-                                        <p class="detaile-value">2024-12-17T10:05:48</p>
+                                        <p class="detaile-value">2024-12-17</p>
                                     </div>
                                 </div>
                                     <a href="{{route('detail',$categories[6])}}" class="detaile-btn-custom">See More</a>
@@ -290,7 +290,7 @@
                 </div>
                 <div style="display: flex; align-items: center; margin-top: 50px;">
                     <div class="container">
-                        <a class="card-button btn-card" href="{{route('games')}}"><span>See More Games</span></a>
+                        <a class="card-button btn-card" href="{{route('all.games')}}"><span>See More Games</span></a>
                     </div>
                 </div>
             </div>
@@ -334,6 +334,17 @@
         <div class="container sc-DfghF">
             <div class="container-genres">
             <div class="tabs-content">
+            <div style="margin-top: 20px;">
+            <button id="btn-category" class="burger">
+                    <svg style="enable-background:new 0 0 24 24;" stroke="currentColor" fill="currentColor" stroke-width="0" height="32" width="32"  version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="info"/><g id="icons"><g id="menu">
+                                <path d="M20,10H4c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2C22,10.9,21.1,10,20,10z"/>
+                                <path d="M4,8h12c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6C2,7.1,2.9,8,4,8z"/>
+                                <path d="M16,16H4c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2C18,16.9,17.1,16,16,16z"/>
+                            </g></g>
+                        </svg>
+                    </button>
+                <div id="navbar-menu-category" class="burger-container">
                 <ul class="list-genres">
                      @foreach ($categories as $category)
                         <li class="genres-item">
@@ -343,6 +354,8 @@
                         </li>
                     @endforeach
                 </ul>
+                </div>
+            </div>
             </div>
             <div class="tabs-body">
                 <div class="sc-fsfFfa"> 
@@ -391,7 +404,7 @@
                             <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name">Tomb Raider (2013)</a>
@@ -432,13 +445,13 @@
                             <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name">Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name">The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name">The Elder Scrolls V</a>
                         </li>
                     </ul>
                     </div>
@@ -634,7 +647,7 @@
                             <a class="game-name">Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name">Counter-Strike: Global Offensive</a>
+                            <a class="game-name">Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name">Tomb Raider (2013)</a>
@@ -804,6 +817,5 @@
         });
     });
 });
-
 </script>
 @endsection

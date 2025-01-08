@@ -26,6 +26,7 @@
 
 .category-nav {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .category-item {
@@ -171,4 +172,61 @@
     background-color: var(--clr-white);
     color: var(--clr-black);
     
+}
+
+@media (max-width: 750px) {
+    .details-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .page-description,.page-platform {
+        padding: 10px 0px;
+    }
+
+    .btn-navbar {
+        margin: 0;
+    }
+}
+
+@media (max-width: 475px) {
+
+    .details-container {
+        padding: 0;
+    }
+    .btn-items {
+        margin-right: 1rem;
+    }
+
+    .btn-link {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 387px) {
+
+    .btn-items {
+        margin-right: 0;
+    }
+
+    .btn-link {
+        padding: 10px 20px;
+    }
+
+    .description-lead {
+        font-size: 1.3rem;
+    }
+
+    .chunk {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .details-title {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
 }

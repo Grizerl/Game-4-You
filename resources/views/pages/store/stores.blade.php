@@ -39,7 +39,7 @@
                             <a class="game-name" >Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" >Counter-Strike: Global Offensive</a>
+                            <a class="game-name" >Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name" >Tomb Raider (2013)</a>
@@ -80,13 +80,13 @@
                             <a class="game-name" >Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" >Counter-Strike: Global Offensive</a>
+                            <a class="game-name" >Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name" >Tomb Raider (2013)</a>
                         </li>
                         <li>
-                            <a class="game-name" >The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name" >The Elder Scrolls V</a>
                         </li>
                     </ul>
                     </div>
@@ -238,7 +238,7 @@
                             <a class="game-name" >The Witcher 3: Wild Hunt</a>
                         </li>
                         <li>
-                            <a class="game-name" >The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name" >The Elder Scrolls V</a>
                         </li>
                         <li>
                             <a class="game-name" >BioShock Infinite</a>
@@ -282,7 +282,7 @@
                             <a class="game-name" >Portal 2</a>
                         </li>
                         <li>
-                            <a class="game-name" >Counter-Strike: Global Offensive</a>
+                            <a class="game-name" >Counter-Strike</a>
                         </li>
                         <li>
                             <a class="game-name" >Tomb Raider (2013)</a>
@@ -291,7 +291,7 @@
                             <a class="game-name" >Left 4 Dead 2</a>
                         </li>
                         <li>
-                            <a class="game-name" >The Elder Scrolls V: Skyrim</a>
+                            <a class="game-name" >The Elder Scrolls V</a>
                         </li>
                     </ul>
                     </div>
