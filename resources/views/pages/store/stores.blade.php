@@ -257,166 +257,149 @@
                 </div>
                 <div class="card-store">
                     <div class="card-img">
-                    <img src="/assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
+                        <img src="/assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
                     </div>
                     <div class="card-container">
-                    <h5 class="card-store-title">
-                        <a class="text-white">Xbox 360 Store</a>
-                    </h5>
-                    <ul class="card-store-info">
-                        <li>
-                            <span class="text-white">Domain:</span>
-                            <a href="https://www.xbox.com/ru-RU/games/xbox-360">marketplace.xbox.com</a>
-                        </li>
-                        <li>
-                            <span class="text-white">Games Count:</span>
-                            <a>1915</a>
-                        </li>
-                    </ul>
-                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
-                    <ul class="card-store-games">
-                        <li>
-                            <a class="game-name" >Grand Theft Auto V</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Portal 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Counter-Strike</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Tomb Raider (2013)</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Left 4 Dead 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >The Elder Scrolls V</a>
-                        </li>
-                    </ul>
+                        <h5 class="card-store-title"><a class="text-white">Xbox 360 Store</a></h5>
+                            <ul class="card-store-info">
+                                <li>
+                                    <span class="text-white">Domain:</span><a href="https://www.xbox.com/ru-RU/games/xbox-360">marketplace.xbox.com</a>
+                                </li>
+                                <li><span class="text-white">Games Count:</span><a>1915</a>
+                                </li>
+                            </ul>
+                                <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                        <ul class="card-store-games">
+                            <li>
+                                <a class="game-name" >Grand Theft Auto V</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Portal 2</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Counter-Strike</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Tomb Raider (2013)</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Left 4 Dead 2</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >The Elder Scrolls V</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="card-store">
-                    <div class="card-img">
-                    <img src="/assets/images/stores/be084b850302abe81675bc4ffc08a0d0.jpg" alt="Games Store" loading="lazy">
+                    <div class="card-store">
+                        <div class="card-img">
+                            <img src="/assets/images/stores/be084b850302abe81675bc4ffc08a0d0.jpg" alt="Games Store" loading="lazy">
+                        </div>
+                            <div class="card-container">
+                                <h5 class="card-store-title"><a class="text-white">Google Play</a></h5>
+                            <ul class="card-store-info">
+                                <li>
+                                    <span class="text-white">Domain:</span><a href="https://play.google.com/store/games?hl=uk">play.google.com</a>
+                                </li>
+                                <li>
+                                    <span class="text-white">Games Count:</span><a>17107</a>
+                                </li>
+                            </ul>
+                                <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                            <ul class="card-store-games">
+                                <li>
+                                    <a class="game-name" >Tomb Raider (2013)</a>
+                                </li>
+                                <li>
+                                    <a class="game-name" >Portal</a>
+                                </li>
+                                <li>
+                                    <a class="game-name" >Borderlands 2</a>
+                                </li>
+                                <li>
+                                    <a class="game-name" >Life is Strange</a>
+                                </li>
+                                <li>
+                                    <a class="game-name" >Limbo</a>
+                                </li>
+                                <li>
+                                    <a class="game-name" >Half-Life 2</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card-container">
-                    <h5 class="card-store-title">
-                        <a class="text-white">Google Play</a>
-                    </h5>
-                    <ul class="card-store-info">
-                        <li>
-                            <span class="text-white">Domain:</span>
-                            <a href="https://play.google.com/store/games?hl=uk">play.google.com</a>
-                        </li>
-                        <li>
-                            <span class="text-white">Games Count:</span>
-                            <a>17107</a>
-                        </li>
-                    </ul>
-                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
-                    <ul class="card-store-games">
-                        <li>
-                            <a class="game-name" >Tomb Raider (2013)</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Portal</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Borderlands 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Life is Strange</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Limbo</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Half-Life 2</a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="card-store">
-                    <div class="card-img">
-                    <img src="/assets/images/stores/ab1b125c1bf4899c58fe90226b9a1f5b.jpg" alt="Games Store" loading="lazy">
-                    </div>
-                    <div class="card-container">
-                    <h5 class="card-store-title">
-                        <a class="text-white">itch.io</a>
-                    </h5>
-                    <ul class="card-store-info">
-                        <li>
-                            <span class="text-white">Domain:</span>
-                            <a href="https://itch.io/">itch.io</a>
-                        </li>
-                        <li>
-                            <span class="text-white">Games Count:</span>
-                            <a>654161</a>
-                        </li>
-                    </ul>
-                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
-                    <ul class="card-store-games">
-                        <li>
-                            <a class="game-name" >Bastion</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Brutal Legend</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Transistor</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Among Us</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Dead Cells</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Papers, Please</a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="card-store">
-                    <div class="card-img">
-                    <img src="/assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
-                    </div>
-                    <div class="card-container">
-                    <h5 class="card-store-title">
-                        <a class="text-white">Epic Games</a>
-                    </h5>
-                    <ul class="card-store-info">
-                        <li>
-                            <span class="text-white">Domain:</span>
-                            <a href="https://store.epicgames.com/en-US/">epicgames.com</a>
-                        </li>
-                        <li>
-                            <span class="text-white">Games Count:</span>
-                            <a>1365</a>
-                        </li>
-                    </ul>
-                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
-                    <ul class="card-store-games">
-                        <li>
-                            <a class="game-name" >Grand Theft Auto V</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Tomb Raider (2013)</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Red Dead Redemption 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >BioShock Infinite</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >Destiny 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name" >PAYDAY 2</a>
-                        </li>
-                    </ul>
+                        <div class="card-store">
+                            <div class="card-img">
+                                <img src="/assets/images/stores/ab1b125c1bf4899c58fe90226b9a1f5b.jpg" alt="Games Store" loading="lazy">
+                            </div>
+                                <div class="card-container">
+                                    <h5 class="card-store-title"><a class="text-white">itch.io</a></h5>
+                                    <ul class="card-store-info">
+                                        <li>
+                                            <span class="text-white">Domain:</span><a href="https://itch.io/">itch.io</a>
+                                        </li>
+                                        <li>
+                                            <span class="text-white">Games Count:</span><a>654161</a>
+                                        </li>
+                                    </ul>
+                                        <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                                <ul class="card-store-games">
+                                    <li>
+                                        <a class="game-name" >Bastion</a>
+                                    </li>
+                                    <li>
+                                        <a class="game-name" >Brutal Legend</a>
+                                    </li>
+                                    <li>
+                                        <a class="game-name" >Transistor</a>
+                                    </li>
+                                    <li>
+                                        <a class="game-name" >Among Us</a>
+                                    </li>
+                                    <li>
+                                        <a class="game-name" >Dead Cells</a>
+                                    </li>
+                                    <li>
+                                        <a class="game-name" >Papers, Please</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <div class="card-store">
+                        <div class="card-img">
+                            <img src="/assets/images/stores/9424d6bb763dc38d9378b488603c87fa.jpg" alt="Games Store" loading="lazy">
+                        </div>
+                        <div class="card-container">
+                            <h5 class="card-store-title"><a class="text-white">Epic Games</a></h5>
+                                <ul class="card-store-info">
+                                    <li>
+                                        <span class="text-white">Domain:</span><a href="https://store.epicgames.com/en-US/">epicgames.com</a>
+                                    </li>
+                                    <li>
+                                        <span class="text-white">Games Count:</span><a>1365</a>
+                                    </li>
+                                </ul>
+                                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">Games:</p>
+                        <ul class="card-store-games">
+                            <li>
+                                <a class="game-name" >Grand Theft Auto V</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Tomb Raider (2013)</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Red Dead Redemption 2</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >BioShock Infinite</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >Destiny 2</a>
+                            </li>
+                            <li>
+                                <a class="game-name" >PAYDAY 2</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

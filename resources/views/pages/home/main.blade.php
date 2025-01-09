@@ -791,28 +791,20 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
-    // Обробка вибору категорії
     $(document).on('click', '.category-link', function(e) {
-        e.preventDefault(); // Запобігає переходу за посиланням
-
-        let categoryId = $(this).attr('href').split('category_id=')[1]; // Отримуємо category_id з URL
-
-        // Видаляємо клас active-category від усіх категорій
+        e.preventDefault(); 
+        let categoryId = $(this).attr('href').split('category_id=')[1]; 
         $('.category-link').removeClass('active-category');
-        
-        // Додаємо клас active-category до вибраної категорії
         $(this).addClass('active-category');
-
-        // Завантажуємо ігри для вибраної категорії
         $.ajax({
             url: "{{ route('games') }}",
             type: "GET",
             data: { category_id: categoryId },
             success: function(response) {
-                $('#games-container').html(response); // Оновлюємо блок ігор
+                $('#games-container').html(response);
             },
             error: function(xhr) {
-                console.error("Помилка AJAX:", xhr.responseText); // Виводимо помилку
+                console.error("Помилка AJAX:", xhr.responseText); 
             }
         });
     });
