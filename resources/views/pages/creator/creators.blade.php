@@ -12,7 +12,7 @@
                     @foreach ($creators as $creator)
                     <div class="sc-flex background-img">
                         <div class="creator-images">
-                            <img src="{{$creator->images}}" alt="{{$creator->name}}">
+                            <img src="{{$creator->images}}" alt="{{$creator->name}}" loading="lazy">
                         </div>
                         <div class="creator-card-bottom">
                             <h4 class="creator-name">{{$creator->name}}</h4>

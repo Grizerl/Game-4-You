@@ -37,7 +37,7 @@
                         </div>
                         <div class="details-grid">
                             <div class="details-left">
-                                <img src="{{$game->images}}" alt="{{$game->name}}">
+                                <img src="{{$game->images}}" alt="{{$game->name}}" loading="lazy">
                             </div>
                             <div class="details-right">
                                 <h4 class="details-right-title"><span>Game</span> Details</h4>

@@ -300,16 +300,16 @@
 <div class="sc-DdshD section">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_1-mc0Hy4Sp.png" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_2-RlRwE6th.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_3-VvERGk7i.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_4-YfdR9_hu.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_5-U2mFURCN.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_6-KOIDvTyl.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_7-S7uvxQ7h.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_8-KU12EZws.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_9-NlFxEIDi.jpg" alt="slider-img"></div>
-            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_10-lvYJu-HK.jpg" alt="slider-img"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_1-mc0Hy4Sp.png" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_2-RlRwE6th.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_3-VvERGk7i.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_4-YfdR9_hu.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_5-U2mFURCN.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_6-KOIDvTyl.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_7-S7uvxQ7h.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_8-KU12EZws.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_9-NlFxEIDi.jpg" alt="slider-img" loading="lazy"></div>
+            <div class="swiper-slide"><img src="assets/images/swiper/slider_img_10-lvYJu-HK.jpg" alt="slider-img" loading="lazy"></div>
         </div>
         <div class="swiper-pagination"></div>
     </div>
