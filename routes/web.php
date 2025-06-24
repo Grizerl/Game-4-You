@@ -9,7 +9,7 @@ Route::get('/', function (): RedirectResponse {
 
 Route::prefix('games-4-you')->group(function (): void {
 
-    Route::get('/', [App\Http\Controllers\ViewsControllers\PageController::class, 'index'])->name('home');
+    Route::get('/вв', [App\Http\Controllers\ViewsControllers\PageController::class, 'index'])->name('home');
 
     Route::get('/category', [App\Http\Controllers\ViewsControllers\PageController::class, 'getGames'])->name('games');
 

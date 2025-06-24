@@ -79,14 +79,7 @@
                             <div id="description-info"  class="page-description show">
                                 <h4 class="description-title">Game Description</h4>
                                 <div class="description-lead">
-                                    @php
-                                        $paragraphs = preg_split('/(?<=[.!?])\s+/', $game->description);
-                                    @endphp
-                                    @foreach ($paragraphs as $paragraph)
-                                        @if (!empty(trim($paragraph)))
-                                            <p>{{ $paragraph }}</p>
-                                        @endif
-                                    @endforeach
+                                   {{ $game->description }}
                                 </div>
                             </div>
                         <div id="platform-info" class="page-platform">

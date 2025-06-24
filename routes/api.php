@@ -12,3 +12,4 @@ Route::get('/creators', [App\Http\Controllers\Api\ApiController::class, 'creator
 Route::get('/games', [App\Http\Controllers\Api\ApiController::class, 'games']);
 
 Route::get('/details/{id}', [App\Http\Controllers\Api\ApiController::class, 'details']);
+

@@ -54,8 +54,7 @@ class PageController extends Controller
      */
     public function creator(): View
     {
-        $creators = Creator::paginate(14);
-
+        $creators = Creator::paginate(15);
         return view('pages.creator.creators', compact('creators'));
     }
 
@@ -65,7 +64,6 @@ class PageController extends Controller
      */
     public function store(): View
     {
-
         return view('pages.store.stores');
     }
 
@@ -75,9 +73,7 @@ class PageController extends Controller
      */
     public function game(): View
     {
-
         $games = Game::paginate(21);
-
         return view('pages.game.games', compact('games'));
     }
 
@@ -88,9 +84,7 @@ class PageController extends Controller
      */
     public function details(int $id): View
     {
-
-        $game = Game::find($id);
-
+        $game = Game::findOrFail($id);
         return view('pages.details.detail', compact('game'));
     }
 }

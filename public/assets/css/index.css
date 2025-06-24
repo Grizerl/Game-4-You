@@ -46,8 +46,11 @@ img {
     width: 100%;
     display: block;
 }
+
 /* navbar */
 .sc-fdhCDF {
+    display: flex;
+    align-items: center;
     min-height: 78px;
     background: rgb(9, 6, 36);
 }
@@ -62,6 +65,11 @@ img {
     width: 100%;
 }
 
+.brand-toggle {
+    position: absolute;
+    left: 0;
+}
+
 .navbar-brand,.navbar-brand span {
     text-transform: uppercase;
     font-weight: 700;
@@ -74,9 +82,10 @@ img {
 }
 
 .navbar-content {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
 }
 
 .navbar-collapse {
@@ -124,6 +133,7 @@ img {
     transition: var(--transition-default);
     color: var(--clr-white);
 }
+
 /* banner */
 .sc-fgdThz {
     min-height: 768px;
@@ -195,6 +205,7 @@ img {
     transform: translate(0,-3px);
     box-shadow: 0 20px 40px 0 rgba(11, 99, 246, 1);
 }
+
 /* popular games */
 .sc-sdsPFK {
     background: var(--clr-violet-dark-active);
@@ -255,6 +266,7 @@ img {
     border-top: 3.5px solid transparent;
     border-bottom: 3.5px solid transparent;
 }
+
 /* card list */
 .card-list,.creators-card {
     display: grid;
