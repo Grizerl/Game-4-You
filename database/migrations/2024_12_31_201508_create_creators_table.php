@@ -12,11 +12,13 @@ return new class () extends Migration {
     {
         Schema::create('creators', function (Blueprint $table): void {
             $table->id();
-            $table->string('name');
-            $table->string('images');
-            $table->bigInteger('games_count');
-            $table->string('position');
-            $table->text('games');
+            $table->string('first_name');
+            $table->string('last_name')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('avatar');
+            $table->unsignedBigInteger('games_count')->default(0);
+            $table->unsignedBigInteger('company_id');
+            $table->string('role');
             $table->timestamps();
         });
     }

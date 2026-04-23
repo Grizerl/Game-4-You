@@ -4,20 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
     use HasFactory;
-    protected $table = "categories";
-    protected $fillable = ["title"];
+    protected $fillable = [
+        'title'
+    ];
 
-    /**
-     * Summary of games
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany<Game, Category>
-     */
-    public function games(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function games(): HasMany
     {
         return $this->hasMany(Game::class, 'category_id');
     }
-
 }

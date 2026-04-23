@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('media_content')
     <div class="sc-sdfTRf">

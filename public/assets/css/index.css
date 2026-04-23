@@ -845,6 +845,91 @@ footer {
 .store-title span {
     color: rgb(239, 151, 232);
 }
+
+.company-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.company-card {
+    background: #151521;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.company-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.company-image {
+    height: 250px;
+    background: #0f0f1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.company-image img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.company-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.company-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.company-text {
+    font-size: 13px;
+    color: #aaa;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.company-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.company-country {
+    font-size: 12px;
+    color: #bbb;
+}
+
+.company-btn {
+    font-size: 13px;
+    color: #ff4c60;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.company-btn:hover {
+    color: #fff;
+    background: #ff4c60;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
 /* games */
 .sc-games {
     margin-bottom: 45px;

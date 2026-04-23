@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-item">
-                    <a class="footer-brand" href="{{route('home')}}">Games 4 <span class="footer-brand-aside">You</span></a>
+                    <a class="footer-brand" href="{{route('home.page')}}">Games 4 <span class="footer-brand-aside">You</span></a>
                     <p class="footer-lead">Lorem ipsum dolor sitamt consectue adispicing duis soolici tudin ague suisomid. Nulla vullam dolor.</p>
                 </div>
                 <div class="footer-item">

@@ -161,11 +161,72 @@
     margin-top: 18px;
 }
 
-#description-info, #platform-info, #stores-info {
+.comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comment-card {
+    background: #1e1e2f;
+    border-radius: 12px;
+    padding: 15px;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: 0.2s;
+}
+
+.comment-card:hover {
+    transform: translateY(-3px);
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #ff4c60;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+}
+
+.date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.comment-body {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.no-comments {
+    color: #aaa;
+}
+
+#description-info, #platform-info, #comments-info, #stores-info {
     display: none; /* Всі картки приховані за замовчуванням */
 }
 
-#description-info.show, #platform-info.show, #stores-info.show {
+#description-info.show, #platform-info.show, #comments-info.show, #stores-info.show {
     display: block; /* Відображає картки, коли додається клас 'show' */
 }
 
@@ -173,6 +234,67 @@
     background-color: var(--clr-white);
     color: var(--clr-black);
     
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1e1e2f;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+    color: #fff;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-add-comment {
+    margin: 25px 0;
+    padding: 10px 15px;
+    background:  var(--clr-pink-normal);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 8px;
 }
 
 @media (max-width: 750px) {

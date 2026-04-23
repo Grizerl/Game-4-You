@@ -89,15 +89,12 @@ class GameFactory extends Factory
         [
             'name' => $this->faker->sentence(3),
             'description' => $this->faker->paragraphs(5, true),
-            'images' => Arr::random($images),
-            'release_date' => $this->faker->date(),
-            'updated' => $this->faker->date(),
-            'cursing' => $this->faker->numberBetween(100, 10000),
+            'cover_image' => Arr::random($images),
+            'rating' => $this->faker->numberBetween(100, 10000),
             'platforms' => implode(', ', $selectedPlatforms), 
-            'developers' => $this->faker->company,
-            'genres' => Arr::random($category),
-            'publishers' => $this->faker->company,
+            'creator_id' => $this->faker->numberBetween(1, 19),
             'category_id' => $this->faker->numberBetween(1, 19),
+            'company_id' => $this->faker->numberBetween(1, 19),
         ];
     }
 }

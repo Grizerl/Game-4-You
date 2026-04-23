@@ -12,17 +12,23 @@ return new class () extends Migration {
     {
         Schema::create('games', function (Blueprint $table): void {
             $table->id();
+
             $table->string('name');
             $table->text('description');
-            $table->string('images');
-            $table->date('release_date');
-            $table->date('updated')->nullable();
-            $table->bigInteger('cursing');
-            $table->string('platforms');
-            $table->string('developers');
-            $table->string('genres');
-            $table->string('publishers');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('cover_image');
+            $table->bigInteger('rating')->default(0);
+            $table->string('platforms')->nullable();
+
+            $table->unsignedBigInteger('category_id')
+                ->constrained()
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('creator_id')
+                ->constrained()
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('company_id')
+                ->constrained()
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

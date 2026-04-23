@@ -4,21 +4,21 @@
                 <div class="container w-100">
                     <div class="navbar-content">
                         <div class="brand-toggle">
-                            <a class="navbar-brand" href="{{route('home')}}">Games 4 <span>You</span></a>
+                            <a class="navbar-brand" href="{{route('home.page')}}">Games 4 <span>You</span></a>
                         </div>
                             <div class="navbar-collapse">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('home')}}">Home</a>
+                                        <a class="nav-link" href="{{route('home.page')}}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link" href="{{route('creators')}}">Creators</a>
+                                        <a  class="nav-link" href="{{route('creator.page')}}">Creators</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link " href="{{route('stores')}}">Stores</a>
+                                        <a  class="nav-link " href="{{ route('company.page') }}">Company</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link" href="{{route('all.games')}}">Games</a>
+                                        <a  class="nav-link" href="{{route('games.page')}}">Games</a>
                                     </li>
                                 </ul>
                                 <ul class="connect-list">
@@ -83,16 +83,16 @@
                                 </button>
                                 <ul class="menu-nav">
                                     <li class="menu-item">
-                                        <a class="menu-link" href="{{route('home')}}">Home</a>
+                                        <a class="menu-link" href="{{route('home.page')}}">Home</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="{{route('creators')}}">Creators</a>
+                                        <a  class="menu-link" href="{{route('creator.page')}}">Creators</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="{{route('stores')}}">Stores</a>
+                                        <a  class="menu-link" href="">Stores</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="{{route('all.games')}}">Games</a>
+                                        <a  class="menu-link" href="{{route('games.page')}}">Games</a>
                                     </li>
                                 </ul>
                                 <ul class="menu-list">

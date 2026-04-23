@@ -83,11 +83,13 @@ class CreatorFactory extends Factory
             $selectgames = [$selectgames];
         }
         return [
-            'name' => $this->faker->name,
-            'images' => Arr::random($images),
+            'first_name' => $this->faker->name,
+            'last_name' => $this->faker->lastName,
+            'bio' => $this->faker->text(),
+            'avatar' => Arr::random($images),
             'games_count' => $this->faker->numberBetween(5, 50),
-            'position' => implode(', ', $selectpositions),
-            'games' => implode(', ', $selectgames),
+            'company_id' => $this->faker->numberBetween(1, 19),
+            'role' => implode(', ', $selectpositions),
         ];
     }
 }

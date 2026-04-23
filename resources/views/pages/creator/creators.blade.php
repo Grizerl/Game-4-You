@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('media_content')
     <div class="section-creators">
@@ -12,14 +12,22 @@
                     @foreach ($creators as $creator)
                     <div class="sc-flex background-img">
                         <div class="creator-images">
-                            <img src="{{$creator->images}}" alt="{{$creator->name}}" loading="lazy">
+                            <img src="{{$creator->avatar}}" alt="{{$creator->first_name}}" loading="lazy">
                         </div>
                         <div class="creator-card-bottom">
-                            <h4 class="creator-name">{{$creator->name}}</h4>
+                            <h4 class="creator-name">{{$creator->first_name}} {{$creator->last_name}}</h4>
+                            <p>Bio: {{$creator->bio}}</p>
                             <ul class="info-list">
                                 <li class="info-item">Games Count: <span>{{$creator->games_count}}</span></li>
-                                <li class="info-item">Position: <span>{{$creator->position}}</span></li>
-                                <li class="info-item">Games: <span>{{$creator->games}}</span></li>
+                                <li class="info-item">Company: <span>{{$creator->company?->name}}</span></li>
+                                <li class="info-item">Position: <span>{{$creator->role}}</span></li>
+                                <li class="info-item">Games: 
+                                    @forelse($creator->games as $game)
+                                        <span>{{ $game->name }}</span>
+                                    @empty
+                                        <span>No games</span>
+                                    @endforelse
+                                </li>
                             </ul>
                         </div>
                     </div>

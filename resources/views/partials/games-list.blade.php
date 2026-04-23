@@ -1,7 +1,7 @@
 @foreach ($games as $game)
     <div class="sc-ktwOf card">
         <div class="card-top">
-            <img src="{{ $game->images }}" alt="{{ $game->name }}" loading="lazy">
+            <img src="{{ $game->cover_image }}" alt="{{ $game->name }}" loading="lazy">
             <div class="card-rating">{{ $game->rating }}</div>
         </div>
         <div class="card-bottom">
@@ -17,7 +17,7 @@
                         <p class="detaile-value">{{ $game->updated_at }}</p>
                     </div>
                 </div>
-                <a href="{{ route('detail', $game->id) }}" class="detaile-btn-custom sc-sfks">See More</a>
+                <a href="{{ route('games.show.page', $game->id) }}" class="detaile-btn-custom sc-sfks">See More</a>
             </div>
         </div>
     </div>
