@@ -3,12 +3,7 @@
 namespace App\Http\Controllers\ViewsControllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use App\Models\Comment as ModelsComment;
-use App\Models\Creator;
 use App\Models\Game;
-use Dom\Comment;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class PageController extends Controller

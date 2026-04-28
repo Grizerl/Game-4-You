@@ -16,7 +16,8 @@ class Creator extends Model
         'avatar', 
         'bio', 
         'games_count',
-        'role'
+        'role',
+        'company_id'
     ];
 
     public function games(): HasMany

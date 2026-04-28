@@ -28,7 +28,7 @@
                     @foreach ($game as $games)
                          <div class="sc-ktwOfi card">
                         <div class="card-top">
-                            <img src="{{ $games->cover_image }}" alt="{{ $games->name }}" loading="lazy">
+                            <img src="{{ asset('storage/' . $games->cover_image) }}" alt="{{ $games->name }}">
                             <div class="card-rating">
                                 {{ $games->rating }}
                                 <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@
         </div>
     </div>
 </section>
-<section style="height: 250vh;" class="sc-genres">
+<section style="height: 150vh;" class="sc-genres">
     <div class="sc-sfFgg">
         <h3 class="genres-title">Top<span>Genres</span></h3>
         <div class="line"></div>

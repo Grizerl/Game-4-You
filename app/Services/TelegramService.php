@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Http;
 
 class TelegramService
 {
-   
     public $token;
     public $chat_id;
     public function sendMessage($text)
@@ -15,7 +14,9 @@ class TelegramService
         $token = config('services.telegram.token');
         $chatId = config('services.telegram.chat_id');
 
-        return Http::post("https://api.telegram.org/bot{$token}/sendMessage", [
+        return Http::withOptions([
+            'verify' => false,
+        ])->post("https://api.telegram.org/bot{$token}/sendMessage", [
             'chat_id' => $chatId,
             'text' => $text,
             'parse_mode' => 'HTML',
@@ -24,14 +25,14 @@ class TelegramService
 
     public function sendNewGame(Game $game)
     {
-        $creator = $game->user->name ?? 'Невідомо';
-
-        $text = "🎮 *Нова гра додана!*\n\n"
-              . "📌 Назва: *{$game->name}*\n"
-              . "📌 Опис: *{$game->description}*\n"
-              . "📌 Дата: *{$game->release_date}*\n"
-              . "📌 Платформи: *{$game->platforms}*\n"
-              . "👤 Автор: {$creator}";
+        $text = "🎮 Нова гра!\n\n"
+            . "📌 Назва гри: {$game->name}\n"
+            . "📌 Опис: \n{$game->description}\n"
+            . "📌 Рейтинг: {$game->rating}\n"
+            . "📌 Підтримка платформ: {$game->platforms}\n"
+            . "📌 Категорія: {$game->category->title}\n"
+            . "📌 Розробник: {$game->creator->first_name}\n"
+            . "📌 Компанія: {$game->company->name}\n";
 
         return $this->sendMessage($text);
     }

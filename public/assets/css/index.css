@@ -501,7 +501,7 @@ img {
 /* Top Genres */
 .sc-genres {
     position: relative;
-    min-height: 1300px;
+    height: auto;
     padding: 60px 0px;
     background-color: var(--clr-violet-dark-active);
 }
@@ -536,7 +536,9 @@ img {
 .list-genres {
     position: absolute;
     left: 0;
-    z-index: 9999;
+    z-index: 999;
+    max-height: 120vh;
+    overflow-y: auto;  
 }
 
 .genres-item {

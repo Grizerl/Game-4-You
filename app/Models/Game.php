@@ -16,7 +16,10 @@ class Game extends Model
         'description', 
         'cover_image', 
         'rating', 
-        'platforms'
+        'platforms',
+        'category_id',
+        'creator_id',
+        'company_id',
     ];
 
     public function category(): BelongsTo
