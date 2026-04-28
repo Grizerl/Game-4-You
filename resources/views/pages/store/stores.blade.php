@@ -4,7 +4,9 @@
 <div class="store-section">
     <div class="container">
 
-        <h3 class="store-title">All <span>Companies</span></h3>
+        <h3 class="store-title">
+            {{ __('companies.all') }} <span>{{ __('companies.title_span') }}</span>
+        </h3>
         <div class="line"></div>
 
         <div class="company-grid">
@@ -13,7 +15,7 @@
                 <div class="company-card">
 
                     <div class="company-image">
-                        <img src="{{ $companies->logo_path }}" alt="{{ $companies->name }}">
+                        <img src="{{ asset('storage/' . $companies->logo_path) }}" alt="{{ $companies->name }}" loading="lazy">
                     </div>
 
                     <div class="company-content">

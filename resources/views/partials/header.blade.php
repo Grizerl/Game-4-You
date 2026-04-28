@@ -9,21 +9,21 @@
                             <div class="navbar-collapse">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('home.page')}}">Home</a>
+                                        <a class="nav-link" href="{{route('home.page')}}">{{ __('header.home') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link" href="{{route('creator.page')}}">Creators</a>
+                                        <a  class="nav-link" href="{{route('creator.page')}}">{{ __('header.creators') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link " href="{{ route('company.page') }}">Company</a>
+                                        <a  class="nav-link " href="{{ route('company.page') }}">{{ __('header.company') }}</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a  class="nav-link" href="{{route('games.page')}}">Games</a>
+                                        <a  class="nav-link" href="{{route('games.page')}}">{{ __('header.games') }}</a>
                                     </li>
                                 </ul>
                                 <ul class="connect-list">
                                     <li class="connect-item">
-                                        <a class="connect-link">Connect</a>
+                                        <a class="connect-link">{{ __('header.connect') }}</a>
                                     </li>
                                     <li class="connect-item">
                                         <a class="connect-link" href="https://www.spotify.com/ua-uk/free/">
@@ -83,16 +83,16 @@
                                 </button>
                                 <ul class="menu-nav">
                                     <li class="menu-item">
-                                        <a class="menu-link" href="{{route('home.page')}}">Home</a>
+                                        <a class="menu-link" href="{{route('home.page')}}">{{ __('header.home') }}</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="{{route('creator.page')}}">Creators</a>
+                                        <a  class="menu-link" href="{{route('creator.page')}}">{{ __('header.creators') }}</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="">Stores</a>
+                                        <a  class="menu-link" href="{{ route('company.page') }}">{{ __('header.company') }}</a>
                                     </li>
                                     <li class="menu-item">
-                                        <a  class="menu-link" href="{{route('games.page')}}">Games</a>
+                                        <a  class="menu-link" href="{{route('games.page')}}">{{ __('header.games') }}</a>
                                     </li>
                                 </ul>
                                 <ul class="menu-list">

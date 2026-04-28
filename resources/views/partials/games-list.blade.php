@@ -9,15 +9,15 @@
             <div class="group-detaile sc-grasf">
                 <div>
                     <div class="detaile-item">
-                        <p class="detaile-name">Release Date:</p>
-                        <p class="detaile-value">{{ $game->release_date }}</p>
+                        <p class="detaile-name">{{ __('home.release_date') }}</p>
+                        <p class="detaile-value">{{ $game->created_at->format('Y-m-d') }}</p>
                     </div>
                     <div class="detaile-item">
-                        <p class="detaile-name">Updated:</p>
-                        <p class="detaile-value">{{ $game->updated_at }}</p>
+                        <p class="detaile-name">{{ __('home.updated') }}</p>
+                        <p class="detaile-value">{{ $game->updated_at->format('d.m.Y') }}</p>
                     </div>
                 </div>
-                <a href="{{ route('games.show.page', $game->id) }}" class="detaile-btn-custom sc-sfks">See More</a>
+                <a href="{{ route('games.show.page', $game->id) }}" class="detaile-btn-custom sc-sfks">{{ __('home.see_more') }}</a>
             </div>
         </div>
     </div>

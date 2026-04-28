@@ -5,7 +5,9 @@
         <div>
             <div class="container">
                 <div>
-                    <h3 class="store-title">all <span>games</span></h3>
+                    <h3 class="store-title">
+                        {{ __('games.all') }} <span>{{ __('games.games') }}</span>
+                    </h3>
                     <div class="line sc-games"></div>
                 </div>
                 <div class="sc-fsfFfa">
@@ -13,7 +15,7 @@
                         @foreach ($games as $game)
                             <div class="sc-ktwOfi card">
                                 <div class="card-top">
-                                    <img src="{{$game->cover_image}}" alt="{{$game->name}}" loading="lazy">
+                                    <img src="{{ asset('storage/' . $game->cover_image) }}" alt="{{ $game->name }}" loading="lazy">
                                     <div class="card-rating">
                                         {{$game->rating}}
                                         <svg height="1.3em" width="1.3em" stroke="currentColor" fill="currentColor" strole-width="0" viewBox="0 0 512 512" class="st-1" xmlns="http://www.w3.org/2000/svg">
@@ -28,15 +30,15 @@
                                     <div class="group-detaile">
                                         <div>
                                             <div class="detaile-item">
-                                                <p class="detaile-name">Release Date:</p>
-                                                <p class="detaile-value">{{$game->created_at}}</p>
+                                                <p class="detaile-name">{{ __('games.release_date') }}</p>
+                                                <p class="detaile-value">{{$game->created_at->format('Y-m-d')}}</p>
                                             </div>
                                             <div class="detaile-item">
-                                                <p class="detaile-name">Updated:</p>
-                                                <p class="detaile-value">{{$game->updated_at}}</p>
+                                                <p class="detaile-name">{{ __('games.updated') }}</p>
+                                                <p class="detaile-value">{{$game->updated_at->format('Y-m-d')}}</p>
                                             </div>
                                         </div>
-                                        <a href="{{route('games.show.page',$game->id)}}" class="detaile-btn-custom">See More</a>
+                                        <a href="{{route('games.show.page',$game->id)}}" class="detaile-btn-custom">{{ __('games.see_more') }}</a>
                                     </div>
                                 </div>
                             </div>

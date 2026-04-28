@@ -4,45 +4,57 @@
             <div class="footer-top">
                 <div class="footer-item">
                     <a class="footer-brand" href="{{route('home.page')}}">Games 4 <span class="footer-brand-aside">You</span></a>
-                    <p class="footer-lead">Lorem ipsum dolor sitamt consectue adispicing duis soolici tudin ague suisomid. Nulla vullam dolor.</p>
+                    <p class="footer-lead">{{ __('footer.description') }}</p>
+                    <ul class="lang-switcher">
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li>
+                                <a class="lang-link" 
+                                rel="alternate" 
+                                hreflang="{{ $localeCode }}" 
+                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
                 <div class="footer-item">
-                    <h5 class="footer-title">quick links</h5>
+                    <h5 class="footer-title">{{ __('footer.quick_links') }}</h5>
                     <ul class="footer-list">
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Gaming</a>
+                            <a class="footer-nav-link" href="{{ route('games.page') }}">{{ __('footer.gaming') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Product</a>
+                            <a class="footer-nav-link" href="{{ route('company.page') }}">{{ __('footer.company') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Social Network</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.social') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Community</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.community') }}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer-item">
-                    <h5 class="footer-title">Supports</h5>
+                    <h5 class="footer-title">{{ __('footer.supports') }}</h5>
                     <ul class="footer-list">
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Setting & Privacy</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.settings') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Help & Support</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.help') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Live Actions</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.live') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">Our News</a>
+                            <a class="footer-nav-link" href="#">{{ __('footer.news') }}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer-item">
-                    <h5 class="footer-title">newsletter</h5>
-                    <p class="footer-lead">Subscribe our newsletter to get our latest update & news.</p>
+                    <h5 class="footer-title">{{ __('footer.newsletter') }}</h5>
+                    <p class="footer-lead">  {{ __('footer.subscribe_text') }}</p>
                     <div class="pole-container">
                         <input class="input-email" name="email" type="email" placeholder="Your email address">
                         <button class="svg-btn">
