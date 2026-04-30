@@ -24,7 +24,10 @@ class UpdateRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'bio' => 'nullable|string',
+            
+            'bio.uk' => 'nullable|string|max:255',
+            'bio.en' => 'nullable|string|max:255',
+            
             'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'games_count' => 'required|integer',
             'role' => 'required|string|max:255',

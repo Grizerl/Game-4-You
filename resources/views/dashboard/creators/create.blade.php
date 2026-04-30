@@ -24,9 +24,27 @@
     </div>
 
     <div class="form-group">
-        <label>Bio</label>
-        <textarea name="bio" class="@error('bio') error-input @enderror" placeholder="Enter bio"></textarea>
-        @error('bio')
+        <label>Bio (UA)</label>
+        <textarea 
+            name="bio[uk]" 
+            class="@error('bio.uk') error-input @enderror"
+            placeholder="Біографія українською"
+        >{{ old('bio.uk') }}</textarea>
+
+        @error('bio.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Bio (EN)</label>
+        <textarea 
+            name="bio[en]" 
+            class="@error('bio.en') error-input @enderror"
+            placeholder="Biography in English"
+        >{{ old('bio.en') }}</textarea>
+
+        @error('bio.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>
@@ -131,6 +149,15 @@
 
     .btn:hover {
         transform: translateY(-1px);
+    }
+
+    select {
+        color: #e2e8f0;
+    }
+
+    select option {
+        background: #0f172a;
+        color: #e2e8f0;
     }
 </style>
 @endsection

@@ -18,7 +18,11 @@
         @foreach($category as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->title }}</td>
+                <td>
+                    {{ $item->getTranslation('title', 'uk') }} 
+                    <span style="color:#64748b;">/</span> 
+                    {{ $item->getTranslation('title', 'en') }}
+                </td>
 
                 <td>
                     <a href="{{ route('category.edit', $item->id) }}" class="edit">Edit</a>

@@ -41,13 +41,18 @@ class GameController extends Controller
     {
         $data = $request->validated();
 
+        unset($data['name'], $data['description']);
+
         if ($request->hasFile('cover_image')) {
             $data['cover_image'] = $request->file('cover_image')->store('games', 'public');
         }
 
-        $game = Game::create($data);
+        $game = new Game($data);
 
-        $telegram->sendNewGame($game);
+        $game->setTranslations('name', $request->input('name'));
+        $game->setTranslations('description', $request->input('description'));
+
+        $game->save();
 
         return redirect()->route('game.index');
     }
@@ -70,6 +75,8 @@ class GameController extends Controller
     {
         $data = $request->validated();
 
+        unset($data['name'], $data['description']);
+
         if ($request->hasFile('cover_image')) {
             if ($game->cover_image) {
                 Storage::disk('public')->delete($game->cover_image);
@@ -79,6 +86,12 @@ class GameController extends Controller
         }
 
         $game->update($data);
+
+        $game->setTranslations('name', $request->input('name'));
+        $game->setTranslations('description', $request->input('description'));
+
+        $game->save();
+        
         return redirect()->route('game.index');
     }
 

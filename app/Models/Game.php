@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Translatable\HasTranslations;
 
 class Game extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $fillable = [
         'name', 
@@ -21,6 +22,8 @@ class Game extends Model
         'creator_id',
         'company_id',
     ];
+
+    public $translatable = ['name', 'description'];
 
     public function category(): BelongsTo
     {

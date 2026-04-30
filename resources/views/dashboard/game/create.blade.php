@@ -8,17 +8,50 @@
     @csrf
 
     <div class="form-group">
-        <label>Game Name</label>
-        <input type="text" name="name" class="@error('name') error-input @enderror" placeholder="Enter game name">
-        @error('name')
+        <label>Game Name (UA)</label>
+        <input 
+            type="text" 
+            name="name[uk]" 
+            class="@error('name.uk') error-input @enderror"
+        >
+        @error('name.uk')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>
 
     <div class="form-group">
-        <label>Description</label>
-        <textarea name="description" class="@error('description') error-input @enderror" placeholder="Enter game description"></textarea>
-        @error('description')
+        <label>Game Name (EN)</label>
+        <input 
+            type="text" 
+            name="name[en]" 
+            class="@error('name.en') error-input @enderror"
+        >
+        @error('name.en')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="form-group">
+        <label>Description (UA)</label>
+        <textarea 
+            name="description[uk]" 
+            class="@error('description.uk') error-input @enderror"
+        ></textarea>
+
+        @error('description.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Description (EN)</label>
+        <textarea 
+            name="description[en]" 
+            class="@error('description.en') error-input @enderror"
+        ></textarea>
+
+        @error('description.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

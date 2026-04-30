@@ -36,12 +36,17 @@ class CreatorController extends Controller
     {
         $data = $request->validated();
 
+        unset($data['bio']);
+
         if ($request->hasFile('avatar')) {
             $data['avatar'] = $request->file('avatar')
                 ->store('creators', 'public');
         }
 
-        Creator::create($data);
+        $creator  = new Creator($data);
+        $creator->setTranslations('bio', $request->input('bio'));
+        $creator->save();
+
         return redirect()->route('creator.index');
     }
 
@@ -61,6 +66,8 @@ class CreatorController extends Controller
     {
         $data = $request->validated();
 
+        unset($data['bio']);
+
         if ($request->hasFile('avatar')) 
         {
             if ($creator->avatar) {
@@ -71,6 +78,9 @@ class CreatorController extends Controller
         }
 
         $creator->update($data);
+        $creator->setTranslations('bio', $request->input('bio'));
+        $creator->save();
+
         return redirect()->route('creator.index');
     }
 

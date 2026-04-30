@@ -23,7 +23,10 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->first_name }}</td>
                 <td>{{ $item->last_name }}</td>
-                <td>{{ $item->bio }}</td>
+                <td>
+                    <strong>UA:</strong> {{ $item->getTranslation('bio', 'uk') ?? '-' }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('bio', 'en') ?? '-' }}
+                </td>
                 <td>{{ $item->company->name ?? '-' }}</td>
 
                 <td>

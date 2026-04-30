@@ -20,8 +20,14 @@
         @foreach($company as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td><strong>{{ $item->name }}</strong></td>
-                <td>{{ Str::limit($item->description, 60) }}</td>
+                <td>
+                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk') }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en') }}
+                </td>
+                <td>
+                    <strong>UA:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'uk'), 40) }} <br>
+                    <strong>EN:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'en'), 40) }}
+                </td>
                 <td>{{ $item->country }}</td>
 
                 <td>

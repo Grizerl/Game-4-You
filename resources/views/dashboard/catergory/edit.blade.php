@@ -8,10 +8,30 @@
     @csrf
     @method('put')
 
+   <div class="form-group">
+        <label>Category Title (UA)</label>
+        <input 
+            type="text" 
+            name="title[uk]" 
+            value="{{ old('title.uk', $category->getTranslation('title', 'uk')) }}" 
+            class="@error('title.uk') error-input @enderror"
+        >
+
+        @error('title.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
     <div class="form-group">
-        <label>Category Title</label>
-        <input type="text" name="title" value="{{ old('title', $category->title) }}" class="@error('title') error-input @enderror">
-        @error('title')
+        <label>Category Title (EN)</label>
+        <input 
+            type="text" 
+            name="title[en]" 
+            value="{{ old('title.en', $category->getTranslation('title', 'en')) }}" 
+            class="@error('title.en') error-input @enderror"
+        >
+
+        @error('title.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

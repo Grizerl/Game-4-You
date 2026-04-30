@@ -22,7 +22,8 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
+            'title.uk' => 'required|string|max:255',
+            'title.en' => 'required|string|max:255',
         ];
     }
 }

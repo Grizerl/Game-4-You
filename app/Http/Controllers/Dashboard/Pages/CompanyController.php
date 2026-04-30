@@ -31,22 +31,26 @@ class CompanyController extends Controller
      */
     public function store(StoreRequest $request)
     {
+        $data = $request->validated();
+
+        unset($data['name'], $data['description']);
         $path = null;
 
-        if ($request->hasFile('logo_path')) 
-        {
+        if ($request->hasFile('logo_path')) {
             $file = $request->file('logo_path');
             $filename = time().'_'.$file->getClientOriginalName();
             $file->move(public_path('uploads/company'), $filename);
             $path = 'uploads/company/'.$filename;
         }
 
-        Company::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'country' => $request->country,
-            'logo_path' => $path,
-        ]);
+        $company = new Company($data);
+
+        $company->setTranslations('name', $request->input('name'));
+        $company->setTranslations('description', $request->input('description'));
+
+        $company->logo_path = $path;
+
+        $company->save();
 
         return redirect()->route('companies.index');
     }
@@ -58,10 +62,13 @@ class CompanyController extends Controller
 
    public function update(UpdateRequest $request, Company $company)
     {
+        $data = $request->validated();
+
+        unset($data['name'], $data['description']); 
+
         $path = $company->logo_path;
 
-        if ($request->hasFile('logo_path')) 
-        {
+        if ($request->hasFile('logo_path')) {
             if ($company->logo_path && file_exists(public_path($company->logo_path))) {
                 unlink(public_path($company->logo_path));
             }
@@ -72,12 +79,14 @@ class CompanyController extends Controller
             $path = 'uploads/company/'.$filename;
         }
 
-        $company->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'country' => $request->country,
-            'logo_path' => $path,
-        ]);
+        $company->update($data);
+
+        $company->setTranslations('name', $request->input('name'));
+        $company->setTranslations('description', $request->input('description'));
+
+        $company->logo_path = $path;
+
+        $company->save();
 
         return redirect()->route('companies.index');
     }

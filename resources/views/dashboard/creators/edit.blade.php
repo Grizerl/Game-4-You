@@ -35,12 +35,25 @@
     </div>
 
     <div class="form-group">
-        <label>Bio</label>
+        <label>Bio (UA)</label>
         <textarea 
-            name="bio"
-            class="@error('bio') error-input @enderror">{{ old('bio', $creator->bio) }}</textarea>
+            name="bio[uk]"
+            class="@error('bio.uk') error-input @enderror"
+        >{{ old('bio.uk', $creator->getTranslation('bio', 'uk')) }}</textarea>
 
-        @error('bio')
+        @error('bio.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Bio (EN)</label>
+        <textarea 
+            name="bio[en]"
+            class="@error('bio.en') error-input @enderror"
+        >{{ old('bio.en', $creator->getTranslation('bio', 'en')) }}</textarea>
+
+        @error('bio.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

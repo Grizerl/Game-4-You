@@ -15,7 +15,7 @@
                 <div class="company-card">
 
                     <div class="company-image">
-                        <img src="{{ asset('storage/' . $companies->logo_path) }}" alt="{{ $companies->name }}" loading="lazy">
+                        <img src="{{ asset($companies->logo_path) }}" alt="{{ $companies->name }}" loading="lazy">
                     </div>
 
                     <div class="company-content">

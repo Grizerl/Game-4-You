@@ -25,7 +25,7 @@
 
                 <div class="details-grid">
                     <div class="details-left">
-                        <img src="{{$game->cover_image}}" alt="{{$game->name}}" loading="lazy">
+                        <img src="{{ asset( 'storage/' . $game->cover_image) }}" alt="{{$game->name}}" loading="lazy">
                     </div>
 
                     <div class="details-right">

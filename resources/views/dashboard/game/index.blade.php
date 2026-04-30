@@ -26,12 +26,29 @@
         @foreach($game as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item?->name }}</td>
-                <td>{{ Str::limit($item->description, 50) }}</td>
+                <td>
+                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk') }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en') }}
+                </td>
+
+                <td>
+                    <strong>UA:</strong> {{ Str::limit($item->getTranslation('description', 'uk'), 50) }} <br>
+                    <strong>EN:</strong> {{ Str::limit($item->getTranslation('description', 'en'), 50) }}
+                </td>
+
                 <td>{{ $item?->rating }}</td>
-                <td>{{ $item->category?->title }}</td>
+
+                <td>
+                    <strong>UA:</strong> {{ $item->category?->getTranslation('title', 'uk') }} <br>
+                    <strong>EN:</strong> {{ $item->category?->getTranslation('title', 'en') }}
+                </td>
+                
                 <td>{{ $item->creator?->first_name }}</td>
-                <td>{{ $item->company?->name }}</td>
+                
+                <td>
+                    <strong>UA:</strong> {{ $item->company?->getTranslation('name', 'uk') }} <br>
+                    <strong>EN:</strong> {{ $item->company?->getTranslation('name', 'en') }}
+                </td>
 
                 <td>
                     <a href="{{ route('game.edit', $item->id) }}" class="edit">Edit</a>

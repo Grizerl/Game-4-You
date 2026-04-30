@@ -8,17 +8,53 @@
     @method('put')
 
     <div class="form-group">
-        <label>Company Name</label>
-        <input type="text" name="name" value="{{ old('name', $company->name) }}" placeholder="Enter company name">
-        @error('name')
+        <label>Company Name (UA)</label>
+        <input 
+            type="text" 
+            name="name[uk]" 
+            value="{{ old('name.uk', $company->getTranslation('name', 'uk')) }}"
+            class="@error('name.uk') error-input @enderror"
+        >
+
+        @error('name.uk')
             <span class="error">{{ $message }}</span>
         @enderror
     </div>
 
     <div class="form-group">
-        <label>About Company</label>
-        <textarea name="description" placeholder="Enter description">{{ old('description', $company->description) }}</textarea>
-        @error('description')
+        <label>Company Name (EN)</label>
+        <input 
+            type="text" 
+            name="name[en]" 
+            value="{{ old('name.en', $company->getTranslation('name', 'en')) }}"
+            class="@error('name.en') error-input @enderror"
+        >
+
+        @error('name.en')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Description (UA)</label>
+        <textarea 
+            name="description[uk]"
+            class="@error('description.uk') error-input @enderror"
+        >{{ old('description.uk', $company->getTranslation('description', 'uk')) }}</textarea>
+
+        @error('description.uk')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Description (EN)</label>
+        <textarea 
+            name="description[en]"
+            class="@error('description.en') error-input @enderror"
+        >{{ old('description.en', $company->getTranslation('description', 'en')) }}</textarea>
+
+        @error('description.en')
             <span class="error">{{ $message }}</span>
         @enderror
     </div>

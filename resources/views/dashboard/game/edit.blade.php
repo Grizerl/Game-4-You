@@ -9,27 +9,53 @@
     @method('put')
 
     <div class="form-group">
-        <label>Name</label>
+    <label>Name (UA)</label>
         <input 
             type="text" 
-            name="name"
-            value="{{ old('name', $game->name) }}"
-            class="@error('name') error-input @enderror"
-            placeholder="Enter name">
+            name="name[uk]"
+            value="{{ old('name.uk', $game->getTranslation('name', 'uk')) }}"
+            class="@error('name.uk') error-input @enderror"
+        >
 
-        @error('name')
+        @error('name.uk')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>
 
     <div class="form-group">
-        <label>Description</label>
-        <textarea 
-            name="description"
-            class="@error('description') error-input @enderror"
-            placeholder="Enter description">{{ old('description', $game->description) }}</textarea>
+        <label>Name (EN)</label>
+        <input 
+            type="text" 
+            name="name[en]"
+            value="{{ old('name.en', $game->getTranslation('name', 'en')) }}"
+            class="@error('name.en') error-input @enderror"
+        >
 
-        @error('description')
+        @error('name.en')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Description (UA)</label>
+        <textarea 
+            name="description[uk]"
+            class="@error('description.uk') error-input @enderror"
+        >{{ old('description.uk', $game->getTranslation('description', 'uk')) }}</textarea>
+
+        @error('description.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Description (EN)</label>
+        <textarea 
+            name="description[en]"
+            class="@error('description.en') error-input @enderror"
+        >{{ old('description.en', $game->getTranslation('description', 'en')) }}</textarea>
+
+        @error('description.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

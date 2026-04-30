@@ -31,7 +31,10 @@ class CategoryController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        Category::create($request->all());
+        $category = new Category();
+        $category->setTranslations('title', $request->input('title'));
+        $category->save();
+
         return redirect()->route('category.index');
     }
 
@@ -48,7 +51,9 @@ class CategoryController extends Controller
      */
     public function update(UpdateRequest $request, Category $category)
     {
-        $category->update($request->all());
+        $category->setTranslations('title', $request->input('title'));
+        $category->save();
+        
         return redirect()->route('category.index');
     }
 

@@ -24,8 +24,11 @@ class StoreRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'nullable|string|max:255',
-            'bio' => 'nullable|string|max:255',
-            'avatar' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            
+            'bio.uk' => 'nullable|string|max:255',
+            'bio.en' => 'nullable|string|max:255',
+            
+            'avatar' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
             'games_count' => 'required|integer',
             'company_id' => 'required|exists:companies,id',
             'role' => 'required|string|max:255',
