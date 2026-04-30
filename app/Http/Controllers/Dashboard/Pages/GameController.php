@@ -52,6 +52,7 @@ class GameController extends Controller
         $game->setTranslations('name', $request->input('name'));
         $game->setTranslations('description', $request->input('description'));
 
+        $telegram->sendNewGame($game);
         $game->save();
 
         return redirect()->route('game.index');
