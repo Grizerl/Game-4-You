@@ -81,6 +81,18 @@
     </div>
 
     <div class="form-group">
+        <label>Is New</label>
+        <select name="isNew" class="@error('isNew') error-input @enderror">
+            <option value="0" {{ old('isNew') == 0 ? 'selected' : '' }}>No</option>
+            <option value="1" {{ old('isNew') == 1 ? 'selected' : '' }}>Yes</option>
+        </select>
+
+        @error('isNew')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
         <label>Category</label>
         <select name="category_id" class="@error('category_id') error-input @enderror">
             <option value="">-- Select Category --</option>

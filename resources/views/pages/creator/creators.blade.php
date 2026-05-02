@@ -18,7 +18,7 @@
                             <h4 class="creator-name">{{$creator->first_name}} {{$creator->last_name}}</h4>
                             <p>{{ __('creators.bio') }}: {{$creator->bio}}</p>
                             <ul class="info-list">
-                                <li class="info-item">{{ __('creators.games_count') }}: <span>{{$creator->games_count}}</span></li>
+                                <li class="info-item">{{ __('creators.games_count') }}: <span>{{$creator->games_count}} 🎮</span></li>
                                 <li class="info-item">{{ __('creators.company') }}: <span>{{$creator->company?->name}}</span></li>
                                 <li class="info-item">{{ __('creators.position') }}: <span>{{$creator->role}}</span></li>
                                 <li class="info-item">{{ __('creators.games') }}: 

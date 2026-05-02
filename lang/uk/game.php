@@ -8,9 +8,9 @@ return [
     'game_details' => 'Деталі гри',
 
     'release_date' => 'Дата виходу',
-    'platforms' => 'Платформи',
-    'creators' => 'Автори',
-    'company' => 'Компанія',
+    'platforms' => 'Підтримка платформ',
+    'creators' => 'Автор',
+    'company' => 'Студія розробки',
 
     'add_comment' => 'Додати коментар',
     'description' => 'Опис',

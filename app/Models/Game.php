@@ -18,9 +18,14 @@ class Game extends Model
         'cover_image', 
         'rating', 
         'platforms',
+        'isNew',
         'category_id',
         'creator_id',
         'company_id',
+    ];
+
+    protected $casts = [
+        'isNew' => 'boolean',
     ];
 
     public $translatable = ['name', 'description'];

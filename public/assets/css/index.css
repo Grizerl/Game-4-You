@@ -577,10 +577,12 @@ img {
 .sc-sfks {
     margin-top: 20px;
 }
+
 /* games stores */
 .sc-store {
-    padding: 60px 0px;
-    background: linear-gradient(rgba(12, 10, 36, 0.73) 0%, rgba(0, 0, 0, 0.73) 72.92%), url(../images/store_image-6FRiqSup.jpg) center center / cover no-repeat;
+    padding: 60px 0;
+    background: linear-gradient(rgba(12, 10, 36, 0.73), rgba(0, 0, 0, 0.73)),
+    url(../images/store_image-6FRiqSup.jpg) center/cover no-repeat;
 }
 
 .sc-store h3 {
@@ -589,40 +591,52 @@ img {
     font-weight: 800;
     font-size: 35px;
     letter-spacing: 0.1em;
-    color: var(--clr-white);
+    color: #fff;
     margin-bottom: 20px;
-    font-family: var(--font-family-poppins);
 }
 
 .aside-title {
     color: rgb(239, 151, 232);
 }
 
-.sc-FgFhjg,.card-store {
+.sc-FgFhjg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
 .card-store {
-    min-height: 120px;
-    margin: 16px 0px;
+    display: flex;
     background-color: rgb(40, 59, 92);
     border-radius: 13px;
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.card-img {
+    width: 220px;
+    min-width: 220px;
+    height: auto;
 }
 
 .card-img img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.card-store-title {
-    letter-spacing: 0.04em;
-    color: rgb(11, 8, 45);
-    font-size: 16px;
-    display: inline-block;
-    transition: var(--transition-default);
+.card-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.game-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 .text-white {
@@ -630,39 +644,37 @@ img {
     color: var(--clr-white);
 }
 
-.card-store-info span {
+.card-store-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-store-info li span {
     font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
 }
 
-li a {
-    color: rgb(255, 255, 255);
-}
-
-.card-container {
-    padding: 20px 0px;
+.card-store-info li a {
+    color: #fff;
 }
 
 .card-store-games {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
+    margin-top: 5px;
 }
 
-.card-store-games > li {
+.card-store-games li {
     background-color: rgb(185, 25, 142);
-    border-radius: 100vh;
-    padding-right: 8px;
-    padding-left: 8px;
-    height: 25px;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: #fff;
 }
 
-.game-name {
-    color: var(--clr-white);
-    font-size: 15px;
-    display: inline-block;
-    transform: translateY(-3px);
-    font-style: italic;
-}
 /* Footer */
 footer {
     background-color: var(--clr-violet-darker);
@@ -704,11 +716,13 @@ footer {
 
 .footer-nav-item {
     margin: 6px 0px;
+    color: var(--clr-white);
 }
 
 .footer-nav-link {
     font-size: 1.4rem;
     position: relative;
+    color: var(--clr-white);
 }
 
 .footer-nav-link:hover::after {

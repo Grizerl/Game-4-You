@@ -51,7 +51,7 @@
 
                                 <li class="details-right-items">
                                     {{ __('game.creators') }}:
-                                    <span>{{$game->creator?->first_name}} {{$game->creator?->last_name_name}}</span>
+                                    <span>{{$game->creator?->first_name}} {{$game->creator?->last_name}}</span>
                                 </li>
 
                                 <li class="details-right-items">

@@ -24,7 +24,7 @@ class HomeController extends Controller
         $games = Game::latest()->take(20)->get();
 
         $game = $games->take(9); 
-        $storeGame = $games->shuffle()->take(8); 
+        $storeGame = Game::where('isNew', 1)->get();
 
         return view('pages.home.index', compact('categories', 'category_id', 'game', 'storeGame'));
     }

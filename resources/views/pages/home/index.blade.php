@@ -148,47 +148,61 @@
         <h3>
             {{ __('home.our') }} <span class="aside-title">{{ __('home.game_stores') }}</span>
         </h3>
+
         <div style="margin-bottom: 30px;" class="line"></div>
+
         <div class="container">
             <div class="sc-FgFhjg">
-                @foreach ($storeGame as $storeGames)
+
+                @foreach ($storeGame as $game)
                     <div class="card-store">
-                    <div class="card-img">
-                        <img src="{{ asset('storage/' . $storeGames->cover_image) }}" alt="{{ $storeGames->name }}" loading="lazy">
-                    </div>
-                    <div class="card-container">
-                    <ul class="card-store-info">
-                        <li>
-                            <span class="text-white">{{ __('home.platforms') }}</span>
-                            <a>{{ $storeGames->platforms }}</a>
-                        </li>
-                        <li>
-                            <span class="text-white">{{ __('home.games_rating') }}</span>
-                            <a>{{ $storeGames->rating }}</a>
-                        </li>
-                    </ul>
-                    <p style="font-weight: 700; margin-bottom: 10px;" class="text-white">{{ __('home.games_label') }}</p>
-                    <ul class="card-store-games">
-                        <li>
-                            <a class="game-name">Grand Theft Auto V</a>
-                        </li>
-                        <li>
-                            <a class="game-name">The Witcher 3: Wild Hunt</a>
-                        </li>
-                        <li>
-                            <a class="game-name">Portal 2</a>
-                        </li>
-                        <li>
-                            <a class="game-name">Counter-Strike</a>
-                        </li>
-                        <li>
-                            <a class="game-name">Tomb Raider (2013)</a>
-                        </li>
-                        <li>
-                            <a class="game-name">Portal</a>
-                        </li>
-                    </ul>
-                    </div>
+
+                        <div class="card-img">
+                            <img src="{{ asset('storage/' . $game->cover_image) }}" 
+                                 alt="{{ $game->name }}" 
+                                 loading="lazy">
+                        </div>
+
+                        <div class="card-container">
+
+                            <h4 class="game-title">
+                                {{ $game->name }}
+                            </h4>
+
+                            <ul class="card-store-info">
+                                <li>
+                                    <span class="text-white">{{ __('home.games_rating') }}</span>
+                                    <a>{{ $game->rating }} ⭐</a>
+                                </li>
+
+                                <li>
+                                    <span class="text-white">{{ __('home.platforms') }}</span>
+                                    <a>{{ $game->platforms }}</a>
+                                </li>
+                            </ul>
+
+                            <p style="font-weight:700; margin-top:10px;  color: #fff;   text-transform: uppercase;">
+                                {{ __('home.info') }}
+                            </p>
+
+                            <ul class="card-store-games">
+
+                                <li>
+                                    <span>{{ __('home.category') }} {{ $game->category->title ?? 'No category' }}</span>
+                                </li>
+
+                                <li>
+                                    <span>{{ __('home.company') }} {{ $game->company->name ?? 'No company' }}</span>
+                                </li>
+
+                                <li>
+                                   <span>{{ __('home.creator') }}
+                                        {{ $game->creator->first_name ?? '' }}
+                                        {{ $game->creator->sur_name ?? '' }}
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 @endforeach
             </div>

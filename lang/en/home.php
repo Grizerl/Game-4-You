@@ -16,7 +16,7 @@ return [
 
     'join' => 'JOIN THE',
     'community' => 'COMMUNITY',
-    'join_text' => 'Join our Discord community made by gamers for gamers.',
+    'join_text' => 'Join our Discord community made by gamers for gamers.Join our Discord community made by gamers, for gamers, where you can connect with players from around the world, share your gaming experiences, find teammates, discuss your favorite titles, and stay updated with the latest news, events, and updates from the gaming world.',
     'join_discord' => 'Join Discord',
 
     'top' => 'Top',
@@ -27,5 +27,8 @@ return [
 
     'platforms' => 'Platforms:',
     'games_rating' => 'Games rating:',
-    'games_label' => 'Games:',
+    'info' => 'Game Info:',
+    'category' => 'Category:',
+    'company' => 'Company:',
+    'creator' => 'Creator:'
 ];

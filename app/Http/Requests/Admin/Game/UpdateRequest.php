@@ -30,6 +30,7 @@ class UpdateRequest extends FormRequest
 
             'rating' => 'required|numeric|min:0',
             'platforms' => 'required|string|max:255',
+            'isNew' => 'required|boolean',
 
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
