@@ -102,11 +102,11 @@
         </div>
     </div>
 </section>
-<section style="height: 150vh;" class="sc-genres">
+<section class="sc-genres">
     <div class="sc-sfFgg">
         <h3 class="genres-title">{{ __('home.top') }}<span>{{ __('home.genres') }}</span></h3>
         <div class="line"></div>
-        <div class="container sc-DfghF">
+        <div class="sc-DfghF">
             <div class="container-genres">
             <div class="tabs-content">
             <div style="margin-top: 20px;">

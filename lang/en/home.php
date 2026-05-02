@@ -3,7 +3,7 @@
 return [
     'badge' => 'ENJOY THE GAMES',
     'title' => 'join streaming',
-    'description' => 'Live gaming with lots of other games. Join the gaming world and have fun.',
+    'description' => 'Live gaming streams, a wide variety of exciting games, and nonstop action await you. Join the gaming world, discover new experiences, connect with other players, and enjoy every moment to the fullest.',
     'play_now' => 'play now',
 
     'top_games' => 'top popular',

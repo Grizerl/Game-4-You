@@ -529,16 +529,13 @@ img {
 
 .container-genres {
     display: flex;
-    justify-content: center;
-    padding-left: 4rem;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .list-genres {
-    position: absolute;
-    left: 0;
-    z-index: 999;
-    max-height: 120vh;
-    overflow-y: auto;  
+    position: static;
+    max-height: none;
 }
 
 .genres-item {
