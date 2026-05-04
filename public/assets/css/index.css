@@ -833,6 +833,7 @@ footer {
 .creator-images img {
     width: 150px;
     height: 150px;
+    object-fit: cover;
     margin-left: auto;
     margin-right: auto;
     margin-top: -60px;
@@ -973,6 +974,26 @@ footer {
 /* games */
 .sc-games {
     margin-bottom: 45px;
+}
+
+.game-image {
+    width: 100%;
+    height: 260px; /* або як у тебе в карточці */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0f172a;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* 🔥 ключовий момент */
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.game-image img:hover {
+    transform: scale(1.05);
 }
 
 /* Pagination */

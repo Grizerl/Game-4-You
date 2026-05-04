@@ -28,10 +28,10 @@ class TelegramService
         $text = "🎮 Нова гра!\n\n"
             . "📌 Назва гри: {$game->name}\n"
             . "📌 Опис: \n{$game->description}\n"
-            . "📌 Рейтинг: {$game->rating}\n"
+            . "📌 Рейтинг: {$game->rating}⭐\n"
             . "📌 Підтримка платформ: {$game->platforms}\n"
             . "📌 Категорія: {$game->category->title}\n"
-            . "📌 Розробник: {$game->creator->first_name}\n"
+            . "📌 Розробник: {$game->creator->first_name} {$game->creator->last_name}\n"
             . "📌 Компанія: {$game->company->name}\n";
 
         return $this->sendMessage($text);

@@ -28,7 +28,9 @@ class UpdateRequest extends FormRequest
             'description.uk' => 'nullable|string',
             'description.en' => 'nullable|string',
             
-            'country' => 'nullable',
+            'country.uk' => 'required|string|max:255',
+            'country.en' => 'required|string|max:255',
+            
             'logo_path' => 'nullable|image|mimes:jpg,png,jpeg,webp'
         ];
     }

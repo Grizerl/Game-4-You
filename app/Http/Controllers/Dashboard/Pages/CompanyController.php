@@ -33,7 +33,7 @@ class CompanyController extends Controller
     {
         $data = $request->validated();
 
-        unset($data['name'], $data['description']);
+        unset($data['name'], $data['description'], $data['country']);
         $path = null;
 
         if ($request->hasFile('logo_path')) {
@@ -47,6 +47,7 @@ class CompanyController extends Controller
 
         $company->setTranslations('name', $request->input('name'));
         $company->setTranslations('description', $request->input('description'));
+        $company->setTranslations('country', $request->input('country'));
 
         $company->logo_path = $path;
 
@@ -64,7 +65,7 @@ class CompanyController extends Controller
     {
         $data = $request->validated();
 
-        unset($data['name'], $data['description']); 
+        unset($data['name'], $data['description'], $data['country']);
 
         $path = $company->logo_path;
 
@@ -83,6 +84,7 @@ class CompanyController extends Controller
 
         $company->setTranslations('name', $request->input('name'));
         $company->setTranslations('description', $request->input('description'));
+        $company->setTranslations('country', $request->input('country'));
 
         $company->logo_path = $path;
 

@@ -36,7 +36,7 @@ class CreatorController extends Controller
     {
         $data = $request->validated();
 
-        unset($data['bio']);
+        unset($data['bio'], $data['role']);
 
         if ($request->hasFile('avatar')) {
             $data['avatar'] = $request->file('avatar')
@@ -44,7 +44,10 @@ class CreatorController extends Controller
         }
 
         $creator  = new Creator($data);
+        
         $creator->setTranslations('bio', $request->input('bio'));
+        $creator->setTranslations('role', $request->input('role'));
+        
         $creator->save();
 
         return redirect()->route('creator.index');
@@ -66,7 +69,7 @@ class CreatorController extends Controller
     {
         $data = $request->validated();
 
-        unset($data['bio']);
+        unset($data['bio'], $data['role']);
 
         if ($request->hasFile('avatar')) 
         {
@@ -78,7 +81,10 @@ class CreatorController extends Controller
         }
 
         $creator->update($data);
+        
         $creator->setTranslations('bio', $request->input('bio'));
+        $creator->setTranslations('role', $request->input('role'));
+        
         $creator->save();
 
         return redirect()->route('creator.index');

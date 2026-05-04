@@ -385,7 +385,7 @@
                     <ul class="card-store-info">
                         <li>
                             <span class="text-white">Domain:</span>
-                            <a href="https://store.steampowered.com/?l=russian">store.steampowered.com</a>
+                            <a href="https://store.steampowered.com/">store.steampowered.com</a>
                         </li>
                         <li>
                             <span class="text-white">Games Count:</span>

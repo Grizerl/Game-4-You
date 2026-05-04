@@ -32,7 +32,7 @@ class StoreRequest extends FormRequest
             'platforms' => 'required|string|max:255',
             'isNew' => 'required|boolean',
 
-            'cover_image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'cover_image' => 'required|image|mimes:jpg,jpeg,png,webp',
 
             'category_id' => 'required|exists:categories,id',
             'creator_id'  => 'required|exists:creators,id',

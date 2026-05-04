@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label>First Name</label>
-        <input  type="text" name="first_name" class="@error('first_name') error-input @enderror" placeholder="Enter first name">
+        <input  type="text" name="first_name" value="{{ old('first_name') }}" class="@error('first_name') error-input @enderror" placeholder="Enter first name">
         @error('first_name')
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -17,7 +17,7 @@
 
     <div class="form-group">
         <label>Last Name</label>
-        <input type="text" name="last_name" class="@error('last_name') error-input @enderror" placeholder="Enter last name">
+        <input type="text" name="last_name" value="{{ old('last_name') }}" class="@error('last_name') error-input @enderror" placeholder="Enter last name">
         @error('last_name')
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -76,16 +76,36 @@
 
     <div class="form-group">
         <label>Games Count</label>
-        <input type="number" name="games_count" class="@error('games_count') error-input @enderror" placeholder="Enter games count">
+        <input type="number" name="games_count" value="{{ old('games_count') }}" class="@error('games_count') error-input @enderror" placeholder="Enter games count">
         @error('games_count')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>
 
+   <div class="form-group">
+        <label>Role (UA)</label>
+        <input 
+            type="text" 
+            name="role[uk]" 
+            value="{{ old('role.uk') }}" 
+            class="@error('role.uk') error-input @enderror"
+            placeholder="Роль українською"
+        >
+        @error('role.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
     <div class="form-group">
-        <label>Role</label>
-        <input type="text" name="role" class="@error('role') error-input @enderror" placeholder="Enter role">
-        @error('role')
+        <label>Role (EN)</label>
+        <input 
+            type="text" 
+            name="role[en]" 
+            value="{{ old('role.en') }}" 
+            class="@error('role.en') error-input @enderror"
+            placeholder="Role in English"
+        >
+        @error('role.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

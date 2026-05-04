@@ -115,14 +115,31 @@
     </div>
 
     <div class="form-group">
-        <label>Role</label>
+        <label>Role (UA)</label>
         <input 
             type="text" 
-            name="role"
-            value="{{ old('role', $creator->role) }}"
-            class="@error('role') error-input @enderror">
+            name="role[uk]"
+            value="{{ old('role.uk', $creator->getTranslation('role', 'uk') ?? '') }}"
+            class="@error('role.uk') error-input @enderror"
+            placeholder="Роль українською"
+        >
 
-        @error('role')
+        @error('role.uk')
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Role (EN)</label>
+        <input 
+            type="text" 
+            name="role[en]"
+            value="{{ old('role.en', $creator->getTranslation('role', 'en') ?? '') }}"
+            class="@error('role.en') error-input @enderror"
+            placeholder="Role in English"
+        >
+
+        @error('role.en')
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>

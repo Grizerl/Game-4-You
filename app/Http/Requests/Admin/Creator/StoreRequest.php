@@ -28,10 +28,12 @@ class StoreRequest extends FormRequest
             'bio.uk' => 'nullable|string|max:255',
             'bio.en' => 'nullable|string|max:255',
             
-            'avatar' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'avatar' => 'required|image|mimes:jpg,jpeg,png,webp',
             'games_count' => 'required|integer',
             'company_id' => 'required|exists:companies,id',
-            'role' => 'required|string|max:255',
+
+            'role.uk' => 'required|string|max:255',
+            'role.en' => 'required|string|max:255',
         ];
     }
 }

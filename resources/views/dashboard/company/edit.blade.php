@@ -60,9 +60,31 @@
     </div>
 
     <div class="form-group">
-        <label>Country</label>
-        <input type="text" name="country" value="{{ old('country', $company->country) }}" placeholder="Enter country">
-        @error('country')
+        <label>Країна (UA)</label>
+        <input 
+            type="text" 
+            name="country[uk]" 
+            value="{{ old('country.uk', $company->getTranslation('country', 'uk')) }}"
+            class="@error('country.uk') error-input @enderror"
+            placeholder="Країна українською"
+        >
+
+        @error('country.uk')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Country (EN)</label>
+        <input 
+            type="text" 
+            name="country[en]" 
+            value="{{ old('country.en',  $company->getTranslation('country', 'en')) }}"
+            class="@error('country.en') error-input @enderror"
+            placeholder="Country in English"
+        >
+
+        @error('country.en')
             <span class="error">{{ $message }}</span>
         @enderror
     </div>

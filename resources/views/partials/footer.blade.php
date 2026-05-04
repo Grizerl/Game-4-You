@@ -31,7 +31,7 @@
                             <a class="footer-nav-link" href="#">{{ __('footer.social') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">{{ __('footer.community') }}</a>
+                            <a class="footer-nav-link" href="https://discord.com/" target="_blank">{{ __('footer.community') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -39,16 +39,16 @@
                     <h5 class="footer-title">{{ __('footer.supports') }}</h5>
                     <ul class="footer-list">
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">{{ __('footer.settings') }}</a>
+                            <a class="footer-nav-link" href="#" target="_blank">{{ __('footer.settings') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">{{ __('footer.help') }}</a>
+                            <a class="footer-nav-link" href="tel:+380950660989">{{ __('footer.help') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">{{ __('footer.live') }}</a>
+                            <a class="footer-nav-link" href="https://t.me/+xvGhD6MByNRkYWMy" target="_blank">{{ __('footer.live') }}</a>
                         </li>
                         <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#">{{ __('footer.news') }}</a>
+                            <a class="footer-nav-link" href="https://discord.com/" target="_blank">{{ __('footer.news') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +56,7 @@
                     <h5 class="footer-title">{{ __('footer.newsletter') }}</h5>
                     <p class="footer-lead">  {{ __('footer.subscribe_text') }}</p>
                     <div class="pole-container">
-                        <a class="connect-link" href="https://www.spotify.com/ua-uk/free/">
+                        <a class="connect-link" href="https://www.spotify.com/ua-uk/free/" target="_blank">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.4em" width="1.4em" version="1.1" viewBox="0 0 64 64"
                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" 
                                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -67,19 +67,19 @@
                                 <path d="m 14.619632,24.426176 c 0.01,0.058 0.022,0.116 0.038,0.173 0.382001,1.732006 2.040006,2.917009 3.836012,2.696009 1.638005,-0.195001 3.30801,-0.295001 5.001015,-0.295001 8.121026,0 15.707049,2.310007 22.130069,6.315019 1.571005,1.003003 3.665011,0.588002 4.741015,-0.947003 0,0 0,0 0,0 0.051,-0.073 0.098,-0.145 0.135,-0.225 0.444002,-0.732003 0.603002,-1.619005 0.433002,-2.476008 -0.184001,-0.933003 -0.741003,-1.750005 -1.542005,-2.263007 -0.003,-0.002 -0.006,-0.004 -0.01,-0.006 -7.513024,-4.688015 -16.386051,-7.398023 -25.887081,-7.398023 -1.979006,0 -3.932012,0.118 -5.851018,0.343001 -0.002,0 -0.003,0 -0.005,0 -0.953003,0.118 -1.816005,0.621002 -2.387007,1.393004 -0.570002,0.772003 -0.799003,1.744006 -0.632002,2.690009 z m 34.055106,6.864021 c -0.485002,0.602002 -1.335005,0.747002 -1.983007,0.334001 -0.003,-0.002 -0.006,-0.004 -0.009,-0.006 -6.73002,-4.197013 -14.679045,-6.61802 -23.188072,-6.61802 -1.773005,0 -3.52201,0.105 -5.241016,0.31 -0.001,0 -0.002,0 -0.004,0 -0.790002,0.097 -1.518004,-0.441001 -1.656005,-1.226003 -0.004,-0.02 -0.008,-0.04 -0.013,-0.06 -0.054,-0.388001 0.046,-0.783002 0.280001,-1.099003 0.244001,-0.330001 0.613002,-0.546002 1.020003,-0.596002 1.842006,-0.216 3.715012,-0.329001 5.614017,-0.329001 9.110029,0 17.618055,2.597008 24.822077,7.091022 0.340001,0.219001 0.577002,0.567002 0.655002,0.964003 0.079,0.398001 -0.008,0.811003 -0.241,1.144004 -0.02,0.03 -0.039,0.06 -0.056,0.091 z M 14.619632,24.426176 Z" id="path16" style="stroke-width:1;"/>
                             </svg>
                         </a>
-                        <a class="connect-link" href="https://store.steampowered.com/?l=russian">
+                        <a class="connect-link" href="https://store.steampowered.com/" target="_blank">
                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g>
                                 <path d="M0 0H24V24H0z" fill="none"/>
                                 <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/></g>
                             </svg>
                         </a>
-                         <a class="connect-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk">
+                         <a class="connect-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk" target="_blank">
                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" version="1.1" viewBox="0 0 512 512" 
                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
                             </svg>
                         </a>
-                         <a class="connect-link" href="https://www.twitch.tv/">
+                         <a class="connect-link" href="https://www.twitch.tv/" target="_blank">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.1em" width="1.1em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/>
                                 <path d="M2.089 0L.525 4.175v16.694h5.736V24h3.132l3.127-3.132h4.695l6.26-6.258V0H2.089zm2.086 2.085H21.39v11.479l-3.652 3.652H12l-3.127 3.127v-3.127H4.175V2.085zM9.915 12.522H12v-6.26H9.915v6.26zm5.735 0h2.086v-6.26H15.65v6.26z"/>
                             </svg>

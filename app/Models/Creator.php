@@ -21,7 +21,12 @@ class Creator extends Model
         'company_id'
     ];
 
-    public $translatable = ['bio'];
+    public $translatable = ['bio', 'role'];
+
+    protected $casts = [
+        'bio' => 'array',
+        'role' => 'array',
+    ];
 
     public function games(): HasMany
     {

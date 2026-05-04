@@ -28,10 +28,12 @@ class UpdateRequest extends FormRequest
             'bio.uk' => 'nullable|string|max:255',
             'bio.en' => 'nullable|string|max:255',
             
-            'avatar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'avatar' => 'nullable|image|mimes:jpg,jpeg,png,webp',
             'games_count' => 'required|integer',
-            'role' => 'required|string|max:255',
             'company_id' => 'required|exists:companies,id',
+
+            'role.uk' => 'required|string|max:255',
+            'role.en' => 'required|string|max:255',
         ];
     }
 }

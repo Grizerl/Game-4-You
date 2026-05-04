@@ -57,9 +57,29 @@
     </div>
 
     <div class="form-group">
-        <label>Country</label>
-        <input type="text" name="country" placeholder="Enter country">
-        @error('country')
+        <label>Країна (UA)</label>
+        <input 
+            type="text" 
+            name="country[uk]" 
+            class="@error('country.uk') error-input @enderror"
+            placeholder="Країна українською"
+        >
+
+        @error('country.uk')
+            <span class="error">{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label>Country (EN)</label>
+        <input 
+            type="text" 
+            name="country[en]" 
+            class="@error('country.en') error-input @enderror"
+            placeholder="Country in English"
+        >
+
+        @error('country.en')
             <span class="error">{{ $message }}</span>
         @enderror
     </div>

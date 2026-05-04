@@ -28,7 +28,11 @@
                     <strong>UA:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'uk'), 40) }} <br>
                     <strong>EN:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'en'), 40) }}
                 </td>
-                <td>{{ $item->country }}</td>
+
+                <td>
+                    <strong>UA:</strong> {{ $item->getTranslation('country', 'uk') }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('country', 'en') }}
+                </td>
 
                 <td>
                     <a href="{{ route('companies.edit', $item->id) }}" class="edit">Edit</a>

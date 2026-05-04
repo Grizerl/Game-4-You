@@ -26,7 +26,7 @@
                                         <a class="connect-link">{{ __('header.connect') }}</a>
                                     </li>
                                     <li class="connect-item">
-                                        <a class="connect-link" href="https://www.spotify.com/ua-uk/free/">
+                                        <a class="connect-link" href="https://www.spotify.com/ua-uk/free/" target="_blank">
                                             <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.4em" width="1.4em" version="1.1" viewBox="0 0 64 64"
                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" 
                                                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -39,7 +39,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-item">
-                                        <a class="connect-link" href="https://store.steampowered.com/?l=russian">
+                                        <a class="connect-link" href="https://store.steampowered.com/" target="_blank">
                                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g>
                                                 <path d="M0 0H24V24H0z" fill="none"/>
                                                 <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/></g>
@@ -47,7 +47,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-item">
-                                        <a class="connect-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk">
+                                        <a class="connect-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk" target="_blank">
                                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" version="1.1" viewBox="0 0 512 512" 
                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
@@ -55,7 +55,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-item">
-                                        <a class="connect-link" href="https://www.twitch.tv/">
+                                        <a class="connect-link" href="https://www.twitch.tv/" target="_blank">
                                             <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.1em" width="1.1em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/>
                                                 <path d="M2.089 0L.525 4.175v16.694h5.736V24h3.132l3.127-3.132h4.695l6.26-6.258V0H2.089zm2.086 2.085H21.39v11.479l-3.652 3.652H12l-3.127 3.127v-3.127H4.175V2.085zM9.915 12.522H12v-6.26H9.915v6.26zm5.735 0h2.086v-6.26H15.65v6.26z"/>
                                             </svg>
@@ -113,7 +113,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-menu">
-                                        <a class="menu-link" href="https://store.steampowered.com/?l=russian">
+                                        <a class="menu-link" href="https://store.steampowered.com/" target="_blank">
                                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g>
                                                 <path d="M0 0H24V24H0z" fill="none"/>
                                                 <path d="M12.004 2c-5.25 0-9.556 4.05-9.964 9.197l5.36 2.216c.454-.31 1.002-.492 1.593-.492.053 0 .104.003.157.005l2.384-3.452v-.049c0-2.08 1.69-3.77 3.77-3.77 2.079 0 3.77 1.692 3.77 3.772s-1.692 3.771-3.77 3.771h-.087l-3.397 2.426c0 .043.003.088.003.133 0 1.562-1.262 2.83-2.825 2.83-1.362 0-2.513-.978-2.775-2.273l-3.838-1.589C3.573 18.922 7.427 22 12.005 22c5.522 0 9.998-4.477 9.998-10 0-5.522-4.477-10-9.999-10zM7.078 16.667c.218.452.595.832 1.094 1.041 1.081.45 2.328-.063 2.777-1.145.22-.525.22-1.1.004-1.625-.215-.525-.625-.934-1.147-1.152-.52-.217-1.075-.208-1.565-.025l1.269.525c.797.333 1.174 1.25.84 2.046-.33.797-1.247 1.175-2.044.843l-1.228-.508zm10.74-7.245c0-1.385-1.128-2.512-2.513-2.512-1.387 0-2.512 1.127-2.512 2.512 0 1.388 1.125 2.513 2.512 2.513 1.386 0 2.512-1.125 2.512-2.513zM15.31 7.53c1.04 0 1.888.845 1.888 1.888s-.847 1.888-1.888 1.888c-1.044 0-1.888-.845-1.888-1.888s.845-1.888 1.888-1.888z"/></g>
@@ -121,7 +121,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-menu">
-                                        <a class="menu-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk">
+                                        <a class="menu-link" href="https://www.youtube.com/?app=desktop&gl=UA&hl=uk" target="_blank">
                                             <svg  stroke="currentColor" fill="currentColor" stroke-width="0" height="1.3em" width="1.3em" version="1.1" viewBox="0 0 512 512" 
                                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
                                                 <path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
@@ -129,7 +129,7 @@
                                         </a>
                                     </li>
                                     <li class="connect-menu">
-                                        <a class="menu-link" href="https://www.twitch.tv/">
+                                        <a class="menu-link" href="https://www.twitch.tv/" target="_blank">
                                             <svg stroke="currentColor" fill="currentColor" stroke-width="0"  height="1.1em" width="1.1em" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title/>
                                                 <path d="M2.089 0L.525 4.175v16.694h5.736V24h3.132l3.127-3.132h4.695l6.26-6.258V0H2.089zm2.086 2.085H21.39v11.479l-3.652 3.652H12l-3.127 3.127v-3.127H4.175V2.085zM9.915 12.522H12v-6.26H9.915v6.26zm5.735 0h2.086v-6.26H15.65v6.26z"/>
                                             </svg>

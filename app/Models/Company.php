@@ -16,7 +16,13 @@ class Company extends Model
         'logo_path'
     ];
 
-    public $translatable = ['name', 'description'];
+    public $translatable = ['name', 'description', 'country'];
+
+    protected $casts = [
+        'name' => 'array',
+        'description' => 'array',
+        'country' => 'array',
+    ];
 
     public function creator(): HasMany
     {
