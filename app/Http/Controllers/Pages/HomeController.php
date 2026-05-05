@@ -14,18 +14,18 @@ class HomeController extends Controller
     {
         $category_id = $request->get('category_id');
 
-        $categories = Category::with(['games' => function ($query) use ($category_id) {
-            if ($category_id) {
-                $query->where('category_id', $category_id);
-            }
-            $query->limit(6);
-        }])->get();
+        $categories = Category::all();
 
-        $games = Game::latest()->take(20)->get();
+        $gamesQuery = Game::latest();
 
-        $game = $games->take(9); 
+        if ($category_id) {
+            $gamesQuery->where('category_id', $category_id);
+        }
+
+        $games = $gamesQuery->paginate(6); 
+
         $storeGame = Game::where('isNew', 1)->get();
 
-        return view('pages.home.index', compact('categories', 'category_id', 'game', 'storeGame'));
+        return view('pages.home.index', compact('categories', 'category_id', 'games', 'storeGame'));
     }
 }

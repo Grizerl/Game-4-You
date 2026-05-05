@@ -671,7 +671,8 @@ img {
     background-color: rgb(185, 25, 142);
     border-radius: 999px;
     padding: 4px 10px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
     color: #fff;
 }
 
@@ -978,7 +979,7 @@ footer {
 
 .game-image {
     width: 100%;
-    height: 260px; /* або як у тебе в карточці */
+    height: 260px; 
     overflow: hidden;
     border-radius: 12px;
     background: #0f172a;
@@ -987,13 +988,40 @@ footer {
 .game-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* 🔥 ключовий момент */
+    object-fit: cover; 
     object-position: center;
     transition: transform 0.3s ease;
 }
 
 .game-image img:hover {
     transform: scale(1.05);
+}
+
+.filter-form {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 30px 0;
+}
+
+.filter-form select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.filter-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #6c5ce7;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.filter-form button:hover {
+    opacity: 0.85;
 }
 
 /* Pagination */

@@ -22,3 +22,13 @@
         </div>
     </div>
 @endforeach
+
+@if ($games->hasMorePages())
+    <div style="display: flex; align-items: center; margin-top: 50px;">
+        <div class="container">
+            <a class="card-button btn-card" href="{{ route('games.page') }}">
+                <span>{{ __('home.see_more_games') }}</span>
+            </a>
+        </div>
+    </div>
+@endif

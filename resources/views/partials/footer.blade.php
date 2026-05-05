@@ -38,9 +38,7 @@
                 <div class="footer-item">
                     <h5 class="footer-title">{{ __('footer.supports') }}</h5>
                     <ul class="footer-list">
-                        <li class="footer-nav-item">
-                            <a class="footer-nav-link" href="#" target="_blank">{{ __('footer.settings') }}</a>
-                        </li>
+                        
                         <li class="footer-nav-item">
                             <a class="footer-nav-link" href="tel:+380950660989">{{ __('footer.help') }}</a>
                         </li>

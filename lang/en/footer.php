@@ -10,7 +10,6 @@ return [
     'community' => 'Community',
 
     'supports' => 'Supports',
-    'settings' => 'Settings & Privacy',
     'help' => 'Help & Support',
     'live' => 'Live Actions',
     'news' => 'Our News',

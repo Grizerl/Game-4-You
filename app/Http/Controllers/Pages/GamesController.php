@@ -3,16 +3,27 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Game;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
-    public function index(): View
+    public function index(Request $request): View
     {
-        $games = Game::paginate(21);
-        return view('pages.game.games', compact('games'));
+        $query = Game::query();
+
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+
+        $games = $query->paginate(12)->withQueryString();
+
+        $categories = Category::all();
+
+        return view('pages.game.games', compact('games', 'categories'));
     }
 
     public function show(int $id): View

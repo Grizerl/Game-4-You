@@ -28,28 +28,28 @@
             </div>
             <div class="sc-fsfFfa">
                 <div class="card-list">
-                    @foreach ($game as $games)
+                    @foreach ($games as $game)
                          <div class="sc-ktwOfi card">
                         <div class="card-top">
-                            <img src="{{ asset('storage/' . $games->cover_image) }}" alt="{{ $games->name }}">
+                            <img src="{{ asset('storage/' . $game->cover_image) }}" alt="{{ $game->name }}">
                             <div class="card-rating">
-                                {{ $games->rating }} ⭐
+                                {{ $game->rating }} ⭐
                             </div>
                         </div>
                         <div class="card-bottom">
-                            <h4 class="card-title">{{ $games->name }}</h4>
+                            <h4 class="card-title">{{ $game->name }}</h4>
                             <div class="group-detaile">
                                 <div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">{{ __('home.release_date') }}</p>
-                                        <p class="detaile-value">{{ $games->created_at->format('Y-m-d') }}</p>
+                                        <p class="detaile-value">{{ $game->created_at->format('Y-m-d') }}</p>
                                     </div>
                                     <div class="detaile-item">
                                         <p class="detaile-name">{{ __('home.updated') }}</p>
-                                        <p class="detaile-value">{{ $games->updated_at->format('Y-m-d') }}</p>
+                                        <p class="detaile-value">{{ $game->updated_at->format('Y-m-d') }}</p>
                                     </div>
                                 </div>
-                                    <a href="{{route('games.show.page', $games->id)}}" class="detaile-btn-custom">{{ __('home.see_more') }}</a>
+                                    <a href="{{route('games.show.page', $game->id)}}" class="detaile-btn-custom">{{ __('home.see_more') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
             <div class="tabs-body">
                 <div class="sc-fsfFfa"> 
                     <div class="card-list" id="games-container">
-                        @include('partials.games-list', ['games' => $categories->first()->games ?? []])
+                        @include('partials.games-list', ['games' => $games])
                     </div>
                 </div>
             </div>
@@ -193,7 +193,7 @@
                                 <li>
                                    <span>{{ __('home.creator') }}
                                         {{ $game->creator->first_name ?? '' }}
-                                        {{ $game->creator->sur_name ?? '' }}
+                                        {{ $game->creator->last_name ?? '' }}
                                     </span>
                                 </li>
                             </ul>
