@@ -2,11 +2,13 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Arr;
+use App\Models\Company;
+use App\Models\Creator;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Creator>
+ * @extends Factory<Creator>
  */
 class CreatorFactory extends Factory
 {
@@ -17,7 +19,7 @@ class CreatorFactory extends Factory
      */
     public function definition(): array
     {
-        $images = 
+        $images =
         [
             '/assets/images/creators/2a502a143225ad0faf1f8319d58fb6c0.jpg',
             '/assets/images/creators/6ea06e2ddd6c0190e5134f61d826f30f.jpg',
@@ -41,55 +43,51 @@ class CreatorFactory extends Factory
             '/assets/images/creators/287df7736bf74448e62f43978c23d4ca.png',
         ];
 
-        $positions = 
+        $positions =
         [
-            'writer', 
-            'director', 
-            'producer',
-            'designer',
-            'programmer',
-            'composer',
-            'artist',
+            'writer' => 'сценарист',
+            'director' => 'режисер',
+            'producer' => 'продюсер',
+            'designer' => 'дизайнер',
+            'programmer' => 'програміст',
+            'composer' => 'композитор',
+            'artist' => 'художник',
         ];
 
-        $selectpositions = Arr::random($positions, rand(1, 4));
-        
-        if (!is_array($selectpositions)) {
-            $selectpositions = [$selectpositions];
-        }
+        $selected = Arr::random(array_keys($positions), rand(1, 3));
 
-        $games = [
-            'The Elder Scrolls V: Skyrim',
-            'Fallout 4',
-            'The Elder Scrolls V: Skyrim Special Edition',
-            'Wolfenstein II',
-            'The New Colossus',
-            'Fallout Shelter',
-            'Fallout 3',
-            'The Elder Scrolls III',
-            'Morrowind',
-            'The Elder Scrolls V',
-            'DOOM (2016)',
-            'Wolfenstein: The New Order',
-            'DOOM Eternal',
-            'Call of Duty: Black Ops III',
-            'Global Offensive',
-            'Counter-Strike: Global Offensive',
-        ];
+        $socials = array_filter([
+            'website' => $this->faker->boolean(70) ? $this->faker->url() : null,
+            'x' => $this->faker->boolean(50) ? 'https://x.com/'.$this->faker->userName() : null,
+            'youtube' => $this->faker->boolean(40) ? 'https://www.youtube.com/@'.$this->faker->userName() : null,
+            'twitch' => $this->faker->boolean(20) ? 'https://www.twitch.tv/'.$this->faker->userName() : null,
+            'instagram' => $this->faker->boolean(30) ? 'https://www.instagram.com/'.$this->faker->userName() : null,
+        ]);
 
-        $selectgames = Arr::random($games, rand(2, 9));
-        
-        if (!is_array($selectgames)) {
-            $selectgames = [$selectgames];
-        }
         return [
-            'first_name' => $this->faker->name,
-            'last_name' => $this->faker->lastName,
-            'bio' => $this->faker->text(),
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
+            'bio' => [
+                'uk' => $this->faker->text(),
+                'en' => $this->faker->text(),
+            ],
             'avatar' => Arr::random($images),
-            'games_count' => $this->faker->numberBetween(5, 50),
-            'company_id' => $this->faker->numberBetween(1, 19),
-            'role' => implode(', ', $selectpositions),
+            'company_id' => Company::factory(),
+            'role' => [
+                'uk' => implode(', ', array_map(fn (string $key): string => $positions[$key], $selected)),
+                'en' => implode(', ', $selected),
+            ],
+            'country' => [
+                'uk' => 'Україна',
+                'en' => 'Ukraine',
+            ],
+            'career_start' => $this->faker->numberBetween(1990, 2020),
+            'socials' => $socials ?: null,
         ];
+    }
+
+    public function withoutAvatar(): static
+    {
+        return $this->state(fn (): array => ['avatar' => null]);
     }
 }
