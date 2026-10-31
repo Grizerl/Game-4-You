@@ -28,7 +28,7 @@ Browse the catalog, filter by category, meet the creators and companies behind t
 | Database | MySQL 8 (sessions, cache and queues also use the database) |
 | Frontend | Blade, Vite 6, Tailwind CSS 3, Bootstrap 5, Alpine.js (Node 22) |
 | Quality | PHPUnit 13, Laravel Pint |
-| Workflow | [OpenSpec](https://github.com/Fission-AI/OpenSpec) spec-driven changes, Claude Code |
+| Workflow | [OpenSpec](https://github.com/Fission-AI/OpenSpec) spec-driven changes, git flow, Claude Code |
 
 ## 🚀 Getting started
 
@@ -139,6 +139,31 @@ Behaviour changes go through [OpenSpec](https://github.com/Fission-AI/OpenSpec) 
 `/opsx:explore` → `/opsx:propose` → `/opsx:apply` → `/opsx:sync` → `/opsx:archive`
 
 Active changes live in `openspec/changes/`, current specs in `openspec/specs/`.
+
+### 🌿 Git flow
+
+The project uses **git flow**:
+
+| Branch | Purpose |
+|---|---|
+| `master` | Production-ready code; every release is tagged |
+| `develop` | Integration branch; all feature branches start from it |
+| `feature/<name>` | A new feature or OpenSpec change (e.g. `feature/news-section`) |
+| `release/<version>` | Release preparation (from `develop`, merged into `master` and `develop`) |
+| `hotfix/<name>` | Urgent production fix (from `master`, merged into `master` and `develop`) |
+
+```bash
+git flow init -d                           # once per clone (needs the git-flow AVH extension)
+
+git flow feature start my-feature          # branches off develop
+git flow feature finish my-feature         # merges into develop with --no-ff
+
+git flow release start 1.2.0
+git flow release finish 1.2.0              # merges into master and develop, tags 1.2.0
+git push origin master develop --tags
+```
+
+No extension? The same flow works with plain git (`git checkout -b feature/x develop`, `git merge --no-ff feature/x`). Install the extension on Windows with `scoop install git-flow-avh` or `choco install gitflow-avh`. Version tags have no `v` prefix (`gitflow.prefix.versiontag` is empty).
 
 ## 🗺 Roadmap
 
