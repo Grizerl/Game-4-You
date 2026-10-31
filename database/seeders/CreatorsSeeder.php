@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Company;
 use App\Models\Creator;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +14,14 @@ class CreatorsSeeder extends Seeder
     public function run(): void
     {
         Creator::truncate();
-        
-        Creator::factory(30)->create();
+
+        // Беремо наявні студії; нові створюються лише коли таблиця порожня.
+        $companyIds = Company::pluck('id');
+
+        Creator::factory(30)
+            ->state(fn (): array => [
+                'company_id' => $companyIds->isNotEmpty() ? $companyIds->random() : Company::factory(),
+            ])
+            ->create();
     }
 }

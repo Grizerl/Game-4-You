@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,9 @@
     <link rel="stylesheet" crossorigin href="/assets/css/index.css">
     <link rel="stylesheet" crossorigin href="/assets/css/details.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <title>Games 4 You</title>
+    @stack('styles')
+    <title>@yield('title', 'Games 4 You')</title>
+    @stack('head')
 </head>
 <body>
     @include('partials.header')
@@ -16,5 +18,6 @@
     <script src="/assets/js/menu/menu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('assets/js/swiper/swiper.js') }}"></script>
+    @stack('scripts')
 </body>
 </html>

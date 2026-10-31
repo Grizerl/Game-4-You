@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Support\PublicImage;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Translatable\HasTranslations;
@@ -13,10 +15,10 @@ class Game extends Model
     use HasFactory, HasTranslations;
 
     protected $fillable = [
-        'name', 
-        'description', 
-        'cover_image', 
-        'rating', 
+        'name',
+        'description',
+        'cover_image',
+        'rating',
         'platforms',
         'isNew',
         'category_id',
@@ -29,6 +31,11 @@ class Game extends Model
     ];
 
     public $translatable = ['name', 'description'];
+
+    protected function coverUrl(): Attribute
+    {
+        return Attribute::get(fn (): ?string => PublicImage::url($this->cover_image));
+    }
 
     public function category(): BelongsTo
     {

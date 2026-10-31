@@ -3,33 +3,40 @@
 @section('title', 'Creators')
 
 @section('content')
-<a href="{{ route('creator.create') }}" class="btn">+ Add creator</a>
-<br><br>
+<div class="toolbar">
+    <a href="{{ route('creator.create') }}" class="btn">+ Add creator</a>
+
+    <form method="get" action="{{ route('creator.index') }}" class="search">
+        <input type="search" name="q" value="{{ request('q') }}" placeholder="Search by name">
+        <button class="btn">Search</button>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Bio</th>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Slug</th>
             <th>Company</th>
-            <th width="200">Actions</th>
+            <th>Games</th>
+            <th width="260">Actions</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach($creator as $item)
+        @forelse($creators as $item)
             <tr>
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->first_name }}</td>
-                <td>{{ $item->last_name }}</td>
-                <td>
-                    <strong>UA:</strong> {{ $item->getTranslation('bio', 'uk') ?? '-' }} <br>
-                    <strong>EN:</strong> {{ $item->getTranslation('bio', 'en') ?? '-' }}
-                </td>
+                <td><img src="{{ $item->avatar_url }}" alt="" width="44" height="44" class="thumb"></td>
+                <td>{{ $item->full_name }}</td>
+                <td>{{ $item->slug }}</td>
                 <td>{{ $item->company->name ?? '-' }}</td>
+                <td>{{ $item->games_count }}</td>
 
                 <td>
+                    <a href="{{ route('creator.show.page', $item) }}" target="_blank" rel="noopener" class="edit">View</a>
                     <a href="{{ route('creator.edit', $item->id) }}" class="edit">Edit</a>
                     <form action="{{ route('creator.destroy', $item->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -38,11 +45,83 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="7">No creators found.</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 
+<div class="pager">{{ $creators->links() }}</div>
+
 <style>
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: flex;
+        gap: 8px;
+    }
+
+    .search input {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(15, 23, 42, 0.6);
+        color: #e2e8f0;
+    }
+
+    .search .btn {
+        border: none;
+        cursor: pointer;
+    }
+
+    .thumb {
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .pager {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .pager nav > div:first-child {
+        display: none;
+    }
+
+    .pager .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        list-style: none;
+    }
+
+    .pager .page-link {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #e2e8f0;
+        text-decoration: none;
+    }
+
+    .pager .active .page-link {
+        background: #3b82f6;
+        border-color: #3b82f6;
+    }
+
+    .pager .disabled .page-link {
+        opacity: 0.4;
+    }
+
     .btn {
         display: inline-block;
         background: linear-gradient(135deg, #3b82f6, #6366f1);
