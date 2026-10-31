@@ -103,8 +103,8 @@ class CreatorProfileTest extends TestCase
 
         $this->get(route('creator.show.page', $creator))
             ->assertSeeInOrder(['Newerone', 'Olderone'])
-            ->assertSee('href="'.route('games.show.page', $newer->id).'"', false)
-            ->assertSee('href="'.route('games.show.page', $older->id).'"', false);
+            ->assertSee('href="'.route('games.show.page', $newer).'"', false)
+            ->assertSee('href="'.route('games.show.page', $older).'"', false);
     }
 
     #[Test]

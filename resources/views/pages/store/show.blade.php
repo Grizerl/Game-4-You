@@ -139,7 +139,7 @@
                     <ul class="co-games">
                         @foreach ($games as $game)
                             <li>
-                                <a class="cr-game" href="{{ route('games.show.page', $game->id) }}">
+                                <a class="cr-game" href="{{ route('games.show.page', $game) }}">
                                     <img src="{{ $game->cover_url }}" alt="{{ $game->name }}" loading="lazy" width="96" height="64">
                                     <span class="cr-game__body">
                                         <span class="cr-game__name">{{ $game->name }}</span>

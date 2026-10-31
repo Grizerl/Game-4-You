@@ -91,14 +91,23 @@ class GameFactory extends Factory
 
         return
         [
-            'name' => $this->faker->sentence(3),
-            'description' => $this->faker->paragraphs(5, true),
+            'name' => $this->localized($this->faker->sentence(3)),
+            'description' => $this->localized($this->faker->paragraphs(5, true)),
             'cover_image' => Arr::random($images),
             'rating' => $this->faker->numberBetween(100, 10000),
             'platforms' => implode(', ', $selectedPlatforms),
+            'released_at' => $this->faker->dateTimeBetween('-8 years', 'now')->format('Y-m-d'),
             'creator_id' => Creator::factory(),
             'category_id' => Category::factory(),
             'company_id' => Company::factory(),
         ];
+    }
+
+    /**
+     * @return array{uk: string, en: string}
+     */
+    private function localized(string $text): array
+    {
+        return ['uk' => $text, 'en' => $text];
     }
 }

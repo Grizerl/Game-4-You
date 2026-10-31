@@ -17,7 +17,7 @@
                         <p class="detaile-value">{{ $game->updated_at }}</p>
                     </div>
                 </div>
-                <a href="{{ route('games.show.page', $game->id) }}" class="detaile-btn-custom sc-sfks">{{ __('home.see_more') }}</a>
+                <a href="{{ route('games.show.page', $game) }}" class="detaile-btn-custom sc-sfks">{{ __('home.see_more') }}</a>
             </div>
         </div>
     </div>

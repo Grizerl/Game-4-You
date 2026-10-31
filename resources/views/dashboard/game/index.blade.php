@@ -3,54 +3,47 @@
 @section('title', 'Games')
 
 @section('content')
+<div class="toolbar">
+    <a href="{{ route('game.create') }}" class="btn">+ Add game</a>
 
-<a href="{{ route('game.create') }}" class="btn">+ Add game</a>
-
-<br><br>
+    <form method="get" action="{{ route('game.index') }}" class="search">
+        <input type="search" name="q" value="{{ request('q') }}" placeholder="Search by name">
+        <button class="btn">Search</button>
+    </form>
+</div>
 
 <table class="table">
     <thead>
         <tr>
             <th>#</th>
+            <th>Cover</th>
             <th>Game Title</th>
-            <th>Overview</th>
+            <th>Slug</th>
             <th>Score</th>
             <th>Category</th>
-            <th>Creator</th>
             <th>Company</th>
-            <th width="200">Actions</th>
+            <th>Comments</th>
+            <th width="260">Actions</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach($game as $item)
+        @forelse($game as $item)
             <tr>
                 <td>{{ $item->id }}</td>
+                <td><img src="{{ $item->cover_url }}" alt="" width="44" height="66" class="thumb"></td>
                 <td>
-                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk') }} <br>
-                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en') }}
+                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk', false) }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en', false) }}
                 </td>
+                <td>{{ $item->slug }}</td>
+                <td>{{ $item->rating }}</td>
+                <td>{{ $item->category?->title }}</td>
+                <td>{{ $item->company?->name }}</td>
+                <td>{{ $item->comments_count }}</td>
 
                 <td>
-                    <strong>UA:</strong> {{ Str::limit($item->getTranslation('description', 'uk'), 50) }} <br>
-                    <strong>EN:</strong> {{ Str::limit($item->getTranslation('description', 'en'), 50) }}
-                </td>
-
-                <td>{{ $item?->rating }}</td>
-
-                <td>
-                    <strong>UA:</strong> {{ $item->category?->getTranslation('title', 'uk') }} <br>
-                    <strong>EN:</strong> {{ $item->category?->getTranslation('title', 'en') }}
-                </td>
-                
-                <td>{{ $item->creator?->first_name }}</td>
-                
-                <td>
-                    <strong>UA:</strong> {{ $item->company?->getTranslation('name', 'uk') }} <br>
-                    <strong>EN:</strong> {{ $item->company?->getTranslation('name', 'en') }}
-                </td>
-
-                <td>
+                    <a href="{{ route('games.show.page', $item) }}" target="_blank" rel="noopener" class="edit">View</a>
                     <a href="{{ route('game.edit', $item->id) }}" class="edit">Edit</a>
                     <form action="{{ route('game.destroy', $item->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -59,11 +52,83 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="9">No games found.</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 
+<div class="pager">{{ $game->links() }}</div>
+
 <style>
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: flex;
+        gap: 8px;
+    }
+
+    .search input {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(15, 23, 42, 0.6);
+        color: #e2e8f0;
+    }
+
+    .search .btn {
+        border: none;
+        cursor: pointer;
+    }
+
+    .thumb {
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .pager {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .pager nav > div:first-child {
+        display: none;
+    }
+
+    .pager .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        list-style: none;
+    }
+
+    .pager .page-link {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #e2e8f0;
+        text-decoration: none;
+    }
+
+    .pager .active .page-link {
+        background: #3b82f6;
+        border-color: #3b82f6;
+    }
+
+    .pager .disabled .page-link {
+        opacity: 0.4;
+    }
+
     .btn {
         display: inline-block;
         background: linear-gradient(135deg, #3b82f6, #6366f1);

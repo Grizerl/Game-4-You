@@ -37,10 +37,11 @@ Route::group(
         Route::get('/games', [GamesController::class, 'index'])
             ->name('games.page');
 
-        Route::get('/games/{id}', [GamesController::class, 'show'])
+        Route::get('/games/{game}', [GamesController::class, 'show'])
             ->name('games.show.page');
 
         Route::post('/comments', [CommentController::class, 'store'])
+            ->middleware('throttle:5,1')
             ->name('comments.store');
 
         Route::get('/category', [PageController::class, 'getGames'])

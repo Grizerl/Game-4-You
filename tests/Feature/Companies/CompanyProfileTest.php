@@ -99,7 +99,7 @@ class CompanyProfileTest extends TestCase
 
         $this->get(route('company.show.page', $company))
             ->assertSeeInOrder(['Newerone', 'Olderone'])
-            ->assertSee('href="'.route('games.show.page', $newer->id).'"', false);
+            ->assertSee('href="'.route('games.show.page', $newer).'"', false);
     }
 
     #[Test]

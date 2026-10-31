@@ -49,7 +49,7 @@
                                         <p class="detaile-value">{{ $game->updated_at->format('Y-m-d') }}</p>
                                     </div>
                                 </div>
-                                    <a href="{{route('games.show.page', $game->id)}}" class="detaile-btn-custom">{{ __('home.see_more') }}</a>
+                                    <a href="{{route('games.show.page', $game)}}" class="detaile-btn-custom">{{ __('home.see_more') }}</a>
                                 </div>
                             </div>
                         </div>
