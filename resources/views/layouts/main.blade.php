@@ -6,7 +6,6 @@
     <link rel="icon" type="images" href="/assets/images/logo-vAIZT_ch.png">
     <link rel="stylesheet" crossorigin href="/assets/css/index.css">
     <link rel="stylesheet" crossorigin href="/assets/css/details.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     @stack('styles')
     <title>@yield('title', 'Games 4 You')</title>
     @stack('head')
@@ -16,8 +15,6 @@
     @include('partials.footer')
     <script src="/assets/js/details/btn.js"></script>
     <script src="/assets/js/menu/menu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{ asset('assets/js/swiper/swiper.js') }}"></script>
     @stack('scripts')
 </body>
 </html>

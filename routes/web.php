@@ -10,7 +10,6 @@ use App\Http\Controllers\Pages\CompanyController as PagesCompanyController;
 use App\Http\Controllers\Pages\CreatorController as PagesCreatorController;
 use App\Http\Controllers\Pages\GamesController;
 use App\Http\Controllers\Pages\HomeController;
-use App\Http\Controllers\ViewsControllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -43,9 +42,6 @@ Route::group(
         Route::post('/comments', [CommentController::class, 'store'])
             ->middleware('throttle:5,1')
             ->name('comments.store');
-
-        Route::get('/category', [PageController::class, 'getGames'])
-            ->name('games');
     });
 
 Route::middleware(['auth', 'verified'])->prefix('control')->group(function () {
