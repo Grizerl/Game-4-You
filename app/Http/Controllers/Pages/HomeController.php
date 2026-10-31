@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Company;
@@ -21,6 +22,8 @@ class HomeController extends Controller
     private const CREATORS_LIMIT = 4;
 
     private const COMMENTS_LIMIT = 6;
+
+    private const NEWS_LIMIT = 3;
 
     public function index(Request $request): View|RedirectResponse
     {
@@ -75,8 +78,10 @@ class HomeController extends Controller
             ->limit(self::COMMENTS_LIMIT)
             ->get();
 
+        $latestNews = Article::query()->published()->newest()->with('tags')->limit(self::NEWS_LIMIT)->get();
+
         return view('pages.home.index', compact(
-            'stats', 'newGames', 'topGames', 'spotlight', 'genres', 'companies', 'creators', 'comments'
+            'stats', 'newGames', 'topGames', 'spotlight', 'genres', 'companies', 'creators', 'comments', 'latestNews'
         ));
     }
 

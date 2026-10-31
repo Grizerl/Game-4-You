@@ -1,0 +1,652 @@
+/* Новини та блог. Префікс .nw- ; змінні, чіпи, кнопки й постери беруться з games.css (.gm-page) */
+.nw-page {
+    overflow-x: clip;
+}
+
+/* ---------- список ---------- */
+.nw-hero {
+    padding: 56px 0 6px;
+    background:
+        radial-gradient(820px 320px at 8% -10%, rgba(255, 184, 0, 0.14), transparent 70%),
+        radial-gradient(760px 300px at 92% 0%, rgba(25, 211, 197, 0.16), transparent 70%);
+}
+
+.nw-title {
+    margin: 0 0 8px;
+    font-family: var(--gm-display);
+    font-size: clamp(44px, 8.5vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.nw-title::after {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 6px;
+    margin-top: 16px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--gm-gold), var(--gm-accent));
+}
+
+.nw-subtitle {
+    max-width: 60ch;
+    margin: 0 0 26px;
+    color: var(--gm-muted);
+    font-size: 18px;
+}
+
+.nw-tools {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+}
+
+.nw-search {
+    flex: 1 1 320px;
+    max-width: 640px;
+}
+
+.nw-rss {
+    color: var(--gm-gold) !important;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.nw-rss:hover {
+    text-decoration: underline;
+}
+
+.nw-body {
+    padding-top: 32px;
+    padding-bottom: 72px;
+}
+
+.nw-featured {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-height: 440px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    border: 1px solid var(--gm-line);
+    border-radius: 24px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+}
+
+.nw-featured__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.nw-featured:hover .nw-featured__bg {
+    transform: scale(1.04);
+}
+
+.nw-featured__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(to top, rgba(7, 5, 27, 0.96) 0%, rgba(7, 5, 27, 0.55) 45%, rgba(7, 5, 27, 0.1) 100%),
+        linear-gradient(90deg, rgba(7, 5, 27, 0.6), transparent 70%);
+}
+
+.nw-featured__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 760px;
+    padding: 40px;
+}
+
+.nw-featured__badge {
+    margin: 0;
+    padding: 4px 14px;
+    border-radius: 6px;
+    background: var(--gm-gold);
+    color: #1b1300;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.nw-featured__title {
+    margin: 0;
+    font-family: var(--gm-display);
+    font-size: clamp(30px, 4.6vw, 58px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.nw-featured__title a:hover {
+    color: var(--gm-accent);
+}
+
+.nw-featured__excerpt {
+    margin: 0 0 6px;
+    color: rgba(236, 236, 248, 0.88);
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.nw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.nw-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--gm-line);
+    border-radius: 18px;
+    background: var(--gm-card);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nw-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gm-accent);
+    box-shadow: 0 18px 40px rgba(25, 211, 197, 0.14);
+}
+
+.nw-card__media {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #0b0a22;
+}
+
+.nw-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.nw-card:hover .nw-card__media img {
+    transform: scale(1.06);
+}
+
+.nw-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    padding: 20px;
+}
+
+.nw-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 12px;
+    color: var(--gm-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nw-tag {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    background: rgba(25, 211, 197, 0.14);
+    color: var(--gm-accent) !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+a.nw-tag:hover {
+    background: var(--gm-accent);
+    color: #04121a !important;
+}
+
+.nw-card__title {
+    margin: 0;
+    font-family: var(--gm-display);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    overflow-wrap: anywhere;
+}
+
+/* Увесь блок картки клікабельний через заголовок */
+.nw-card__title a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.nw-card__excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    color: var(--gm-muted);
+    font-size: 15px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- сторінка статті ---------- */
+.nw-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    height: 3px;
+    background: transparent;
+    pointer-events: none;
+}
+
+.nw-progress span {
+    display: block;
+    height: 100%;
+    transform: scaleX(var(--p, 0));
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--gm-gold), var(--gm-accent));
+}
+
+.nw-notice {
+    margin: 0;
+    padding: 10px 20px;
+    background: rgba(255, 184, 0, 0.14);
+    border-bottom: 1px solid rgba(255, 184, 0, 0.4);
+    color: var(--gm-gold);
+    font-weight: 700;
+    text-align: center;
+}
+
+.nw-cover {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-height: clamp(360px, 46vw, 580px);
+    overflow: hidden;
+}
+
+.nw-cover__img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nw-cover__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(to top, var(--gm-bg) 0%, rgba(7, 5, 27, 0.7) 38%, rgba(7, 5, 27, 0.25) 100%);
+}
+
+.nw-cover__inner {
+    width: 100%;
+    padding-top: 22px;
+    padding-bottom: 44px;
+}
+
+.nw-cover__inner .gm-crumbs {
+    margin-bottom: 120px;
+}
+
+.nw-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.nw-cover__title {
+    max-width: 22ch;
+    margin: 0 0 18px;
+    font-family: var(--gm-display);
+    font-size: clamp(32px, 6vw, 78px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.nw-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 22px;
+    color: rgba(236, 236, 248, 0.8);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nw-share {
+    padding: 6px 16px;
+    border: 1px solid var(--gm-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--gm-text);
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nw-share:hover {
+    border-color: var(--gm-accent);
+    color: var(--gm-accent);
+}
+
+.nw-layout {
+    padding-top: 40px;
+    padding-bottom: 16px;
+}
+
+.nw-article {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.nw-lead {
+    margin: 0 0 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--gm-gold);
+    color: rgba(236, 236, 248, 0.92);
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 600;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.nw-prose {
+    font-size: 18px;
+    line-height: 1.85;
+    color: rgba(236, 236, 248, 0.9);
+    overflow-wrap: anywhere;
+}
+
+.nw-prose > :first-child {
+    margin-top: 0;
+}
+
+.nw-prose p {
+    margin: 0 0 1.35em;
+}
+
+.nw-prose h2,
+.nw-prose h3,
+.nw-prose h4 {
+    margin: 2em 0 0.7em;
+    font-family: var(--gm-display);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--gm-text);
+}
+
+.nw-prose h2 {
+    padding-left: 14px;
+    border-left: 4px solid var(--gm-accent);
+    font-size: clamp(24px, 3.4vw, 32px);
+}
+
+.nw-prose h3 {
+    font-size: clamp(20px, 2.6vw, 25px);
+}
+
+.nw-prose h4 {
+    font-size: 19px;
+}
+
+.nw-prose a {
+    color: var(--gm-accent) !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.nw-prose a:hover {
+    color: var(--gm-gold) !important;
+}
+
+.nw-prose ul,
+.nw-prose ol {
+    margin: 0 0 1.35em;
+    padding-left: 1.4em;
+}
+
+.nw-prose li {
+    margin-bottom: 0.45em;
+}
+
+.nw-prose li::marker {
+    color: var(--gm-accent);
+}
+
+.nw-prose blockquote {
+    margin: 1.8em 0;
+    padding: 18px 24px;
+    border-left: 4px solid var(--gm-gold);
+    border-radius: 0 14px 14px 0;
+    background: rgba(255, 184, 0, 0.07);
+    font-size: 1.08em;
+    font-style: italic;
+}
+
+.nw-prose blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.nw-prose img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.8em auto;
+    border-radius: 14px;
+}
+
+.nw-prose hr {
+    margin: 2.4em 0;
+    border: 0;
+    border-top: 1px solid var(--gm-line);
+}
+
+.nw-prose code {
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.09);
+    font-size: 0.88em;
+}
+
+.nw-prose pre {
+    margin: 1.6em 0;
+    padding: 18px 20px;
+    overflow-x: auto;
+    border: 1px solid var(--gm-line);
+    border-radius: 12px;
+    background: #0b0a22;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.nw-prose pre code {
+    padding: 0;
+    background: none;
+}
+
+.nw-prose table {
+    display: block;
+    width: 100%;
+    margin: 1.6em 0;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.nw-prose th,
+.nw-prose td {
+    padding: 10px 14px;
+    border: 1px solid var(--gm-line);
+    text-align: left;
+}
+
+.nw-prose th {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.nw-section {
+    padding-top: 56px;
+}
+
+.nw-section--last {
+    padding-bottom: 80px;
+}
+
+.nw-section__gap {
+    margin-top: 36px;
+}
+
+.nw-studios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nw-studio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px 8px 8px;
+    border: 1px solid var(--gm-line);
+    border-radius: 999px;
+    background: var(--gm-card);
+    font-weight: 800;
+    transition: border-color 0.2s ease;
+}
+
+.nw-studio:hover {
+    border-color: var(--gm-accent);
+}
+
+.nw-studio img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* ---------- адаптив ---------- */
+@media (max-width: 720px) {
+    .nw-hero {
+        padding-top: 36px;
+    }
+
+    .nw-body {
+        padding-bottom: 52px;
+    }
+
+    .nw-featured {
+        min-height: 380px;
+        margin-bottom: 28px;
+        border-radius: 18px;
+    }
+
+    .nw-featured__body {
+        padding: 24px;
+    }
+
+    .nw-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .nw-cover {
+        min-height: 360px;
+    }
+
+    .nw-cover__inner .gm-crumbs {
+        margin-bottom: 70px;
+    }
+
+    .nw-cover__inner {
+        padding-bottom: 28px;
+    }
+
+    .nw-prose {
+        font-size: 17px;
+    }
+
+    .nw-section {
+        padding-top: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nw-card,
+    .nw-card__media img,
+    .nw-featured__bg,
+    .nw-studio {
+        transition: none;
+    }
+
+    .nw-card:hover,
+    .nw-card:hover .nw-card__media img,
+    .nw-featured:hover .nw-featured__bg {
+        transform: none;
+    }
+}
+
+/* Картки новин усередині обгорток анімації появи (головна) розтягуються на всю висоту клітинки */
+.nw-grid > .hm-reveal {
+    display: flex;
+}
+
+.nw-grid > .hm-reveal > .nw-card {
+    flex: 1;
+}
+
+/* Глобальні стилі сайту скидають маркери списків: повертаємо їх у тексті статті */
+.nw-prose ul {
+    list-style: disc;
+}
+
+.nw-prose ol {
+    list-style: decimal;
+}

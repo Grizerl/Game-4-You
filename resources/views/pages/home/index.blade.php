@@ -202,6 +202,28 @@
             </section>
         @endif
 
+        {{-- ============ ОСТАННІ НОВИНИ ============ --}}
+        @if ($latestNews->isNotEmpty())
+            <section class="hm-section" id="news">
+                <div class="container">
+                    <div class="hm-head hm-reveal">
+                        <div>
+                            <h2 class="gm-h2">{{ __('news.home_title') }}</h2>
+                            <p class="hm-hint">{{ __('news.home_hint') }}</p>
+                        </div>
+                        <a class="hm-link" href="{{ route('news.page') }}">{{ __('news.all_news') }} →</a>
+                    </div>
+                    <div class="nw-grid">
+                        @foreach ($latestNews as $i => $article)
+                            <div class="hm-reveal" style="--d: {{ $i * 80 }}ms">
+                                @include('pages.news.partials.card', ['article' => $article])
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
+
         {{-- ============ СТУДІЇ ТА ТВОРЦІ ============ --}}
         @if ($companies->isNotEmpty() || $creators->isNotEmpty())
             <section class="hm-section">
