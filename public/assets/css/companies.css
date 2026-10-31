@@ -1,0 +1,71 @@
+/* Сторінки студій. Спільні компоненти (cr-*, шрифти) беруться з creators.css */
+.co-logo {
+    width: 72px;
+    height: 72px;
+    flex: none;
+    object-fit: contain;
+    padding: 6px;
+    border-radius: 16px;
+    background: #fff;
+    border: 2px solid var(--cr-accent, rgb(239, 151, 232));
+}
+
+.co-logo--mini {
+    width: 56px;
+    height: 56px;
+    padding: 4px;
+    border-radius: 12px;
+    border-width: 1px;
+}
+
+.co-hero__logo {
+    width: 200px;
+    height: 200px;
+    flex: none;
+    object-fit: contain;
+    padding: 18px;
+    border-radius: 28px;
+    background: #fff;
+    border: 3px solid var(--cr-accent, rgb(239, 151, 232));
+    box-shadow: 0 0 0 8px rgba(239, 151, 232, 0.12);
+}
+
+.co-games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.co-games .cr-game {
+    height: 100%;
+}
+
+/* У списку студій чотири елементи фільтра (без «Посади») */
+.cr-filters.co-filters {
+    grid-template-columns: 2fr 1.2fr 1.4fr auto;
+}
+
+@media (max-width: 900px) {
+    .cr-filters.co-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .cr-filters.co-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .co-hero__logo {
+        width: 150px;
+        height: 150px;
+        padding: 14px;
+    }
+
+    .co-games {
+        grid-template-columns: 1fr;
+    }
+}

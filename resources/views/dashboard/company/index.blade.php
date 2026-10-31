@@ -3,38 +3,48 @@
 @section('title', 'Companies')
 
 @section('content')
-<a href="{{ route('companies.create') }}" class="btn">+ Add New Company</a>
-<br><br>
+<div class="toolbar">
+    <a href="{{ route('companies.create') }}" class="btn">+ Add New Company</a>
+
+    <form method="get" action="{{ route('companies.index') }}" class="search">
+        <input type="search" name="q" value="{{ request('q') }}" placeholder="Search by name">
+        <button class="btn">Search</button>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>#</th>
+            <th>Logo</th>
             <th>Company</th>
-            <th>About</th>
+            <th>Slug</th>
             <th>Country</th>
-            <th width="200">Actions</th>
+            <th>Games</th>
+            <th>Creators</th>
+            <th width="260">Actions</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach($company as $item)
+        @forelse($company as $item)
             <tr>
                 <td>{{ $item->id }}</td>
+                <td><img src="{{ $item->logo_url }}" alt="" width="44" height="44" class="thumb"></td>
                 <td>
-                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk') }} <br>
-                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en') }}
+                    <strong>UA:</strong> {{ $item->getTranslation('name', 'uk', false) }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('name', 'en', false) }}
                 </td>
+                <td>{{ $item->slug }}</td>
                 <td>
-                    <strong>UA:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'uk'), 40) }} <br>
-                    <strong>EN:</strong> {{ \Illuminate\Support\Str::limit($item->getTranslation('description', 'en'), 40) }}
+                    <strong>UA:</strong> {{ $item->getTranslation('country', 'uk', false) }} <br>
+                    <strong>EN:</strong> {{ $item->getTranslation('country', 'en', false) }}
                 </td>
+                <td>{{ $item->games_count }}</td>
+                <td>{{ $item->creators_count }}</td>
 
                 <td>
-                    <strong>UA:</strong> {{ $item->getTranslation('country', 'uk') }} <br>
-                    <strong>EN:</strong> {{ $item->getTranslation('country', 'en') }}
-                </td>
-
-                <td>
+                    <a href="{{ route('company.show.page', $item) }}" target="_blank" rel="noopener" class="edit">View</a>
                     <a href="{{ route('companies.edit', $item->id) }}" class="edit">Edit</a>
                     <form action="{{ route('companies.destroy', $item->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -43,11 +53,83 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="8">No companies found.</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 
+<div class="pager">{{ $company->links() }}</div>
+
 <style>
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: flex;
+        gap: 8px;
+    }
+
+    .search input {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(15, 23, 42, 0.6);
+        color: #e2e8f0;
+    }
+
+    .search .btn {
+        border: none;
+        cursor: pointer;
+    }
+
+    .thumb {
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .pager {
+        margin-top: 20px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .pager nav > div:first-child {
+        display: none;
+    }
+
+    .pager .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        list-style: none;
+    }
+
+    .pager .page-link {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #e2e8f0;
+        text-decoration: none;
+    }
+
+    .pager .active .page-link {
+        background: #3b82f6;
+        border-color: #3b82f6;
+    }
+
+    .pager .disabled .page-link {
+        opacity: 0.4;
+    }
+
     .btn {
         display: inline-block;
         background: linear-gradient(135deg, #3b82f6, #6366f1);

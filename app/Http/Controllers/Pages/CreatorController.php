@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pages\CreatorIndexRequest;
-use App\Models\Category;
 use App\Models\Company;
 use App\Models\Creator;
-use App\Models\Game;
+use App\Support\GameStatistics;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 
@@ -66,15 +65,8 @@ class CreatorController extends Controller
         ]);
 
         $games = $creator->games;
-        $genres = $this->genres($games);
+        ['stats' => $stats, 'genres' => $genres] = GameStatistics::for($games);
         $socials = $creator->socialLinks();
-
-        $stats = [
-            'count' => $games->count(),
-            'average' => $games->isEmpty() ? null : (int) round($games->avg('rating')),
-            'max' => $games->max('rating'),
-            'main_genre' => $genres->first()['category'] ?? null,
-        ];
 
         $coCreators = Creator::query()
             ->withCount('games')
@@ -105,27 +97,6 @@ class CreatorController extends Controller
         return view('pages.creator.show', compact(
             'creator', 'games', 'stats', 'genres', 'socials', 'coCreators', 'previous', 'next', 'structuredData'
         ));
-    }
-
-    /**
-     * Розподіл ігор за жанрами: від найпоширенішого; за рівності — менший id категорії.
-     *
-     * @param  Collection<int, Game>  $games
-     * @return Collection<int, array{category: Category, count: int, percent: int}>
-     */
-    private function genres(Collection $games): Collection
-    {
-        $categorized = $games->filter(fn ($game): bool => $game->category !== null);
-
-        return $categorized
-            ->groupBy('category_id')
-            ->map(fn (Collection $group): array => [
-                'category' => $group->first()->category,
-                'count' => $group->count(),
-                'percent' => (int) round($group->count() / $categorized->count() * 100),
-            ])
-            ->sort(fn (array $a, array $b): int => [$b['count'], $a['category']->id] <=> [$a['count'], $b['category']->id])
-            ->values();
     }
 
     /**

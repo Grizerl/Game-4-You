@@ -31,6 +31,9 @@ Route::group(
         Route::get('/company', [PagesCompanyController::class, 'index'])
             ->name('company.page');
 
+        Route::get('/company/{company:slug}', [PagesCompanyController::class, 'show'])
+            ->name('company.show.page');
+
         Route::get('/games', [GamesController::class, 'index'])
             ->name('games.page');
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Support\PublicImage;
+use App\Support\SocialLinks;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,7 +22,7 @@ class Creator extends Model
 {
     use HasFactory, HasTranslations;
 
-    public const SOCIAL_KEYS = ['website', 'x', 'youtube', 'twitch', 'instagram'];
+    public const SOCIAL_KEYS = SocialLinks::KEYS;
 
     public const SORTS = ['new', 'games', 'name'];
 
@@ -112,17 +113,7 @@ class Creator extends Model
      */
     public function socialLinks(): array
     {
-        $links = [];
-
-        foreach (self::SOCIAL_KEYS as $key) {
-            $url = $this->socials[$key] ?? null;
-
-            if (is_string($url) && in_array(strtolower((string) parse_url($url, PHP_URL_SCHEME)), ['http', 'https'], true)) {
-                $links[$key] = $url;
-            }
-        }
-
-        return $links;
+        return SocialLinks::safe($this->socials);
     }
 
     /**

@@ -19,7 +19,7 @@ final class PublicImage
 
         return match (true) {
             Str::startsWith($path, ['http://', 'https://']) => $path,
-            Str::startsWith($path, ['/', 'assets/']) => asset(ltrim($path, '/')),
+            Str::startsWith($path, ['/', 'assets/', 'uploads/']) => asset(ltrim($path, '/')),
             default => asset('storage/'.$path),
         };
     }
