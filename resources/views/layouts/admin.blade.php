@@ -200,6 +200,10 @@
         <a href="{{ route('game.index') }}" class="nav-item {{ request()->is('admin/authors') ? 'active' : '' }}">
             <i class="fa-solid fa-gamepad"></i> Game
         </a>
+
+        <a href="{{ route('news.index') }}" class="nav-item {{ request()->is('control/news*') ? 'active' : '' }}">
+            <i class="fa-solid fa-newspaper"></i> News
+        </a>
     </div>
     <div class="main">
         <div class="header">

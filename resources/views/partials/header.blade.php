@@ -20,6 +20,9 @@
                                     <li class="nav-item">
                                         <a  class="nav-link" href="{{route('games.page')}}">{{ __('header.games') }}</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('news.page') }}">{{ __('header.news') }}</a>
+                                    </li>
                                 </ul>
                                 <ul class="connect-list">
                                     <li class="connect-item">
@@ -93,6 +96,9 @@
                                     </li>
                                     <li class="menu-item">
                                         <a  class="menu-link" href="{{route('games.page')}}">{{ __('header.games') }}</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="{{ route('news.page') }}">{{ __('header.news') }}</a>
                                     </li>
                                 </ul>
                                 <ul class="menu-list">

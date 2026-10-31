@@ -1189,3 +1189,8 @@ a.gm-pager__item:hover {
 .gm-strip::-webkit-scrollbar-thumb:hover {
     background: var(--gm-accent);
 }
+
+/* Якщо всі чіпи вміщаються (немає куди гортати) або JS вимкнено, кнопки-стрілки не потрібні */
+.gm-chips-wrap:not(.can-prev):not(.can-next) .gm-chips__arrow {
+    display: none;
+}
