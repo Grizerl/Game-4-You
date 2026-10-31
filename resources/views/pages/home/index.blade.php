@@ -1,235 +1,302 @@
 @extends('layouts.main')
 
+@php
+    $poster = asset('assets/video/hero-poster.jpg');
+    $steamUrl = config('services.social.steam');
+    $discordUrl = config('services.social.discord');
+    $titleWords = preg_split('/\s+/u', trim(__('home.title')), -1, PREG_SPLIT_NO_EMPTY);
+    $structuredData = [
+        '@context' => 'https://schema.org',
+        '@type' => 'WebSite',
+        'name' => 'Games 4 You',
+        'url' => route('home.page'),
+        'inLanguage' => app()->getLocale(),
+        'potentialAction' => [
+            '@type' => 'SearchAction',
+            'target' => ['@type' => 'EntryPoint', 'urlTemplate' => route('games.page').'?q={search_term_string}'],
+            'query-input' => 'required name=search_term_string',
+        ],
+    ];
+@endphp
+
+@section('title', __('home.meta_title'))
+
+@push('styles')
+    @include('pages.home.partials.assets')
+@endpush
+
+@push('head')
+    <script>document.documentElement.classList.add('hm-js')</script>
+    <meta name="description" content="{{ __('home.meta_description') }}">
+    <link rel="canonical" href="{{ route('home.page') }}">
+    @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $code => $locale)
+        <link rel="alternate" hreflang="{{ $code }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($code, route('home.page')) }}">
+    @endforeach
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('home.meta_title') }}">
+    <meta property="og:description" content="{{ __('home.meta_description') }}">
+    <meta property="og:image" content="{{ $poster }}">
+    <meta property="og:url" content="{{ route('home.page') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">{!! json_encode($structuredData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
+@endpush
+
+@push('scripts')
+    <script src="{{ asset('assets/js/home/home.js') }}" defer></script>
+@endpush
+
 @section('media_content')
-    <div class="sc-sdfTRf">
-        <div class="sc-fgdThz">
-            <div class="banner-content container w-100">
-                <div class="banner-badge">{{ __('home.badge') }}</div>
-                <h1 class="banner-title">{{ __('home.title') }}</h1>
-                <p class="banner-lead">
-                    {{ __('home.description') }}
-                </p>
-                <button class="btn-custom btn-1">
-                    <span><svg enable-background="new 0 0 64 64" height="25" width="25" stroke="currentColor" fill="currentColor" stroke-width="0" id="Layer_1" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M49.3,20.3c6.7,0,12.2,5.5,12.2,12.2c0,6.7-5.5,12.2-12.2,12.2c-4.8,0-9.1-2.8-11.1-7.2  c-0.4-0.9-1.3-1.5-2.3-1.5h-7.8c-1,0-1.9,0.6-2.3,1.5c-2,4.4-6.3,7.2-11.1,7.2C8,44.6,2.6,39.1,2.6,32.4c0-6.7,5.5-12.2,12.2-12.2  H49.3 M49.3,17.8H14.7c-8.1,0-14.7,6.6-14.7,14.7c0,8.1,6.6,14.7,14.7,14.7c5.9,0,11.1-3.5,13.4-8.6h7.8c2.3,5.1,7.4,8.6,13.4,8.6  c8.1,0,14.7-6.6,14.7-14.7C63.9,24.3,57.4,17.8,49.3,17.8L49.3,17.8z" fill="#20293B"/><circle cx="14.7" cy="32.4" fill="none" r="6.9" stroke="#20293B" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"/><path d="M49.3,22.9c-5.2,0-9.5,4.3-9.5,9.5s4.3,9.5,9.5,9.5c5.2,0,9.5-4.3,9.5-9.5S54.5,22.9,49.3,22.9z M44.9,34.2  c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S45.9,34.2,44.9,34.2z M49.3,38.5c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7  c1,0,1.7,0.8,1.7,1.7S50.2,38.5,49.3,38.5z M49.3,29.8c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7c1,0,1.7,0.8,1.7,1.7  S50.2,29.8,49.3,29.8z M53.6,34.2c-1,0-1.7-0.8-1.7-1.7s0.8-1.7,1.7-1.7s1.7,0.8,1.7,1.7S54.5,34.2,53.6,34.2z" fill="#20293B"/><polygon fill="#20293B" points="15.8,31.3 15.8,29 13.7,29 13.7,31.3 11.2,31.3 11.2,33.5 13.7,33.5 13.7,35.9 15.8,35.9 15.8,33.5   18.2,33.5 18.2,31.3 "/><path d="M32.2,33L32.2,33c-0.3-0.3-0.3-0.9,0-1.2l2.2-2.2c0.3-0.3,0.9-0.3,1.2,0v0c0.3,0.3,0.3,0.9,0,1.2L33.4,33  C33.1,33.4,32.5,33.4,32.2,33z" fill="#20293B"/><path d="M27.1,33L27.1,33c-0.3-0.3-0.3-0.9,0-1.2l2.2-2.2c0.3-0.3,0.9-0.3,1.2,0l0,0c0.3,0.3,0.3,0.9,0,1.2L28.3,33  C28,33.4,27.4,33.4,27.1,33z" fill="#20293B"/><path d="M21.6,16.9h-7.8c-1,0-1.7,0.8-1.7,1.7v0h11.2v0C23.4,17.7,22.6,16.9,21.6,16.9z" fill="#20293B"/><path d="M50.1,16.9h-7.8c-1,0-1.7,0.8-1.7,1.7v0h11.2v0C51.9,17.7,51.1,16.9,50.1,16.9z" fill="#20293B"/></svg></span>
-                    <a style="color: #fff;" href="https://store.steampowered.com/" target="_blank">{{ __('home.play_now') }}</a>
-                </button>
-            </div>
-        </div>
-    </div>
-<section>
-    <div class="sc-sdsPFK">
-        <div class="container">
-            <div class="sc-sghRfa">
-                <div class="upxXb">
-                <h3>
-                    {{ __('home.top_games') }} <span>{{ __('home.games') }}</span>
-                </h3>
-                <div class="line"></div>
-            </div>
-            <div class="sc-fsfFfa">
-                <div class="card-list">
-                    @foreach ($games as $game)
-                         <div class="sc-ktwOfi card">
-                        <div class="card-top">
-                            <img src="{{ asset('storage/' . $game->cover_image) }}" alt="{{ $game->name }}">
-                            <div class="card-rating">
-                                {{ $game->rating }} ⭐
-                            </div>
-                        </div>
-                        <div class="card-bottom">
-                            <h4 class="card-title">{{ $game->name }}</h4>
-                            <div class="group-detaile">
-                                <div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">{{ __('home.release_date') }}</p>
-                                        <p class="detaile-value">{{ $game->created_at->format('Y-m-d') }}</p>
-                                    </div>
-                                    <div class="detaile-item">
-                                        <p class="detaile-name">{{ __('home.updated') }}</p>
-                                        <p class="detaile-value">{{ $game->updated_at->format('Y-m-d') }}</p>
-                                    </div>
-                                </div>
-                                    <a href="{{route('games.show.page', $game)}}" class="detaile-btn-custom">{{ __('home.see_more') }}</a>
-                                </div>
-                            </div>
-                        </div>
+    <div class="gm-page hm-page">
+        {{-- ============ HERO З ВІДЕО ============ --}}
+        <section class="hm-hero" data-hm-hero>
+            <video class="hm-hero__video" data-hm-video muted loop autoplay playsinline preload="metadata"
+                   poster="{{ $poster }}" aria-hidden="true" tabindex="-1">
+                <source src="{{ asset('assets/video/hero.webm') }}" type="video/webm">
+                <source src="{{ asset('assets/video/hero.mp4') }}" type="video/mp4">
+            </video>
+            <div class="hm-hero__shade" aria-hidden="true"></div>
+            <div class="hm-hero__glow" data-hm-glow aria-hidden="true"></div>
+
+            <div class="container hm-hero__inner">
+                <p class="hm-badge">{{ __('home.badge') }}</p>
+
+                <h1 class="hm-hero__title">
+                    @foreach ($titleWords as $i => $word)
+                        <span class="hm-word" style="--i: {{ $i }}">{{ $word }}</span>{{ ' ' }}
                     @endforeach
-                    </div>  
+                </h1>
+
+                <p class="hm-hero__lead">{{ __('home.description') }}</p>
+
+                <form class="gm-search hm-search" method="GET" action="{{ route('games.page') }}" role="search">
+                    <span class="gm-sr">{{ __('home.search_label') }}</span>
+                    <input type="search" name="q" maxlength="100" placeholder="{{ __('home.search_placeholder') }}" aria-label="{{ __('home.search_label') }}">
+                    <button type="submit">{{ __('home.search_button') }}</button>
+                </form>
+
+                <div class="hm-hero__cta">
+                    <a class="gm-btn" href="{{ route('games.page') }}">{{ __('home.cta_catalog') }}</a>
+                    <a class="gm-btn gm-btn--ghost" href="{{ $steamUrl }}" target="_blank" rel="noopener noreferrer">🎮 {{ __('home.play_now') }}</a>
                 </div>
-                <div style="display: flex; align-items: center; margin-top: 50px;">
-                    <div class="container">
-                        <a class="card-button btn-card" href="{{route('games.page')}}"><span>{{ __('home.see_more_games') }}</span></a>
+
+                <dl class="hm-stats">
+                    <div>
+                        <dt>{{ __('home.stat_games') }}</dt>
+                        <dd data-hm-count="{{ $stats['games'] }}">{{ $stats['games'] }}</dd>
+                    </div>
+                    <div>
+                        <dt>{{ __('home.stat_companies') }}</dt>
+                        <dd data-hm-count="{{ $stats['companies'] }}">{{ $stats['companies'] }}</dd>
+                    </div>
+                    <div>
+                        <dt>{{ __('home.stat_creators') }}</dt>
+                        <dd data-hm-count="{{ $stats['creators'] }}">{{ $stats['creators'] }}</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="hm-hero__controls">
+                <button type="button" class="hm-ctrl" data-hm-pause
+                        data-label-pause="{{ __('home.video_pause') }}" data-label-play="{{ __('home.video_play') }}"
+                        aria-label="{{ __('home.video_pause') }}" aria-pressed="false">❚❚</button>
+                <button type="button" class="hm-ctrl" data-hm-mute
+                        data-label-mute="{{ __('home.video_mute') }}" data-label-unmute="{{ __('home.video_unmute') }}"
+                        aria-label="{{ __('home.video_unmute') }}" aria-pressed="true">🔇</button>
+            </div>
+
+            <a class="hm-scroll" href="#trending" aria-label="{{ __('home.scroll_down') }}">↓</a>
+        </section>
+
+        {{-- ============ ТРЕНДИ ============ --}}
+        @if ($newGames->isNotEmpty())
+            <section class="hm-section" id="trending">
+                <div class="container">
+                    <div class="hm-head hm-reveal">
+                        <div>
+                            <h2 class="gm-h2">{{ __('home.trending_title') }}</h2>
+                            <p class="hm-hint">{{ __('home.trending_hint') }}</p>
+                        </div>
+                        <div class="hm-head__side">
+                            <div class="hm-tabs" role="tablist" aria-label="{{ __('home.trending_title') }}">
+                                <button type="button" role="tab" id="tab-new" aria-controls="panel-new" aria-selected="true" data-hm-tab="new">{{ __('home.tab_new') }}</button>
+                                <button type="button" role="tab" id="tab-top" aria-controls="panel-top" aria-selected="false" data-hm-tab="top" tabindex="-1">{{ __('home.tab_top') }}</button>
+                            </div>
+                            <a class="hm-link" href="{{ route('games.page') }}">{{ __('home.see_all') }} →</a>
+                        </div>
+                    </div>
+
+                    <div class="hm-panel is-active hm-reveal" role="tabpanel" id="panel-new" aria-labelledby="tab-new" data-hm-panel="new">
+                        <h3 class="hm-panel__title">{{ __('home.tab_new') }}</h3>
+                        <div class="gm-strip hm-strip">
+                            @foreach ($newGames as $game)
+                                @include('pages.game.partials.poster', ['game' => $game])
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="hm-panel hm-reveal" role="tabpanel" id="panel-top" aria-labelledby="tab-top" data-hm-panel="top">
+                        <h3 class="hm-panel__title">{{ __('home.tab_top') }}</h3>
+                        <div class="gm-strip hm-strip">
+                            @foreach ($topGames as $game)
+                                @include('pages.game.partials.poster', ['game' => $game])
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="sc-DdshD section">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_1-mc0Hy4Sp.png') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_2-RlRwE6th.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_3-VvERGk7i.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_4-YfdR9_hu.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_5-U2mFURCN.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_6-KOIDvTyl.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_7-S7uvxQ7h.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_8-KU12EZws.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_9-NlFxEIDi.jpg') }}" alt="slider-img" loading="lazy"></div>
-            <div class="swiper-slide"><img src="{{ asset('assets/images/swiper/slider_img_10-lvYJu-HK.jpg') }}" alt="slider-img" loading="lazy"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-</div>
-<section>
-    <div>
-        <div class="sc-join" style="padding: 60px 0px; background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset('assets/images/join_image.png') }}') center center / cover no-repeat; ">
-            <div class="container">
-                <div class="join-container">
-                    <h2 class="join-title">{{ __('home.join') }} <span>{{ __('home.community') }}</span></h2>
-                    <p class="join-lead">
-                        {{ __('home.join_text') }}
-                    </p>
-                    <button class="join-btn"><a href="https://discord.com/" target="_blank">{{ __('home.join_discord') }}</a></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="sc-genres">
-    <div class="sc-sfFgg">
-        <h3 class="genres-title">{{ __('home.top') }}<span>{{ __('home.genres') }}</span></h3>
-        <div class="line"></div>
-        <div class="sc-DfghF">
-            <div class="container-genres">
-            <div class="tabs-content">
-            <div style="margin-top: 20px;">
-            <button id="btn-category" class="burger">
-                    <svg style="enable-background:new 0 0 24 24;" stroke="currentColor" fill="currentColor" stroke-width="0" height="32" width="32"  version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <g id="info"/><g id="icons"><g id="menu">
-                                <path d="M20,10H4c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2C22,10.9,21.1,10,20,10z"/>
-                                <path d="M4,8h12c1.1,0,2-0.9,2-2c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6C2,7.1,2.9,8,4,8z"/>
-                                <path d="M16,16H4c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2C18,16.9,17.1,16,16,16z"/>
-                            </g></g>
-                        </svg>
-                    </button>
-                <div id="navbar-menu-category" class="burger-container">
-                <ul class="list-genres">
-                     @foreach ($categories as $category)
-                        <li class="genres-item">
-                            <a href="{{ route('home.page', ['category_id' => $category->id]) }}" class="category-link {{ $category->id == $category_id ? 'active-category' : '' }}">
-                                {{ $category->title }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-                </div>
-            </div>
-            </div>
-            <div class="tabs-body">
-                <div class="sc-fsfFfa"> 
-                    <div class="card-list" id="games-container">
-                        @include('partials.games-list', ['games' => $games])
+            </section>
+        @endif
+
+        {{-- ============ SPOTLIGHT ============ --}}
+        @if ($spotlight)
+            <section class="hm-spot hm-reveal" aria-labelledby="spot-title">
+                <div class="hm-spot__bg" aria-hidden="true"><img src="{{ $spotlight->cover_url }}" alt="" loading="lazy"></div>
+                <div class="container hm-spot__grid">
+                    <a class="hm-spot__poster" href="{{ route('games.show.page', $spotlight) }}" tabindex="-1" aria-hidden="true">
+                        <img src="{{ $spotlight->cover_url }}" alt="" loading="lazy" width="300" height="450">
+                    </a>
+                    <div class="hm-spot__body">
+                        <p class="hm-label">{{ __('home.spotlight_label') }}</p>
+                        <h2 class="hm-spot__title" id="spot-title">{{ $spotlight->name }}</h2>
+                        <ul class="hm-meta">
+                            @if ($spotlight->category)
+                                <li>{{ $spotlight->category->title }}</li>
+                            @endif
+                            <li class="hm-meta__rating">★ {{ number_format($spotlight->rating, 0, '.', ' ') }}</li>
+                            @foreach (array_slice($spotlight->platformList(), 0, 3) as $platform)
+                                <li>{{ $platform }}</li>
+                            @endforeach
+                        </ul>
+                        <p class="hm-spot__text">{{ \Illuminate\Support\Str::limit(strip_tags((string) $spotlight->description), 240) }}</p>
+                        <div class="hm-spot__cta">
+                            <a class="gm-btn" href="{{ route('games.show.page', $spotlight) }}">{{ __('home.spotlight_cta') }}</a>
+                            @if ($spotlight->trailerId())
+                                <a class="gm-btn gm-btn--ghost" href="{{ route('games.show.page', $spotlight) }}#trailer">▶ {{ __('home.spotlight_trailer') }}</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="sc-store">
-        <h3>
-            {{ __('home.our') }} <span class="aside-title">{{ __('home.game_stores') }}</span>
-        </h3>
+            </section>
+        @endif
 
-        <div style="margin-bottom: 30px;" class="line"></div>
-
-        <div class="container">
-            <div class="sc-FgFhjg">
-
-                @foreach ($storeGame as $game)
-                    <div class="card-store">
-
-                        <div class="card-img">
-                            <img src="{{ asset('storage/' . $game->cover_image) }}" 
-                                 alt="{{ $game->name }}" 
-                                 loading="lazy">
+        {{-- ============ ЖАНРИ ============ --}}
+        @if ($genres->isNotEmpty())
+            <section class="hm-section">
+                <div class="container">
+                    <div class="hm-head hm-reveal">
+                        <div>
+                            <h2 class="gm-h2">{{ __('home.genres_title') }}</h2>
+                            <p class="hm-hint">{{ __('home.genres_hint') }}</p>
                         </div>
+                    </div>
+                    <ul class="hm-genres">
+                        @foreach ($genres as $i => $genre)
+                            <li class="hm-reveal" style="--d: {{ min($i, 8) * 50 }}ms">
+                                <a class="hm-genre" style="--hue: {{ ($i * 47 + 170) % 360 }}" href="{{ route('games.page', ['category' => $genre->id]) }}">
+                                    <span class="hm-genre__name">{{ $genre->title }}</span>
+                                    <span class="hm-genre__count">{{ trans_choice('home.games_plural', $genre->games_count) }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </section>
+        @endif
 
-                        <div class="card-container">
-
-                            <h4 class="game-title">
-                                {{ $game->name }}
-                            </h4>
-
-                            <ul class="card-store-info">
-                                <li>
-                                    <span class="text-white">{{ __('home.games_rating') }}</span>
-                                    <a>{{ $game->rating }} ⭐</a>
-                                </li>
-
-                                <li>
-                                    <span class="text-white">{{ __('home.platforms') }}</span>
-                                    <a>{{ $game->platforms }}</a>
-                                </li>
+        {{-- ============ СТУДІЇ ТА ТВОРЦІ ============ --}}
+        @if ($companies->isNotEmpty() || $creators->isNotEmpty())
+            <section class="hm-section">
+                <div class="container">
+                    @if ($companies->isNotEmpty())
+                        <div class="hm-head hm-reveal">
+                            <div>
+                                <h2 class="gm-h2">{{ __('home.studios_title') }}</h2>
+                                <p class="hm-hint">{{ __('home.studios_hint') }}</p>
+                            </div>
+                            <a class="hm-link" href="{{ route('company.page') }}">{{ __('home.see_all_studios') }} →</a>
+                        </div>
+                        <div class="hm-marquee hm-reveal" data-hm-marquee>
+                            <ul class="hm-marquee__track">
+                                @foreach ([1, 2] as $copy)
+                                    @foreach ($companies as $company)
+                                        <li @if ($copy === 2) aria-hidden="true" class="hm-marquee__dup" @endif>
+                                            <a class="hm-logo" href="{{ route('company.show.page', $company) }}" @if ($copy === 2) tabindex="-1" @endif title="{{ $company->name }}">
+                                                @if ($company->logo_path)
+                                                    <img src="{{ $company->logo_url }}" alt="{{ $copy === 1 ? $company->name : '' }}" loading="lazy" height="44">
+                                                @else
+                                                    <span>{{ $company->name }}</span>
+                                                @endif
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                @endforeach
                             </ul>
+                        </div>
+                    @endif
 
-                            <p style="font-weight:700; margin-top:10px;  color: #fff;   text-transform: uppercase;">
-                                {{ __('home.info') }}
-                            </p>
-
-                            <ul class="card-store-games">
-
-                                <li>
-                                    <span>{{ __('home.category') }} {{ $game->category->title ?? 'No category' }}</span>
-                                </li>
-
-                                <li>
-                                    <span>{{ __('home.company') }} {{ $game->company->name ?? 'No company' }}</span>
-                                </li>
-
-                                <li>
-                                   <span>{{ __('home.creator') }}
-                                        {{ $game->creator->first_name ?? '' }}
-                                        {{ $game->creator->last_name ?? '' }}
+                    @if ($creators->isNotEmpty())
+                        <div class="hm-head hm-head--spaced hm-reveal">
+                            <div>
+                                <h2 class="gm-h2">{{ __('home.creators_title') }}</h2>
+                                <p class="hm-hint">{{ __('home.creators_hint') }}</p>
+                            </div>
+                            <a class="hm-link" href="{{ route('creator.page') }}">{{ __('home.see_all_creators') }} →</a>
+                        </div>
+                        <div class="hm-people">
+                            @foreach ($creators as $i => $creator)
+                                <a class="hm-person hm-reveal" style="--d: {{ $i * 70 }}ms" href="{{ route('creator.show.page', $creator) }}">
+                                    <img src="{{ $creator->avatar_url }}" alt="" loading="lazy" width="64" height="64">
+                                    <span class="hm-person__body">
+                                        <strong>{{ $creator->full_name }}</strong>
+                                        <small>{{ implode(', ', array_slice($creator->roleList(), 0, 2)) }}</small>
+                                        <em>🎮 {{ trans_choice('home.games_plural', $creator->games_count) }}</em>
                                     </span>
-                                </li>
-                            </ul>
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            </section>
+        @endif
+
+        {{-- ============ ВІДГУКИ ============ --}}
+        @if ($comments->isNotEmpty())
+            <section class="hm-section">
+                <div class="container">
+                    <div class="hm-head hm-reveal">
+                        <div>
+                            <h2 class="gm-h2">{{ __('home.comments_title') }}</h2>
+                            <p class="hm-hint">{{ __('home.comments_hint') }}</p>
                         </div>
                     </div>
-                @endforeach
+                    <div class="hm-reviews">
+                        @foreach ($comments as $i => $comment)
+                            <article class="hm-review hm-reveal" style="--d: {{ $i * 60 }}ms">
+                                <header>
+                                    <span class="gm-comment__avatar" aria-hidden="true">{{ mb_strtoupper(mb_substr($comment->name, 0, 1)) }}</span>
+                                    <div>
+                                        <strong>{{ $comment->name }}</strong>
+                                        <time datetime="{{ $comment->created_at?->toIso8601String() }}">{{ $comment->created_at?->diffForHumans() }}</time>
+                                    </div>
+                                </header>
+                                <p>{{ $comment->content }}</p>
+                                <a href="{{ route('games.show.page', $comment->game) }}#comments">{{ $comment->game->name }} →</a>
+                            </article>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        {{-- ============ СПІЛЬНОТА ============ --}}
+        <section class="hm-community hm-reveal">
+            <div class="container hm-community__inner">
+                <h2 class="hm-community__title">{{ __('home.join') }} <span>{{ __('home.community') }}</span></h2>
+                <p class="hm-community__text">{{ __('home.join_text') }}</p>
+                <div class="hm-community__cta">
+                    <a class="gm-btn" href="{{ $discordUrl }}" target="_blank" rel="noopener noreferrer">{{ __('home.join_discord') }}</a>
+                    <a class="gm-btn gm-btn--ghost" href="{{ $steamUrl }}" target="_blank" rel="noopener noreferrer">{{ __('home.join_steam') }}</a>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $(document).on('click', '.category-link', function(e) {
-        e.preventDefault(); 
-        let categoryId = $(this).attr('href').split('category_id=')[1]; 
-        $('.category-link').removeClass('active-category');
-        $(this).addClass('active-category');
-        $.ajax({
-            url: "{{ route('games') }}",
-            type: "GET",
-            data: { category_id: categoryId },
-           success: function(response) {
-                $('#games-container').html(response);
-
-                if (swiper) {
-                    swiper.destroy(true, true);
-                }
-
-                initSwiper();
-            },
-            error: function(xhr) {
-                console.error("Помилка AJAX:", xhr.responseText); 
-            }
-        });
-    });
-});
-</script>
 @endsection
