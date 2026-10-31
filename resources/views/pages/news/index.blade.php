@@ -12,7 +12,6 @@
     @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $code => $locale)
         <link rel="alternate" hreflang="{{ $code }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($code, route('news.page')) }}">
     @endforeach
-    <link rel="alternate" type="application/rss+xml" title="{{ __('news.feed_title') }}" href="{{ route('news.feed.page') }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ __('news.meta_title') }}">
     <meta property="og:description" content="{{ __('news.meta_description') }}">
@@ -40,7 +39,6 @@
                         <input type="search" name="q" value="{{ $filters['q'] }}" maxlength="100" placeholder="{{ __('news.search_placeholder') }}" aria-label="{{ __('news.search_label') }}">
                         <button type="submit">{{ __('news.search_button') }}</button>
                     </form>
-                    <a class="nw-rss" href="{{ route('news.feed.page') }}">◉ {{ __('news.rss') }}</a>
                 </div>
 
                 @if ($tags->isNotEmpty())

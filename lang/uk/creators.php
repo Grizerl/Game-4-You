@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'наші',
+    'title' => 'Наші',
     'title_span' => 'креатори',
 
     'bio' => 'Біографія',
@@ -56,5 +56,9 @@ return [
         'twitch' => 'Twitch',
         'instagram' => 'Instagram',
     ],
+
+    // SEO
+    'meta_title' => 'Розробники відеоігор — Game 4 You',
+    'meta_description_creators' => 'Відкривай світ розробників відеоігор! Дізнавайся більше про студії, які створюють улюблені ігри, їхні проєкти та досягнення.',
     'meta_description' => ':name — :role. Профіль творця на Games 4 You.',
 ];

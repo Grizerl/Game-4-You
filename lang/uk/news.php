@@ -17,7 +17,6 @@ return [
     'featured_badge' => 'Головна новина',
     'read_more' => 'Читати далі',
     'min_read' => ':count хв читання',
-    'rss' => 'RSS-стрічка',
 
     // стаття
     'back_to_list' => 'Усі новини',

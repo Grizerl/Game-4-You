@@ -45,5 +45,8 @@ return [
     'similar_title' => 'Similar games',
     'more_title' => 'More from the studio and creator',
 
+    // SEO
+    'meta_title' => 'Video Games — Game 4 You',
+    'meta_description_games' => 'Explore the world of video games with Game 4 You! Discover different genres, explore popular titles, and find new games for your next gaming adventure.',
     'meta_description' => ':name — a game on Games 4 You.',
 ];

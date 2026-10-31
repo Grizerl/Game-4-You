@@ -50,5 +50,9 @@ return [
         'twitch' => 'Twitch',
         'instagram' => 'Instagram',
     ],
+
+    // SEO
+    'meta_title' => 'Gaming Companies — Game 4 You',
+    'meta_description_company' => 'Explore the gaming industry! Discover companies that develop and publish video games, learn about their projects, and explore their contributions to the industry.',
     'meta_description' => ':name — game studio. Profile on Games 4 You.',
 ];

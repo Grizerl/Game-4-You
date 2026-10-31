@@ -17,7 +17,6 @@ return [
     'featured_badge' => 'Top story',
     'read_more' => 'Read more',
     'min_read' => ':count min read',
-    'rss' => 'RSS feed',
 
     // article
     'back_to_list' => 'All news',

@@ -1,9 +1,21 @@
 @extends('layouts.main')
 
-@section('title', __('creators.title') . ' ' . __('creators.title_span') . ' — Games 4 You')
+@section('title', __('creators.meta_title'))
 
 @push('styles')
     @include('pages.creator.partials.assets')
+@endpush
+
+@push('head')
+    <meta name="description" content="{{ __('creators.meta_description_creators') }}">
+    <link rel="canonical" href="{{ route('creator.page') }}">
+    @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $code => $locale)
+        <link rel="alternate" hreflang="{{ $code }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($code, route('creator.page')) }}">
+    @endforeach
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('creators.meta_title') }}">
+    <meta property="og:description" content="{{ __('creators.meta_description_creators') }}">
+    <meta property="og:url" content="{{ route('creator.page') }}">
 @endpush
 
 @push('scripts')

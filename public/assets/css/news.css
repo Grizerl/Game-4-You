@@ -50,16 +50,6 @@
     max-width: 640px;
 }
 
-.nw-rss {
-    color: var(--gm-gold) !important;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-}
-
-.nw-rss:hover {
-    text-decoration: underline;
-}
-
 .nw-body {
     padding-top: 32px;
     padding-bottom: 72px;

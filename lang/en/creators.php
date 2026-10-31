@@ -56,5 +56,9 @@ return [
         'twitch' => 'Twitch',
         'instagram' => 'Instagram',
     ],
+
+    // SEO
+    'meta_title' => 'Video Game Developers — Game 4 You',
+    'meta_description_creators' => 'Explore the world of video game developers! Discover the studios behind your favorite games, their projects, and achievements.',
     'meta_description' => ':name — :role. Creator profile on Games 4 You.',
 ];

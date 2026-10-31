@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'all' => 'всі',
+    'all' => 'Всі',
     'games' => 'ігри',
 
     'search_label' => 'Пошук гри',

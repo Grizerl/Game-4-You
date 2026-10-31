@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', __('games.all') . ' ' . __('games.games') . ' — Games 4 You')
+@section('title', __('game.meta_title'))
 
 @push('styles')
     @include('pages.game.partials.assets')
@@ -8,6 +8,18 @@
 
 @push('scripts')
     <script src="{{ asset('assets/js/games/games.js') }}" defer></script>
+@endpush
+
+@push('head')
+    <meta name="description" content="{{ __('game.meta_description_games') }}">
+    <link rel="canonical" href="{{ route('games.page') }}">
+    @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $code => $locale)
+        <link rel="alternate" hreflang="{{ $code }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($code, route('games.page')) }}">
+    @endforeach
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('game.meta_title') }}">
+    <meta property="og:description" content="{{ __('game.meta_description_games') }}">
+    <meta property="og:url" content="{{ route('games.page') }}">
 @endpush
 
 @section('media_content')

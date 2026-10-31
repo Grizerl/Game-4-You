@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', __('companies.all') . ' ' . __('companies.title_span') . ' — Games 4 You')
+@section('title', __('companies.meta_title'))
 
 @push('styles')
     @include('pages.store.partials.assets')
@@ -8,6 +8,18 @@
 
 @push('scripts')
     <script src="{{ asset('assets/js/creators/creators.js') }}" defer></script>
+@endpush
+
+@push('head')
+    <meta name="description" content="{{ __('companies.meta_description_company') }}">
+    <link rel="canonical" href="{{ route('company.page') }}">
+    @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $code => $locale)
+        <link rel="alternate" hreflang="{{ $code }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($code, route('company.page')) }}">
+    @endforeach
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('companies.meta_title') }}">
+    <meta property="og:description" content="{{ __('companies.meta_description_company') }}">
+    <meta property="og:url" content="{{ route('company.page') }}">
 @endpush
 
 @section('media_content')
