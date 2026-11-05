@@ -12,6 +12,7 @@ use App\Http\Controllers\Pages\CreatorController as PagesCreatorController;
 use App\Http\Controllers\Pages\GamesController;
 use App\Http\Controllers\Pages\HomeController;
 use App\Http\Controllers\Pages\NewsController;
+use App\Http\Controllers\Pages\SearchController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -50,6 +51,10 @@ Route::group(
 
         Route::get('/news/{article:slug}', [NewsController::class, 'show'])
             ->name('news.show.page');
+
+        Route::get('/search/suggest', [SearchController::class, 'suggest'])
+            ->middleware('throttle:30,1')
+            ->name('search.suggest');
 
         Route::post('/comments', [CommentController::class, 'store'])
             ->middleware('throttle:5,1')

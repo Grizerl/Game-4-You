@@ -1,0 +1,520 @@
+/*
+ * Шапка сайту (.sh-*): логотип + пошук на всю ширину + бургер зі шторкою; пошук із випадаючим
+ * списком (.hs-*). Кольори — з палітри сайту (index.css).
+ */
+
+:root {
+    --sh-bg: #090624;
+    --sh-bg-soft: #100e2b;
+    --sh-line: rgba(255, 255, 255, 0.14);
+    --sh-accent: #b9198e;
+    --sh-accent-light: #ef97e8;
+    --sh-text: #fff;
+    --sh-muted: rgba(255, 255, 255, 0.62);
+}
+
+/* ---------- шапка ---------- */
+
+.sh .container {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.sh-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.sh-brand {
+    flex: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.28em;
+    font-size: 30px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.sh-brand span {
+    font-size: inherit;
+}
+
+.sh-iconbtn {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--sh-line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--sh-text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sh-burger {
+    margin-left: auto;
+}
+
+.hs-search ~ .sh-burger {
+    margin-left: 0;
+}
+
+.sh-search-toggle {
+    display: none;
+}
+
+.sh-ico--close,
+.sh-search-toggle[aria-expanded="true"] .sh-ico--search {
+    display: none;
+}
+
+.sh-search-toggle[aria-expanded="true"] .sh-ico--close {
+    display: block;
+}
+
+.sh-iconbtn:hover,
+.sh-iconbtn:focus-visible,
+.sh-search-toggle[aria-expanded="true"] {
+    border-color: var(--sh-accent);
+    background: rgba(185, 25, 142, 0.18);
+    outline: 0;
+}
+
+.sh-burger__lines {
+    display: grid;
+    gap: 5px;
+    width: 20px;
+}
+
+.sh-burger__lines i {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+}
+
+.sh-burger__lines i:nth-child(2) {
+    width: 70%;
+    margin-left: auto;
+}
+
+/* ---------- шторка ---------- */
+
+.sh-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1990;
+    background: rgba(4, 2, 14, 0.66);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sh-overlay.is-open {
+    opacity: 1;
+}
+
+.sh-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: min(380px, 100%);
+    padding: 22px 26px 28px;
+    overflow-y: auto;
+    background:
+        radial-gradient(120% 60% at 100% 0%, rgba(185, 25, 142, 0.28), transparent 60%),
+        var(--sh-bg);
+    border-left: 1px solid var(--sh-line);
+    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.45);
+    color: var(--sh-text);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1), visibility 0s linear 0.35s;
+}
+
+.sh-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+.sh-drawer:focus {
+    outline: 0;
+}
+
+.sh-drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sh-drawer__title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sh-muted);
+}
+
+.sh-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--sh-line);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--sh-text);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sh-close:hover,
+.sh-close:focus-visible {
+    border-color: var(--sh-accent);
+    background: rgba(185, 25, 142, 0.18);
+    outline: 0;
+}
+
+.sh-nav ul {
+    display: grid;
+    gap: 6px;
+}
+
+.sh-link {
+    position: relative;
+    display: block;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--sh-text);
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.sh-link:hover,
+.sh-link:focus-visible {
+    padding-left: 24px;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--sh-accent-light);
+    outline: 0;
+}
+
+.sh-link.is-active {
+    background: rgba(185, 25, 142, 0.22);
+    color: var(--sh-text);
+}
+
+.sh-link.is-active::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    left: 0;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--sh-accent);
+}
+
+.sh-connect {
+    margin-top: auto;
+    padding-top: 22px;
+    border-top: 1px solid var(--sh-line);
+}
+
+.sh-connect__title {
+    margin-bottom: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sh-muted);
+}
+
+.sh-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sh-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--sh-line);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--sh-text);
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sh-social svg {
+    width: 22px;
+    height: 22px;
+}
+
+.sh-social:hover,
+.sh-social:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--sh-accent);
+    background: var(--sh-accent);
+    color: var(--sh-text);
+    outline: 0;
+}
+
+body.sh-locked {
+    overflow: hidden;
+}
+
+/* ---------- пошук у шапці ---------- */
+
+.hs-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.hs-search {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    height: 42px;
+    padding: 0 4px 0 18px;
+    border: 1px solid var(--sh-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.hs-search:focus-within {
+    border-color: var(--sh-accent);
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 0 4px rgba(185, 25, 142, 0.22);
+}
+
+.hs-search input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--sh-text);
+    font-family: var(--font-family-barlow, inherit);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.hs-search input::placeholder {
+    color: var(--sh-muted);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.hs-search input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.hs-search__btn {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sh-accent);
+    color: var(--sh-text);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hs-search__btn:hover,
+.hs-search__btn:focus-visible {
+    background: #d11fa4;
+    transform: scale(1.06);
+    outline: 0;
+}
+
+.hs-search__list {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border: 1px solid var(--sh-line);
+    border-radius: 18px;
+    background: var(--sh-bg-soft);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.5);
+}
+
+.hs-search__list[hidden] {
+    display: none;
+}
+
+.hs-search__list a {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 2px 12px;
+    align-items: baseline;
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: var(--sh-text);
+    font-size: 16px;
+}
+
+.hs-search__list li.is-active a,
+.hs-search__list a:hover {
+    background: rgba(185, 25, 142, 0.24);
+}
+
+.hs-search.is-invalid {
+    border-color: #ff5d8f;
+    box-shadow: 0 0 0 4px rgba(255, 93, 143, 0.2);
+}
+
+.hs-search__msg {
+    padding: 12px 14px;
+    font-size: 15px;
+    color: var(--sh-muted);
+}
+
+.hs-search__msg.is-error {
+    color: #ff8fb1;
+}
+
+.hs-search__title {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.hs-search__label {
+    grid-column: 2;
+    font-size: 13px;
+    color: var(--sh-muted);
+}
+
+.hs-search__type {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sh-accent-light);
+}
+
+/* ---------- адаптив шапки ---------- */
+
+@media (max-width: 767px) {
+    .sh-bar {
+        flex-wrap: wrap;
+        gap: 12px 10px;
+    }
+
+    .sh-brand {
+        font-size: 26px;
+        margin-right: auto;
+    }
+
+    .sh-iconbtn {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+    }
+
+    .sh-search-toggle {
+        display: inline-flex;
+    }
+
+    .sh-burger,
+    .hs-search ~ .sh-burger {
+        margin-left: 0;
+    }
+
+    /* Поле пошуку на мобільному ховається; по кліку на іконку виїжджає окремим рядком знизу. */
+    .hs-search {
+        display: none;
+        order: 3;
+        flex: 1 1 100%;
+        height: 48px;
+    }
+
+    .hs-search input {
+        font-size: 16px;
+    }
+
+    .hs-search input::placeholder {
+        font-size: 16px;
+    }
+
+    .hs-search__btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .sh.is-search-open .hs-search {
+        display: flex;
+        animation: hs-slide-down 0.22s ease-out;
+    }
+}
+
+@keyframes hs-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 400px) {
+    .sh-brand {
+        font-size: 23px;
+    }
+
+    .sh-drawer {
+        padding: 18px 18px 22px;
+    }
+
+    .sh-link {
+        font-size: 18px;
+        padding: 12px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sh-drawer,
+    .sh-overlay,
+    .sh-link,
+    .sh-social {
+        transition: none;
+    }
+}

@@ -7,16 +7,9 @@ return [
     'description' => 'A catalog of video games, studios and their creators: ratings, trailers, screenshots and player reviews in one place.',
     'cta_catalog' => 'Browse games',
     'play_now' => 'Play now',
-    'search_label' => 'Search games',
-    'search_placeholder' => 'Find a game by title…',
-    'search_button' => 'Search',
     'stat_games' => 'games',
     'stat_companies' => 'studios',
     'stat_creators' => 'creators',
-    'video_pause' => 'Pause video',
-    'video_play' => 'Play video',
-    'video_mute' => 'Mute',
-    'video_unmute' => 'Unmute',
     'scroll_down' => 'Scroll down',
 
     // trending

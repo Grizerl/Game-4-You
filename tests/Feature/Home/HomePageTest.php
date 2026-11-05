@@ -58,14 +58,13 @@ class HomePageTest extends TestCase
     }
 
     #[Test]
-    public function hero_has_accessible_pause_and_mute_controls(): void
+    public function hero_has_no_video_pause_and_mute_controls(): void
     {
         $this->get(route('home.page'))
-            ->assertSee('data-hm-pause', false)
-            ->assertSee('data-hm-mute', false)
-            ->assertSee('aria-label="'.__('home.video_pause').'"', false)
-            ->assertSee('aria-label="'.__('home.video_unmute').'"', false)
-            ->assertSee('data-label-play="'.__('home.video_play').'"', false);
+            ->assertSee('data-hm-video', false)
+            ->assertDontSee('data-hm-pause', false)
+            ->assertDontSee('data-hm-mute', false)
+            ->assertDontSee('hm-ctrl', false);
     }
 
     #[Test]
@@ -79,11 +78,13 @@ class HomePageTest extends TestCase
     }
 
     #[Test]
-    public function hero_search_form_targets_catalog(): void
+    public function hero_has_no_own_search_form(): void
     {
+        config(['search.enabled' => true]);
+
         $this->get(route('home.page'))
-            ->assertSee('method="GET" action="'.route('games.page').'"', false)
-            ->assertSee('name="q"', false);
+            ->assertDontSee('class="gm-search hm-search"', false)
+            ->assertSee('data-hs-search', false);
     }
 
     #[Test]

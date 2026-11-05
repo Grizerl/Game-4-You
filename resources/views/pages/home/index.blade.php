@@ -68,12 +68,6 @@
 
                 <p class="hm-hero__lead">{{ __('home.description') }}</p>
 
-                <form class="gm-search hm-search" method="GET" action="{{ route('games.page') }}" role="search">
-                    <span class="gm-sr">{{ __('home.search_label') }}</span>
-                    <input type="search" name="q" maxlength="100" placeholder="{{ __('home.search_placeholder') }}" aria-label="{{ __('home.search_label') }}">
-                    <button type="submit">{{ __('home.search_button') }}</button>
-                </form>
-
                 <div class="hm-hero__cta">
                     <a class="gm-btn" href="{{ route('games.page') }}">{{ __('home.cta_catalog') }}</a>
                     <a class="gm-btn gm-btn--ghost" href="{{ $steamUrl }}" target="_blank" rel="noopener noreferrer">🎮 {{ __('home.play_now') }}</a>
@@ -93,15 +87,6 @@
                         <dd data-hm-count="{{ $stats['creators'] }}">{{ $stats['creators'] }}</dd>
                     </div>
                 </dl>
-            </div>
-
-            <div class="hm-hero__controls">
-                <button type="button" class="hm-ctrl" data-hm-pause
-                        data-label-pause="{{ __('home.video_pause') }}" data-label-play="{{ __('home.video_play') }}"
-                        aria-label="{{ __('home.video_pause') }}" aria-pressed="false">❚❚</button>
-                <button type="button" class="hm-ctrl" data-hm-mute
-                        data-label-mute="{{ __('home.video_mute') }}" data-label-unmute="{{ __('home.video_unmute') }}"
-                        aria-label="{{ __('home.video_unmute') }}" aria-pressed="true">🔇</button>
             </div>
 
             <a class="hm-scroll" href="#trending" aria-label="{{ __('home.scroll_down') }}">↓</a>

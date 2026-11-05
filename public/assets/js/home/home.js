@@ -6,29 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- відео ----
     const video = document.querySelector('[data-hm-video]');
-    const pauseButton = document.querySelector('[data-hm-pause]');
-    const muteButton = document.querySelector('[data-hm-mute]');
-
-    const syncPause = () => {
-        if (!video || !pauseButton) {
-            return;
-        }
-
-        const paused = video.paused;
-        pauseButton.textContent = paused ? '▶' : '❚❚';
-        pauseButton.setAttribute('aria-pressed', paused ? 'true' : 'false');
-        pauseButton.setAttribute('aria-label', paused ? pauseButton.dataset.labelPlay : pauseButton.dataset.labelPause);
-    };
-
-    const syncMute = () => {
-        if (!video || !muteButton) {
-            return;
-        }
-
-        muteButton.textContent = video.muted ? '🔇' : '🔊';
-        muteButton.setAttribute('aria-pressed', video.muted ? 'true' : 'false');
-        muteButton.setAttribute('aria-label', video.muted ? muteButton.dataset.labelUnmute : muteButton.dataset.labelMute);
-    };
 
     if (video) {
         if (reduceMotion || saveData) {
@@ -39,26 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             video.play().catch(() => {});
         }
-
-        video.addEventListener('play', syncPause);
-        video.addEventListener('pause', syncPause);
-
-        pauseButton?.addEventListener('click', () => {
-            if (video.paused) {
-                video.preload = 'auto';
-                video.play().catch(() => {});
-            } else {
-                video.pause();
-            }
-        });
-
-        muteButton?.addEventListener('click', () => {
-            video.muted = !video.muted;
-            syncMute();
-        });
-
-        syncPause();
-        syncMute();
     }
 
     // ---- підсвічування за курсором у hero ----

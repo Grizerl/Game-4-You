@@ -95,6 +95,18 @@ docker compose -f docker-compose.yml -f docker-compose.game4you.yml \
 
 See [`CLAUDE.md`](CLAUDE.md) for the full list of commands and conventions.
 
+### 🔎 Site search (Elasticsearch 9)
+
+Search in the header dropdown (games, creators, companies, news, categories) is powered by Elasticsearch 9, run as the `elasticsearch-9` service from `docker-compose.game4you.yml`.
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.game4you.yml up -d elasticsearch-9
+# inside the workspace: set SEARCH_ENABLED=true and ELASTICSEARCH_HOST in .env, then build the index
+php artisan search:reindex
+```
+
+Model changes are indexed through the queue (a queue worker and `schedule:run` are required in production). With `SEARCH_ENABLED=false` the site works as usual and the search box is hidden. Details in [`CLAUDE.md`](CLAUDE.md).
+
 ## 🔌 API
 
 All endpoints are `GET` and return JSON.

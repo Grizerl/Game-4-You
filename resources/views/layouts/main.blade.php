@@ -6,6 +6,7 @@
     <link rel="icon" type="images" href="/assets/images/logo-vAIZT_ch.png">
     <link rel="stylesheet" crossorigin href="/assets/css/index.css">
     <link rel="stylesheet" crossorigin href="/assets/css/details.css">
+    <link rel="stylesheet" href="/assets/css/search.css">
     @stack('styles')
     <title>@yield('title', 'Games 4 You')</title>
     @stack('head')
@@ -14,7 +15,8 @@
     @include('partials.header')
     @include('partials.footer')
     <script src="/assets/js/details/btn.js"></script>
-    <script src="/assets/js/menu/menu.js"></script>
+    <script src="/assets/js/search/header.js" defer></script>
+    <script src="/assets/js/search/search.js" defer></script>
     @stack('scripts')
 </body>
 </html>

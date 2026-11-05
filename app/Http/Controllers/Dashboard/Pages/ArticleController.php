@@ -9,6 +9,7 @@ use App\Models\Article;
 use App\Models\Company;
 use App\Models\Game;
 use App\Models\Tag;
+use App\Services\Search\SearchSync;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -149,6 +150,8 @@ class ArticleController extends Controller
         $article->tags()->sync($tagIds);
         $article->games()->sync($data['games'] ?? []);
         $article->companies()->sync($data['companies'] ?? []);
+
+        SearchSync::index($article);
     }
 
     private function deleteFile(?string $path): void

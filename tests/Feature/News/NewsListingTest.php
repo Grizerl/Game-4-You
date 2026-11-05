@@ -166,11 +166,11 @@ class NewsListingTest extends TestCase
     }
 
     #[Test]
-    public function header_links_to_news_on_desktop_and_mobile_menus(): void
+    public function header_links_to_news_from_the_drawer_menu(): void
     {
         $response = $this->get(route('home.page'));
 
-        $this->assertSame(2, substr_count($response->getContent(), 'href="'.route('news.page').'"'));
+        $this->assertSame(1, substr_count($response->getContent(), 'href="'.route('news.page').'"'));
     }
 
     #[Test]
