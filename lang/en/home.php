@@ -1,34 +1,54 @@
 <?php
 
 return [
-    'badge' => 'ENJOY THE GAMES',
-    'title' => 'join streaming',
-    'description' => 'Live gaming streams, a wide variety of exciting games, and nonstop action await you. Join the gaming world, discover new experiences, connect with other players, and enjoy every moment to the fullest.',
-    'play_now' => 'play now',
+    // hero
+    'badge' => 'Gaming portal',
+    'title' => 'Discover. Play. Discuss.',
+    'description' => 'A catalog of video games, studios and their creators: ratings, trailers, screenshots and player reviews in one place.',
+    'cta_catalog' => 'Browse games',
+    'play_now' => 'Play now',
+    'stat_games' => 'games',
+    'stat_companies' => 'studios',
+    'stat_creators' => 'creators',
+    'scroll_down' => 'Scroll down',
 
-    'top_games' => 'top popular',
-    'games' => 'games',
+    // trending
+    'trending_title' => 'Trending now',
+    'trending_hint' => 'Fresh releases and the highest rated games',
+    'tab_new' => 'New',
+    'tab_top' => 'Top',
+    'see_all' => 'All games',
 
-    'release_date' => 'Release Date:',
-    'updated' => 'Updated:',
-    'see_more' => 'See More',
-    'see_more_games' => 'See More Games',
+    // spotlight
+    'spotlight_label' => 'Spotlight',
+    'spotlight_cta' => 'About the game',
+    'spotlight_trailer' => 'Trailer',
 
-    'join' => 'JOIN THE',
-    'community' => 'COMMUNITY',
-    'join_text' => 'Join our Discord community made by gamers for gamers.Join our Discord community made by gamers, for gamers, where you can connect with players from around the world, share your gaming experiences, find teammates, discuss your favorite titles, and stay updated with the latest news, events, and updates from the gaming world.',
+    // genres
+    'genres_title' => 'Pick a genre',
+    'genres_hint' => 'From action to strategy: find a game for your mood',
+    'games_plural' => ':count game|:count games',
+
+    // studios and creators
+    'studios_title' => 'Studios',
+    'studios_hint' => 'Teams behind the games',
+    'creators_title' => 'Creators',
+    'creators_hint' => 'The most productive authors',
+    'see_all_studios' => 'All studios',
+    'see_all_creators' => 'All creators',
+
+    // comments
+    'comments_title' => 'What players say',
+    'comments_hint' => 'Latest game reviews',
+
+    // community
+    'join' => 'Join the',
+    'community' => 'community',
+    'join_text' => 'Talk about your favorite games, find a team for co-op sessions and share your impressions with players from all over the world.',
     'join_discord' => 'Join Discord',
+    'join_steam' => 'Steam store',
 
-    'top' => 'Top',
-    'genres' => 'Genres',
-
-    'our' => 'our',
-    'game_stores' => 'game stores',
-
-    'platforms' => 'Platforms:',
-    'games_rating' => 'Games rating:',
-    'info' => 'Game Info:',
-    'category' => 'Category:',
-    'company' => 'Company:',
-    'creator' => 'Creator:'
+    // SEO
+    'meta_title' => 'Games 4 You — a catalog of games, studios and creators',
+    'meta_description' => 'A video game catalog: ratings, trailers, screenshots, studios and creators. Find your next game.',
 ];

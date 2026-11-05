@@ -2,11 +2,15 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
+use App\Models\Company;
+use App\Models\Creator;
+use App\Models\Game;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Game>
+ * @extends Factory<Game>
  */
 class GameFactory extends Factory
 {
@@ -50,10 +54,10 @@ class GameFactory extends Factory
             '/assets/images/games/8a02f84a5916ede2f923b88d5f8217ba.jpg',
             '/assets/images/games/48cb04ca483be865e3a83119c94e6097.jpg',
             '/assets/images/games/b54598d1d5cc31899f4f0a7e3122a7b0.jpg',
-            '/assets/images/games/f87457e8347484033cb34cde6101d08d.jpg'
+            '/assets/images/games/f87457e8347484033cb34cde6101d08d.jpg',
         ];
-               
-        $category = 
+
+        $category =
         [
             'Action',
             'Indie',
@@ -74,27 +78,36 @@ class GameFactory extends Factory
             'Board Games',
             'Educational',
             'Card',
-           
+
         ];
 
         $allPlatforms = ['PC', 'PlayStation 3',  'PlayStation 5', 'Xbox Series X', 'PlayStation 4', 'Xbox Series S/X'];
 
         $selectedPlatforms = Arr::random($allPlatforms, rand(2, 5));
-        
-        if (!is_array($selectedPlatforms)) {
+
+        if (! is_array($selectedPlatforms)) {
             $selectedPlatforms = [$selectedPlatforms];
         }
 
-        return 
+        return
         [
-            'name' => $this->faker->sentence(3),
-            'description' => $this->faker->paragraphs(5, true),
+            'name' => $this->localized($this->faker->sentence(3)),
+            'description' => $this->localized($this->faker->paragraphs(5, true)),
             'cover_image' => Arr::random($images),
             'rating' => $this->faker->numberBetween(100, 10000),
-            'platforms' => implode(', ', $selectedPlatforms), 
-            'creator_id' => $this->faker->numberBetween(1, 19),
-            'category_id' => $this->faker->numberBetween(1, 19),
-            'company_id' => $this->faker->numberBetween(1, 19),
+            'platforms' => implode(', ', $selectedPlatforms),
+            'released_at' => $this->faker->dateTimeBetween('-8 years', 'now')->format('Y-m-d'),
+            'creator_id' => Creator::factory(),
+            'category_id' => Category::factory(),
+            'company_id' => Company::factory(),
         ];
+    }
+
+    /**
+     * @return array{uk: string, en: string}
+     */
+    private function localized(string $text): array
+    {
+        return ['uk' => $text, 'en' => $text];
     }
 }

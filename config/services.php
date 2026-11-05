@@ -38,6 +38,12 @@ return [
     'telegram' => [
         'token' => env('TELEGRAM_BOT_TOKEN'),
         'chat_id' => env('TELEGRAM_CHAT_ID'),
-    ]
+    ],
+
+    // Зовнішні посилання на головній (кнопки «Грати зараз» і «Спільнота»).
+    'social' => [
+        'steam' => env('SOCIAL_STEAM_URL', 'https://store.steampowered.com/'),
+        'discord' => env('SOCIAL_DISCORD_URL', 'https://discord.com/'),
+    ],
 
 ];

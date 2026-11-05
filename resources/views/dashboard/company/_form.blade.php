@@ -1,0 +1,198 @@
+{{-- Спільні поля форм створення й редагування студії. $company — null при створенні. --}}
+@php
+    $c = $company ?? null;
+    $translated = fn (string $attribute, string $locale): ?string => $c ? $c->getTranslation($attribute, $locale, false) : null;
+    $locales = ['uk' => 'UA', 'en' => 'EN'];
+    $socialLabels = ['website' => 'Website', 'x' => 'X (Twitter)', 'youtube' => 'YouTube', 'twitch' => 'Twitch', 'instagram' => 'Instagram'];
+@endphp
+
+@foreach ($locales as $locale => $label)
+    <div class="form-group">
+        <label>Company Name ({{ $label }})</label>
+        <input type="text" name="name[{{ $locale }}]" value="{{ old("name.$locale", $translated('name', $locale)) }}"
+               class="@error("name.$locale") error-input @enderror">
+        @error("name.$locale")
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+@endforeach
+
+<div class="form-group">
+    <label>Slug (URL)</label>
+    <input type="text" name="slug" value="{{ old('slug', $c?->slug) }}" class="@error('slug') error-input @enderror" placeholder="big-studio" autocomplete="off">
+    <div class="hint">
+        Latin letters, digits and hyphens. {{ $c ? 'Leave empty to keep the current one.' : 'Leave empty to generate from the name.' }}
+    </div>
+    @error('slug')
+        <div class="error-text">{{ $message }}</div>
+    @enderror
+</div>
+
+@foreach ($locales as $locale => $label)
+    <div class="form-group">
+        <label>Description ({{ $label }})</label>
+        <textarea name="description[{{ $locale }}]" class="@error("description.$locale") error-input @enderror">{{ old("description.$locale", $translated('description', $locale)) }}</textarea>
+        @error("description.$locale")
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+@endforeach
+
+@foreach ($locales as $locale => $label)
+    <div class="form-group">
+        <label>Country ({{ $label }})</label>
+        <input type="text" name="country[{{ $locale }}]" value="{{ old("country.$locale", $translated('country', $locale)) }}"
+               class="@error("country.$locale") error-input @enderror"
+               placeholder="{{ $locale === 'uk' ? 'Країна українською' : 'Country in English' }}">
+        @error("country.$locale")
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    </div>
+@endforeach
+
+<div class="form-group">
+    <label>Founded (year)</label>
+    <input type="number" name="founded_year" value="{{ old('founded_year', $c?->founded_year) }}" min="1970" max="{{ now()->year }}"
+           class="@error('founded_year') error-input @enderror" placeholder="{{ now()->year - 20 }}">
+    @error('founded_year')
+        <div class="error-text">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="form-group">
+    <label>Social links</label>
+    @foreach ($socialLabels as $key => $label)
+        <div class="social-row">
+            <span>{{ $label }}</span>
+            <input type="url" name="socials[{{ $key }}]" value="{{ old("socials.$key", $c?->socials[$key] ?? null) }}"
+                   class="@error("socials.$key") error-input @enderror" placeholder="https://">
+        </div>
+        @error("socials.$key")
+            <div class="error-text">{{ $message }}</div>
+        @enderror
+    @endforeach
+    @error('socials')
+        <div class="error-text">{{ $message }}</div>
+    @enderror
+</div>
+
+<div class="form-group">
+    <label>Logo</label>
+
+    <div class="logo-preview">
+        <img data-logo-preview src="{{ $c?->logo_path ? $c->logo_url : '' }}" alt="Logo preview" width="100" height="100" @if (! $c?->logo_path) hidden @endif>
+    </div>
+
+    <input type="file" name="logo_path" accept="image/*" data-avatar-input class="@error('logo_path') error-input @enderror">
+    <div class="hint">JPG, PNG or WebP, up to 2 MB. Optional.</div>
+    @error('logo_path')
+        <div class="error-text">{{ $message }}</div>
+    @enderror
+</div>
+
+<br>
+
+<button class="btn">{{ $c ? 'Update Company' : 'Create Company' }}</button>
+
+<script>
+    document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        const preview = document.querySelector('[data-logo-preview]');
+
+        if (file && preview) {
+            preview.src = URL.createObjectURL(file);
+            preview.hidden = false;
+        }
+    });
+</script>
+
+<style>
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(255,255,255,0.1);
+        background: rgba(15, 23, 42, 0.6);
+        color: #e2e8f0;
+        outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: #3b82f6;
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .error-input {
+        border-color: #ef4444 !important;
+    }
+
+    .error-text {
+        color: #ef4444;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .hint {
+        color: #64748b;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .social-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 8px;
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .logo-preview {
+        margin-bottom: 10px;
+    }
+
+    .logo-preview img {
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    .btn:hover {
+        transform: translateY(-1px);
+    }
+
+    select {
+        color: #e2e8f0;
+    }
+
+    select option {
+        background: #0f172a;
+        color: #e2e8f0;
+    }
+</style>

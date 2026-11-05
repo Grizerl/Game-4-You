@@ -1,6 +1,58 @@
 <?php
 
 return [
-    'all' => 'всі',
+    'all' => 'Всі',
     'title_span' => 'компанії',
+
+    // список: пошук, фільтри, сортування
+    'search_label' => 'Пошук за назвою',
+    'search_placeholder' => 'Назва студії',
+    'country' => 'Країна',
+    'all_countries' => 'Усі країни',
+    'sort_label' => 'Сортування',
+    'sort_new' => 'Нещодавно додані',
+    'sort_games' => 'За кількістю ігор',
+    'sort_name' => 'За алфавітом',
+    'apply' => 'Застосувати',
+    'reset' => 'Скинути фільтри',
+    'top_title' => 'Топ-студії',
+    'top_subtitle' => 'Студії з найбільшою кількістю ігор',
+    'nothing_found' => 'Нічого не знайдено',
+    'nothing_found_hint' => 'Спробуйте змінити запит або скинути фільтри.',
+    'games_plural' => ':count гра|:count гри|:count ігор',
+    'creators_plural' => ':count творець|:count творці|:count творців',
+
+    // профіль
+    'back_to_list' => 'Усі компанії',
+    'founded' => 'Заснована',
+    'since' => 'З :year року',
+    'years' => ':count рік|:count роки|:count років',
+    'about_title' => 'Про студію',
+    'stats_title' => 'Статистика',
+    'stat_games' => 'Ігор',
+    'stat_creators' => 'Творців',
+    'stat_avg_rating' => 'Середній рейтинг',
+    'stat_max_rating' => 'Найвищий рейтинг',
+    'stat_main_genre' => 'Головний жанр',
+    'no_games_profile' => 'Ігор немає',
+    'genres_title' => 'Жанри',
+    'games_title' => 'Ігри студії',
+    'games_hint' => 'Від нових до старих (за датою додавання на сайт)',
+    'team_title' => 'Команда',
+    'prev' => 'Попередня',
+    'next' => 'Наступна',
+    'share' => 'Поділитися',
+    'share_copied' => 'Посилання скопійовано',
+    'social' => [
+        'website' => 'Сайт',
+        'x' => 'X',
+        'youtube' => 'YouTube',
+        'twitch' => 'Twitch',
+        'instagram' => 'Instagram',
+    ],
+
+    // SEO
+    'meta_title' => 'Ігрові компанії — Game 4 You',
+    'meta_description_company' => 'Досліджуй світ ігрової індустрії! Знайомся з компаніями, які видають і створюють відеоігри, дізнавайся про їхні проєкти та внесок у розвиток індустрії.',
+    'meta_description' => ':name — ігрова студія. Профіль на Games 4 You.',
 ];

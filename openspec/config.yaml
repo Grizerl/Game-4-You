@@ -1,0 +1,35 @@
+schema: spec-driven
+
+# Project context (optional)
+# This is shown to AI when creating artifacts.
+context: |
+  Tech stack: PHP 8.4, Laravel 13, MySQL 8, Blade, Vite 6, Tailwind 3, Bootstrap 5, Alpine.js (Node 22), PHPUnit 13.
+  Packages: mcamara/laravel-localization (localized routes /uk, /en), spatie/laravel-translatable (JSON translations on
+  Game/Category/Creator/Company), laravel/sanctum, laravel/breeze.
+  Domain: games catalog site "Game 4 You" - games, categories, creators, companies, comments; admin panel under /control;
+  public JSON API under /api; Telegram notification on new game. UI languages: uk (default), en.
+  Environment: runs in Laradock (php-fpm-84, workspace-84, nginx, mysql); see CLAUDE.md for commands.
+  Conventions: follow PHP 8.4 (typed code, no implicit nullable params); generate links via route(), never hardcode locale
+  prefixes; secrets only in .env. Specs describe real behaviour - check routes/web.php and migrations before writing them.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always include a "Non-goals" section
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

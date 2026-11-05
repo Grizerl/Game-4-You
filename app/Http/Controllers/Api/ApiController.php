@@ -12,8 +12,8 @@ class ApiController extends Controller
 {
     /**
      * Summary of getGames
-     * @param \Illuminate\Http\Request $request
-     * @return mixed|\Illuminate\Http\JsonResponse
+     *
+     * @return mixed|JsonResponse
      */
     public function getGames(Request $request): JsonResponse
     {
@@ -32,12 +32,13 @@ class ApiController extends Controller
 
     /**
      * Summary of creators
+     *
      * @return JsonResponse|mixed
      */
     public function creators(): JsonResponse
     {
 
-        $creators = Creator::paginate(14);
+        $creators = Creator::withCount('games')->paginate(14);
 
         if ($creators->isEmpty()) {
             return response()->json(['message' => 'No creator found'], 404);
@@ -48,6 +49,7 @@ class ApiController extends Controller
 
     /**
      * Summary of games
+     *
      * @return JsonResponse|mixed
      */
     public function games(): JsonResponse
@@ -64,7 +66,7 @@ class ApiController extends Controller
 
     /**
      * Summary of details
-     * @param int $id
+     *
      * @return JsonResponse|mixed
      */
     public function details(int $id): JsonResponse
@@ -72,7 +74,7 @@ class ApiController extends Controller
 
         $GameDetails = Game::find($id);
 
-        if (!$GameDetails) {
+        if (! $GameDetails) {
             return response()->json(['message' => 'Game not found'], 404);
         }
 
