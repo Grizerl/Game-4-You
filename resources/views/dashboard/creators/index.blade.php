@@ -47,7 +47,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="7">No creators found.</td>
+                <td colspan="7" class="empty"><i class="fa-regular fa-folder-open"></i>No creators found.</td>
             </tr>
         @endforelse
     </tbody>

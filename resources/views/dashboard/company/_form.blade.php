@@ -43,7 +43,7 @@
         <label>Country ({{ $label }})</label>
         <input type="text" name="country[{{ $locale }}]" value="{{ old("country.$locale", $translated('country', $locale)) }}"
                class="@error("country.$locale") error-input @enderror"
-               placeholder="{{ $locale === 'uk' ? 'Країна українською' : 'Country in English' }}">
+               placeholder="{{ $locale === 'uk' ? 'Country in Ukrainian' : 'Country in English' }}">
         @error("country.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -92,7 +92,10 @@
 
 <br>
 
-<button class="btn">{{ $c ? 'Update Company' : 'Create Company' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $c ? 'Update Company' : 'Create Company' }}</button>
+    <a href="{{ route('companies.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
 <script>
     document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {

@@ -161,7 +161,10 @@
 
 <br>
 
-<button class="btn">{{ $g ? 'Update Game' : 'Create Game' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $g ? 'Update Game' : 'Create Game' }}</button>
+    <a href="{{ route('game.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
 @push('styles')
     @vite('resources/scss/admin/form-game.scss')

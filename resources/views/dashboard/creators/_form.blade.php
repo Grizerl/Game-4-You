@@ -53,7 +53,7 @@
         <label>Role ({{ $label }})</label>
         <input type="text" name="role[{{ $locale }}]" value="{{ old("role.$locale", $translated('role', $locale)) }}"
                class="@error("role.$locale") error-input @enderror"
-               placeholder="{{ $locale === 'uk' ? 'Роль українською (кілька — через кому)' : 'Role in English (separate several with commas)' }}">
+               placeholder="{{ $locale === 'uk' ? 'Role in Ukrainian (separate several with commas)' : 'Role in English (separate several with commas)' }}">
         @error("role.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -65,7 +65,7 @@
         <label>Country ({{ $label }})</label>
         <input type="text" name="country[{{ $locale }}]" value="{{ old("country.$locale", $translated('country', $locale)) }}"
                class="@error("country.$locale") error-input @enderror"
-               placeholder="{{ $locale === 'uk' ? 'Країна українською' : 'Country in English' }}">
+               placeholder="{{ $locale === 'uk' ? 'Country in Ukrainian' : 'Country in English' }}">
         @error("country.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -85,7 +85,7 @@
     <div class="form-group">
         <label>Bio ({{ $label }})</label>
         <textarea name="bio[{{ $locale }}]" class="@error("bio.$locale") error-input @enderror"
-                  placeholder="{{ $locale === 'uk' ? 'Біографія українською' : 'Biography in English' }}">{{ old("bio.$locale", $translated('bio', $locale)) }}</textarea>
+                  placeholder="{{ $locale === 'uk' ? 'Biography in Ukrainian' : 'Biography in English' }}">{{ old("bio.$locale", $translated('bio', $locale)) }}</textarea>
         @error("bio.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -125,7 +125,10 @@
 
 <br>
 
-<button class="btn">{{ $c ? 'Update Creator' : 'Create Creator' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $c ? 'Update Creator' : 'Create Creator' }}</button>
+    <a href="{{ route('creator.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
 <script>
     document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {

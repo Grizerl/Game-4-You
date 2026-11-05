@@ -54,7 +54,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="9">No games found.</td>
+                <td colspan="9" class="empty"><i class="fa-regular fa-folder-open"></i>No games found.</td>
             </tr>
         @endforelse
     </tbody>

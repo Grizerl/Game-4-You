@@ -22,6 +22,8 @@ export default defineConfig({
                 'resources/scss/admin/list.scss',
                 'resources/scss/admin/list-news.scss',
                 'resources/scss/admin/list-category.scss',
+                'resources/scss/admin/list-users.scss',
+                'resources/scss/admin/form-user.scss',
                 'resources/scss/admin/form-company.scss',
                 'resources/scss/admin/form-creator.scss',
                 'resources/scss/admin/form-game.scss',

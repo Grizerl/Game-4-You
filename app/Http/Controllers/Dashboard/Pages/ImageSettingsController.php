@@ -40,8 +40,8 @@ class ImageSettingsController extends Controller
         return redirect()
             ->route('settings.images')
             ->with('status', $changed
-                ? 'Розміри збережено. Перегенерація наявних зображень запущена в черзі.'
-                : 'Розміри не змінились.');
+                ? 'Sizes saved. Regeneration of existing images has been queued.'
+                : 'Sizes were not changed.');
     }
 
     public function regenerate(): RedirectResponse
@@ -50,6 +50,6 @@ class ImageSettingsController extends Controller
 
         return redirect()
             ->route('settings.images')
-            ->with('status', 'Перегенерацію всіх зображень поставлено в чергу.');
+            ->with('status', 'Regeneration of all images has been queued.');
     }
 }

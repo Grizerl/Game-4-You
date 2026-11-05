@@ -1,31 +1,18 @@
-// Кнопка, таблиця й дії «Edit»/«Delete» у списках.
+// Таблиця списків; кнопки та дії «Edit»/«Delete» — глобально в admin.scss.
 @use '../abstracts/variables' as *;
-
-.btn {
-    display: inline-block;
-    background: linear-gradient(135deg, $blue, $indigo);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    box-shadow: 0 10px 20px $blue-glow;
-    transition: 0.2s;
-
-    &:hover {
-        transform: translateY(-2px);
-    }
-}
+@use 'empty';
 
 .table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background: $surface;
     backdrop-filter: blur(10px);
-    border-radius: 14px;
+    border-radius: 16px;
     overflow: hidden;
     border: 1px solid $line-soft;
     color: $text;
+    font-size: 14px;
 
     thead {
         background: $surface-head;
@@ -33,52 +20,37 @@
 
     th {
         text-align: left;
-        padding: 14px;
-        font-size: 13px;
+        padding: 14px 16px;
+        font-size: 12px;
+        font-weight: 600;
         color: $muted;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.8px;
+        white-space: nowrap;
     }
 
     td {
-        padding: 14px;
+        padding: 14px 16px;
         border-top: 1px solid $line-soft;
+        vertical-align: middle;
     }
 
     tbody tr {
-        transition: 0.2s;
+        transition: background 0.2s;
 
         &:hover {
             background: $blue-hover;
         }
     }
-}
 
-.edit {
-    color: $blue-light;
-    margin-right: 12px;
-    text-decoration: none;
-
-    &:hover {
-        text-decoration: underline;
+    td strong {
+        color: $subtle;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
     }
-}
 
-.delete {
-    background: $red-soft;
-    color: $red-light;
-    border: 1px solid $red-line;
-    padding: 6px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.2s;
-
-    &:hover {
-        background: $red-hover;
+    td:last-child {
+        white-space: nowrap;
     }
-}
-
-// Форма видалення в одному рядку з посиланням «Edit»
-.inline-form {
-    display: inline;
 }
