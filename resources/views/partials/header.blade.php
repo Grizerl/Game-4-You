@@ -41,6 +41,11 @@
                 </ul>
             </nav>
 
+            <div class="sh-lang">
+                <p class="sh-connect__title">{{ __('header.language') }}</p>
+                @include('partials.lang-switcher', ['variant' => 'drawer'])
+            </div>
+
             <div class="sh-connect">
                 <p class="sh-connect__title">{{ __('header.connect') }}</p>
                 <ul class="sh-socials">
