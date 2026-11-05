@@ -1,59 +1,84 @@
+@php
+    $nav = [
+        'Overview' => [
+            ['Dashboard', 'dashboard', 'fa-solid fa-chart-pie', 'dashboard'],
+        ],
+        'Catalog' => [
+            ['Games', 'game.index', 'fa-solid fa-gamepad', 'game.*'],
+            ['Categories', 'category.index', 'fa-solid fa-layer-group', 'category.*'],
+            ['Creators', 'creator.index', 'fa-solid fa-user-pen', 'creator.*'],
+            ['Companies', 'companies.index', 'fa-regular fa-building', 'companies.*'],
+        ],
+        'Content' => [
+            ['News', 'news.index', 'fa-solid fa-newspaper', 'news.*'],
+        ],
+        'System' => [
+            ['Users', 'users.index', 'fa-solid fa-users', 'users.*'],
+            ['Image sizes', 'settings.images', 'fa-regular fa-image', 'settings.*'],
+        ],
+    ];
+    $currentUser = auth()->user();
+@endphp
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel</title>
+    <title>@yield('title', 'Admin') · Game 4 You Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite('resources/scss/admin/admin.scss')
     @stack('styles')
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">⚡ ADMIN</div>
-
-        <a href="{{ route('dashboard') }}" class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
-            <i class="fa-solid fa-bars"></i> Dashboard
+    <aside class="sidebar">
+        <a href="{{ route('dashboard') }}" class="logo">
+            <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+            <span>Game 4 You <small>Admin</small></span>
         </a>
 
-        <a href="{{ route('companies.index') }}" class="nav-item {{ request()->is('admin/authors') ? 'active' : '' }}">
-            <i class="fa-regular fa-building"></i> Company
-        </a>
+        <nav class="nav">
+            @foreach ($nav as $group => $items)
+                <div class="nav-group">{{ $group }}</div>
+                @foreach ($items as [$label, $route, $icon, $pattern])
+                    <a href="{{ route($route) }}" class="nav-item {{ request()->routeIs($pattern) ? 'active' : '' }}">
+                        <i class="{{ $icon }}"></i> <span>{{ $label }}</span>
+                    </a>
+                @endforeach
+            @endforeach
+        </nav>
 
-        <a href="{{ route('creator.index') }}" class="nav-item {{ request()->is('admin/authors') ? 'active' : '' }}">
-            <i class="fa-solid fa-users"></i> Creator
+        <a href="{{ route('home.page') }}" class="nav-item nav-site" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> <span>View site</span>
         </a>
+    </aside>
 
-        <a href="{{ route('category.index') }}" class="nav-item {{ request()->is('admin/authors') ? 'active' : '' }}">
-            <i class="fa-solid fa-layer-group"></i> Category
-        </a>
-
-        <a href="{{ route('game.index') }}" class="nav-item {{ request()->is('admin/authors') ? 'active' : '' }}">
-            <i class="fa-solid fa-gamepad"></i> Game
-        </a>
-
-        <a href="{{ route('news.index') }}" class="nav-item {{ request()->is('control/news*') ? 'active' : '' }}">
-            <i class="fa-solid fa-newspaper"></i> News
-        </a>
-        <a href="{{ route('settings.images') }}" class="nav-item {{ request()->is('control/settings*') ? 'active' : '' }}">
-            <i class="fa-regular fa-image"></i> Image sizes
-        </a>
-    </div>
     <div class="main">
-        <div class="header">
+        <header class="header">
             <h1>@yield('title')</h1>
             <div class="user">
+                <div class="user-info">
+                    <strong>{{ $currentUser?->name }}</strong>
+                    <span>{{ $currentUser?->email }}</span>
+                </div>
+                <div class="avatar">{{ mb_strtoupper(mb_substr($currentUser?->name ?? '?', 0, 1)) }}</div>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="logout-btn">
-                        Logout
-                    </button>
+                    <button type="submit" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                 </form>
             </div>
-        </div>
-        <div class="content">
+        </header>
+
+        <main class="content">
+            @if (session('status'))
+                <div class="flash flash-success" role="status"><i class="fa-solid fa-circle-check"></i> {{ session('status') }}</div>
+            @endif
+            @if (session('error'))
+                <div class="flash flash-error" role="alert"><i class="fa-solid fa-circle-exclamation"></i> {{ session('error') }}</div>
+            @endif
+
             @yield('content')
-        </div>
+        </main>
     </div>
 <script src="https://kit.fontawesome.com/46a432ef36.js" crossorigin="anonymous"></script>
 </body>

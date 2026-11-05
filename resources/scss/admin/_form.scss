@@ -1,8 +1,19 @@
 // Спільні стилі форм створення/редагування. $preview — клас блоку з прев'ю зображення
 // (у студій — logo-preview, у творців, ігор і новин — avatar-preview).
+// Кнопки (.btn) — глобально в admin.scss.
 @use '../abstracts/variables' as *;
 
 @mixin admin-form($preview) {
+    // Форма — картка в контенті (форми в шапці/сайдбарі не зачіпаємо)
+    .content > form:not(.inline-form) {
+        max-width: 960px;
+        padding: 28px;
+        background: $surface;
+        border: 1px solid $line-soft;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+    }
+
     .form-group {
         margin-bottom: 18px;
     }
@@ -12,20 +23,29 @@
         margin-bottom: 6px;
         color: $muted;
         font-size: 13px;
+        font-weight: 500;
     }
 
     input, textarea, select {
         width: 100%;
-        padding: 12px;
+        padding: 12px 14px;
         border-radius: 10px;
         border: 1px solid $line;
-        background: $surface;
+        background: rgba(2, 6, 23, 0.45);
         color: $text;
+        font: inherit;
+        font-size: 14px;
         outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     input:focus, textarea:focus, select:focus {
         border-color: $blue;
+        box-shadow: 0 0 0 3px $blue-glow;
+    }
+
+    input[type='checkbox'], input[type='radio'] {
+        width: auto;
     }
 
     textarea {
@@ -38,7 +58,7 @@
     }
 
     .error-text {
-        color: $red;
+        color: $red-light;
         font-size: 12px;
         margin-top: 6px;
     }
@@ -68,19 +88,12 @@
         }
     }
 
-    .btn {
-        background: linear-gradient(135deg, $blue, $indigo);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s;
-
-        &:hover {
-            transform: translateY(-1px);
-        }
+    .form-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        padding-top: 20px;
+        border-top: 1px solid $line-soft;
     }
 
     select {

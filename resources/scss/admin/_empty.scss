@@ -1,0 +1,15 @@
+// Порожній стан таблиць і списків.
+@use '../abstracts/variables' as *;
+
+.table td.empty {
+    padding: 48px 16px;
+    text-align: center;
+    color: $muted;
+
+    i {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 28px;
+        color: $subtle;
+    }
+}

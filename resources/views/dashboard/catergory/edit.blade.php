@@ -8,12 +8,12 @@
     @csrf
     @method('put')
 
-   <div class="form-group">
+    <div class="form-group">
         <label>Category Title (UA)</label>
-        <input 
-            type="text" 
-            name="title[uk]" 
-            value="{{ old('title.uk', $category->getTranslation('title', 'uk')) }}" 
+        <input
+            type="text"
+            name="title[uk]"
+            value="{{ old('title.uk', $category->getTranslation('title', 'uk')) }}"
             class="@error('title.uk') error-input @enderror"
         >
 
@@ -24,10 +24,10 @@
 
     <div class="form-group">
         <label>Category Title (EN)</label>
-        <input 
-            type="text" 
-            name="title[en]" 
-            value="{{ old('title.en', $category->getTranslation('title', 'en')) }}" 
+        <input
+            type="text"
+            name="title[en]"
+            value="{{ old('title.en', $category->getTranslation('title', 'en')) }}"
             class="@error('title.en') error-input @enderror"
         >
 
@@ -35,7 +35,11 @@
             <div class="error-text">{{ $message }}</div>
         @enderror
     </div>
-    <button class="btn">Update сategory</button>
+
+    <div class="form-actions">
+        <button class="btn">Update category</button>
+        <a href="{{ route('category.index') }}" class="btn btn-secondary">Cancel</a>
+    </div>
 </form>
 
 @push('styles')

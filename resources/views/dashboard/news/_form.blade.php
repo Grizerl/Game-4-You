@@ -121,7 +121,10 @@
 
 <br>
 
-<button class="btn">{{ $a ? 'Update Article' : 'Create Article' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $a ? 'Update Article' : 'Create Article' }}</button>
+    <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
 @push('styles')
     @vite('resources/scss/admin/form-news.scss')

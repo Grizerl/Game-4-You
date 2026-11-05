@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\Pages\ArticleController;
-use App\Http\Controllers\Dashboard\Pages\ImageSettingsController;
 use App\Http\Controllers\Dashboard\Pages\CategoryController;
 use App\Http\Controllers\Dashboard\Pages\CompanyController;
 use App\Http\Controllers\Dashboard\Pages\CreatorController;
 use App\Http\Controllers\Dashboard\Pages\GameController;
+use App\Http\Controllers\Dashboard\Pages\ImageSettingsController;
+use App\Http\Controllers\Dashboard\Pages\UserController;
 use App\Http\Controllers\Pages\CommentController;
 use App\Http\Controllers\Pages\CompanyController as PagesCompanyController;
 use App\Http\Controllers\Pages\CreatorController as PagesCreatorController;
@@ -62,7 +63,7 @@ Route::group(
             ->name('comments.store');
     });
 
-Route::middleware(['auth', 'verified'])->prefix('control')->group(function () {
+Route::middleware(['auth', 'verified', 'admin.locale'])->prefix('control')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
 
@@ -79,6 +80,8 @@ Route::middleware(['auth', 'verified'])->prefix('control')->group(function () {
     Route::post('settings/images/regenerate', [ImageSettingsController::class, 'regenerate'])->name('settings.images.regenerate');
 
     Route::resource('news', ArticleController::class)->parameters(['news' => 'article']);
+
+    Route::resource('users', UserController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';

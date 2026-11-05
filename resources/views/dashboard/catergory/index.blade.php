@@ -3,8 +3,10 @@
 @section('title', 'Categories')
 
 @section('content')
-<a href="{{ route('category.create') }}" class="btn">+ Add category</a>
-<br><br>
+<div class="toolbar">
+    <a href="{{ route('category.create') }}" class="btn"><i class="fa-solid fa-plus"></i> Add category</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -15,12 +17,12 @@
     </thead>
 
     <tbody>
-        @foreach($category as $item)
+        @forelse($category as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>
-                    {{ $item->getTranslation('title', 'uk') }} 
-                    <span class="sep">/</span> 
+                    {{ $item->getTranslation('title', 'uk') }}
+                    <span class="sep">/</span>
                     {{ $item->getTranslation('title', 'en') }}
                 </td>
 
@@ -33,7 +35,11 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="3" class="empty"><i class="fa-regular fa-folder-open"></i>No categories found.</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 

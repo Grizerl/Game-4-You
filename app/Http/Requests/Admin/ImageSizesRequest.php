@@ -45,12 +45,12 @@ class ImageSizesRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'cover_thumb_desktop' => 'мініатюра обкладинки (десктоп)',
-            'cover_thumb_mobile' => 'мініатюра обкладинки (мобільний)',
-            'cover_large_desktop' => 'великий банер (десктоп)',
-            'cover_large_mobile' => 'великий банер (мобільний)',
-            'avatar_thumb' => 'аватар творця',
-            'logo_thumb' => 'логотип компанії',
+            'cover_thumb_desktop' => 'cover thumbnail (desktop)',
+            'cover_thumb_mobile' => 'cover thumbnail (mobile)',
+            'cover_large_desktop' => 'large banner (desktop)',
+            'cover_large_mobile' => 'large banner (mobile)',
+            'avatar_thumb' => 'creator avatar',
+            'logo_thumb' => 'company logo',
         ];
     }
 
@@ -60,11 +60,11 @@ class ImageSizesRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'required' => 'Вкажіть значення: :attribute.',
-            'integer' => 'Поле «:attribute» має бути цілим числом.',
-            'min' => 'Поле «:attribute» не може бути меншим за :min px.',
-            'max' => 'Поле «:attribute» не може бути більшим за :max px.',
-            'lte' => 'Мобільна ширина («:attribute») не може бути більшою за десктопну (:value px).',
+            'required' => 'Please enter a value for :attribute.',
+            'integer' => 'The :attribute must be a whole number.',
+            'min' => 'The :attribute cannot be smaller than :min px.',
+            'max' => 'The :attribute cannot be larger than :max px.',
+            'lte' => 'The :attribute cannot be wider than the desktop width (:value px).',
         ];
     }
 

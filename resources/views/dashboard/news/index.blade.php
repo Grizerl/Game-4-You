@@ -53,7 +53,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="8">No articles found.</td>
+                <td colspan="8" class="empty"><i class="fa-regular fa-folder-open"></i>No articles found.</td>
             </tr>
         @endforelse
     </tbody>
