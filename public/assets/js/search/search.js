@@ -112,7 +112,7 @@
 
             if (value === '') {
                 setInvalid(showMessage);
-                showMessage ? message(texts.enterQuery || '', 'error') : close();
+                close();
                 return false;
             }
 

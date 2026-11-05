@@ -5,18 +5,7 @@
                 <div class="footer-item">
                     <a class="footer-brand" href="{{route('home.page')}}">Games 4 <span class="footer-brand-aside">You</span></a>
                     <p class="footer-lead">{{ __('footer.description') }}</p>
-                    <ul class="lang-switcher">
-                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <li>
-                                <a class="lang-link" 
-                                rel="alternate" 
-                                hreflang="{{ $localeCode }}" 
-                                href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                    {{ $properties['native'] }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    @include('partials.lang-switcher', ['variant' => 'footer'])
                 </div>
                 <div class="footer-item">
                     <h5 class="footer-title">{{ __('footer.quick_links') }}</h5>
