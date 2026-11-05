@@ -225,6 +225,30 @@
     }
 }
 
+.sh-lang {
+    margin-top: auto;
+    padding-bottom: 22px;
+
+    & + .sh-connect {
+        margin-top: 0;
+    }
+
+    .lang-switcher {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .lang-switcher__list {
+        flex: 1;
+    }
+
+    .lang-link {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
 .sh-connect {
     margin-top: auto;
     padding-top: 22px;
@@ -388,8 +412,8 @@ body.sh-locked {
 }
 
 .hs-search.is-invalid {
-    border-color: #ff5d8f;
-    box-shadow: 0 0 0 4px rgba(255, 93, 143, 0.2);
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
 }
 
 .hs-search__msg {

@@ -516,7 +516,7 @@ a.gm-tag:hover {
 
 .gm-tabs {
     position: sticky;
-    top: 0;
+    top: 78px;
     z-index: 30;
     background: rgba(7, 5, 27, 0.88);
     backdrop-filter: blur(14px);
@@ -853,7 +853,7 @@ a.gm-tag:hover {
 
 .gm-form {
     position: sticky;
-    top: 76px;
+    top: 96px;
     display: flex;
     flex-direction: column;
     gap: 12px;

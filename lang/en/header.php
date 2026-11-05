@@ -9,6 +9,7 @@ return [
     'connect' => 'Connect',
     'menu' => 'Menu',
     'menu_open' => 'Open menu',
+    'language' => 'Language',
     'menu_close' => 'Close menu',
 
     // burger menu
