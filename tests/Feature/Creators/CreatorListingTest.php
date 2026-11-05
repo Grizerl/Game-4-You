@@ -217,6 +217,6 @@ class CreatorListingTest extends TestCase
         $this->get(route('creator.page'))->assertOk();
         $queries = count(\DB::getQueryLog());
 
-        $this->assertLessThanOrEqual(12, $queries, 'Listing must not issue queries per creator.');
+        $this->assertLessThanOrEqual(15, $queries, 'Listing must not issue queries per creator (15 = базові запити + по одному eager-запиту media на тип моделі).');
     }
 }

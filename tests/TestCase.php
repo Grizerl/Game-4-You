@@ -4,6 +4,7 @@ namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Foundation\Vite;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\HtmlString;
 
 abstract class TestCase extends BaseTestCase
@@ -11,6 +12,14 @@ abstract class TestCase extends BaseTestCase
     protected function setUp(): void
     {
         parent::setUp();
+
+        // Media Library кладе файли в storage/app/public/{id}, а id із тестової БД збігаються з id dev-медіа:
+        // без фейкового диска тести перезаписували б і видаляли справжні зображення.
+        Storage::fake('public');
+
+        // Media Library кладе файли в storage/app/public/{id}, а id із тестової БД збігаються з id dev-медіа:
+        // без фейкового диска тести перезаписували б і видаляли справжні зображення.
+        Storage::fake('public');
 
         // Без Accept-Language локалізація редіректить на /en; тести працюють у дефолтній (uk) локалі.
         $this->withHeader('Accept-Language', config('app.locale'));

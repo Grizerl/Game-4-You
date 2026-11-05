@@ -55,7 +55,7 @@
     <label>Cover Image</label>
 
     <div class="avatar-preview">
-        <img data-avatar-preview src="{{ $a?->cover_image ? $a->cover_url : '' }}" alt="Cover preview" width="220" height="124" @if (! $a?->cover_image) hidden @endif>
+        <img data-avatar-preview src="{{ $a?->hasImage() ? $a->cover_thumb_url : '' }}" alt="Cover preview" width="220" height="124" @if (! $a?->cover_image) hidden @endif>
     </div>
 
     <input type="file" name="cover_image" accept="image/*" data-avatar-input class="@error('cover_image') error-input @enderror">

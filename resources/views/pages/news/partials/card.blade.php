@@ -2,7 +2,7 @@
 @php($tag = $article->tags->first())
 <article class="nw-card">
     <a class="nw-card__media" href="{{ route('news.show.page', $article) }}" tabindex="-1" aria-hidden="true">
-        <img src="{{ $article->cover_thumb_url }}" alt="" loading="lazy" width="640" height="360">
+        <x-cover :model="$article" kind="thumb"  alt="" loading="lazy" width="640" height="360" />
     </a>
     <div class="nw-card__body">
         <div class="nw-card__meta">

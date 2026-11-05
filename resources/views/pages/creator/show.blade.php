@@ -58,8 +58,8 @@
                             <li>
                                 <span class="cr-facts__label">{{ __('creators.company') }}</span>
                                 <a class="cr-facts__value" href="{{ route('company.page') }}">
-                                    @if ($creator->company->logo_path)
-                                        <img src="{{ asset($creator->company->logo_path) }}" alt="" width="22" height="22">
+                                    @if ($creator->company->hasImage())
+                                        <img src="{{ $creator->company->logo_thumb_url }}" alt="" width="22" height="22">
                                     @endif
                                     {{ $creator->company->name }}
                                 </a>

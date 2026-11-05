@@ -35,6 +35,9 @@
         <a href="{{ route('news.index') }}" class="nav-item {{ request()->is('control/news*') ? 'active' : '' }}">
             <i class="fa-solid fa-newspaper"></i> News
         </a>
+        <a href="{{ route('settings.images') }}" class="nav-item {{ request()->is('control/settings*') ? 'active' : '' }}">
+            <i class="fa-regular fa-image"></i> Image sizes
+        </a>
     </div>
     <div class="main">
         <div class="header">

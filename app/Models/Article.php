@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Support\PublicImage;
+use App\Models\Concerns\HasImageMedia;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,11 +10,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
 use League\CommonMark\Extension\ExternalLink\ExternalLinkExtension;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Article extends Model
+class Article extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations;
+    use HasFactory, HasImageMedia, HasTranslations;
 
     public const PLACEHOLDER_COVER = 'assets/images/news/placeholder.svg';
 
@@ -95,23 +96,6 @@ class Article extends Model
         return $this->belongsToMany(Company::class, 'article_company');
     }
 
-    protected function coverUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::url($this->cover_image, self::PLACEHOLDER_COVER));
-    }
-
-    /** Легкий WebP 640 px для карток і постерів (поки не згенеровано — оригінал). */
-    protected function coverThumbUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::variant($this->cover_image, 640, self::PLACEHOLDER_COVER));
-    }
-
-    /** Легкий WebP 1280 px для великих банерів. */
-    protected function coverLargeUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::variant($this->cover_image, 1280, self::PLACEHOLDER_COVER));
-    }
-
     public function isPublished(): bool
     {
         return $this->published_at !== null && $this->published_at->lte(now());
@@ -188,5 +172,49 @@ class Article extends Model
         $slug = trim((string) $slug);
 
         return $slug === '' ? $query : $query->whereHas('tags', fn (Builder $tags) => $tags->where('slug', $slug));
+    }
+
+    public static function imageCollectionName(): string
+    {
+        return 'cover';
+    }
+
+    public function legacyImageColumn(): string
+    {
+        return 'cover_image';
+    }
+
+    /** @return array<string, string> */
+    protected function imageSizeKeys(): array
+    {
+        return [
+            'thumb' => 'cover.thumb.desktop',
+            'thumb_mobile' => 'cover.thumb.mobile',
+            'large' => 'cover.large.desktop',
+            'large_mobile' => 'cover.large.mobile',
+        ];
+    }
+
+    protected function imagePlaceholder(): string
+    {
+        return self::PLACEHOLDER_COVER;
+    }
+
+    /** Оригінал (для og:image та структурованих даних). */
+    protected function coverUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl());
+    }
+
+    /** Легкий WebP для карток, списків і мініатюр. */
+    protected function coverThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('thumb'));
+    }
+
+    /** Легкий WebP для великих банерів. */
+    protected function coverLargeUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('large'));
     }
 }

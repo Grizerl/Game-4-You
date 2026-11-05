@@ -80,7 +80,7 @@
     <label>Logo</label>
 
     <div class="logo-preview">
-        <img data-logo-preview src="{{ $c?->logo_path ? $c->logo_url : '' }}" alt="Logo preview" width="100" height="100" @if (! $c?->logo_path) hidden @endif>
+        <img data-logo-preview src="{{ $c?->hasImage() ? $c->logo_thumb_url : '' }}" alt="Logo preview" width="100" height="100" @if (! $c?->logo_path) hidden @endif>
     </div>
 
     <input type="file" name="logo_path" accept="image/*" data-avatar-input class="@error('logo_path') error-input @enderror">

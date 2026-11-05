@@ -113,7 +113,7 @@
     <label>Avatar</label>
 
     <div class="avatar-preview">
-        <img data-avatar-preview src="{{ $c?->avatar ? $c->avatar_url : '' }}" alt="Avatar preview" width="100" height="100" @if (! $c?->avatar) hidden @endif>
+        <img data-avatar-preview src="{{ $c?->hasImage() ? $c->avatar_thumb_url : '' }}" alt="Avatar preview" width="100" height="100" @if (! $c?->avatar) hidden @endif>
     </div>
 
     <input type="file" name="avatar" accept="image/*" data-avatar-input class="@error('avatar') error-input @enderror">

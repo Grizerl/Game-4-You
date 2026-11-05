@@ -3,7 +3,6 @@
 /public/build
 /public/hot
 /public/storage
-/public/assets/_v
 /storage/*.key
 /storage/pail
 /vendor

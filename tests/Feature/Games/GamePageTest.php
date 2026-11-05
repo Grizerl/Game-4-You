@@ -358,7 +358,7 @@ class GamePageTest extends TestCase
         DB::enableQueryLog();
         $this->get(route('games.show.page', $game))->assertOk();
 
-        $this->assertLessThanOrEqual(14, count(DB::getQueryLog()));
+        $this->assertLessThanOrEqual(15, count(DB::getQueryLog()));
     }
 
     #[Test]

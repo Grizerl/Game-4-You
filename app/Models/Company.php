@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Support\PublicImage;
+use App\Models\Concerns\HasImageMedia;
 use App\Support\SocialLinks;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -11,11 +11,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Company extends Model
+class Company extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations;
+    use HasFactory, HasImageMedia, HasTranslations;
 
     public const SORTS = ['new', 'games', 'name'];
 
@@ -86,17 +87,6 @@ class Company extends Model
         return $this->hasMany(Game::class, 'company_id');
     }
 
-    protected function logoUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::url($this->logo_path, self::PLACEHOLDER_LOGO));
-    }
-
-    /** Легкий WebP 640 px для карток (поки не згенеровано — оригінал). */
-    protected function logoThumbUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::variant($this->logo_path, 640, self::PLACEHOLDER_LOGO));
-    }
-
     /**
      * @return array<string, string>
      */
@@ -159,5 +149,40 @@ class Company extends Model
             'name' => $query->orderByRaw('JSON_UNQUOTE(JSON_EXTRACT(name, ?)) COLLATE utf8mb4_unicode_ci', [self::jsonPath()]),
             default => $query->orderByDesc('id'),
         };
+    }
+
+    public static function imageCollectionName(): string
+    {
+        return 'logo';
+    }
+
+    public function legacyImageColumn(): string
+    {
+        return 'logo_path';
+    }
+
+    /** @return array<string, string> */
+    protected function imageSizeKeys(): array
+    {
+        return [
+            'thumb' => 'logo.thumb',
+        ];
+    }
+
+    protected function imagePlaceholder(): string
+    {
+        return self::PLACEHOLDER_LOGO;
+    }
+
+    /** Оригінал (для og:image та структурованих даних). */
+    protected function logoUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl());
+    }
+
+    /** Легкий WebP для карток, списків і мініатюр. */
+    protected function logoThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('thumb'));
     }
 }

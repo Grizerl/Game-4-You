@@ -28,6 +28,7 @@ export default defineConfig({
                 'resources/scss/admin/form-news.scss',
                 'resources/scss/admin/category-create.scss',
                 'resources/scss/admin/category-edit.scss',
+                'resources/scss/admin/settings.scss',
             ],
             refresh: true,
         }),

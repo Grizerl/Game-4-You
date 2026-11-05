@@ -350,7 +350,7 @@ class HomePageTest extends TestCase
         DB::enableQueryLog();
         $this->get(route('home.page'))->assertOk();
 
-        $this->assertLessThanOrEqual(18, count(DB::getQueryLog()));
+        $this->assertLessThanOrEqual(23, count(DB::getQueryLog()));
     }
 
     #[Test]

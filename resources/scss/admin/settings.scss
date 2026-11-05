@@ -1,0 +1,60 @@
+// Налаштування: розміри зображень.
+@use '../abstracts/variables' as *;
+@use 'form';
+
+@include form.admin-form(settings-preview);
+
+.size-form {
+    max-width: 760px;
+}
+
+.size-form--regen {
+    margin-top: 28px;
+}
+
+.section-title {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.size-form .section-title:not(:first-child) {
+    margin-top: 28px;
+}
+
+.size-grid {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(120px, 160px) minmax(120px, 200px);
+    gap: 12px 16px;
+    align-items: start;
+    margin-bottom: 8px;
+}
+
+.size-grid--single {
+    grid-template-columns: minmax(200px, 1fr) minmax(120px, 160px);
+}
+
+.size-head {
+    color: $muted;
+    font-size: 13px;
+}
+
+.size-label {
+    padding-top: 12px;
+    color: $text;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid $line;
+    color: $text;
+}
+
+.flash {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border: 1px solid $blue;
+    border-radius: 10px;
+    background: $blue-hover;
+    color: $text;
+}

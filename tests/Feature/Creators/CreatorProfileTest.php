@@ -253,7 +253,7 @@ class CreatorProfileTest extends TestCase
         \DB::enableQueryLog();
         $this->get(route('creator.show.page', $creator))->assertOk();
 
-        $this->assertLessThanOrEqual(10, count(\DB::getQueryLog()));
+        $this->assertLessThanOrEqual(12, count(\DB::getQueryLog()));
     }
 
     #[Test]

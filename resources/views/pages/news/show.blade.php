@@ -45,7 +45,7 @@
         @endif
 
         <header class="nw-cover">
-            <img class="nw-cover__img" src="{{ $article->cover_large_url }}" alt="" width="1280" height="720">
+            <x-cover :model="$article" kind="large" class="nw-cover__img"  alt="" width="1280" height="720" />
             <div class="nw-cover__shade" aria-hidden="true"></div>
             <div class="container nw-cover__inner">
                 <nav class="gm-crumbs" aria-label="breadcrumb">

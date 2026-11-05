@@ -23,17 +23,4 @@ final class PublicImage
             default => asset('storage/'.$path),
         };
     }
-
-    /**
-     * URL легкого WebP-варіанта шириною $width (див. ImageVariants); якщо варіант ще не згенеровано —
-     * URL оригіналу.
-     */
-    public static function variant(?string $path, int $width, ?string $placeholder = null): ?string
-    {
-        if (filled($path) && ImageVariants::exists($path, $width)) {
-            return asset(ImageVariants::relativePath($path, $width));
-        }
-
-        return self::url($path, $placeholder);
-    }
 }

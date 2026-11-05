@@ -16,8 +16,8 @@
 
     @if ($creator->company)
         <div class="cr-card__company">
-            @if ($creator->company->logo_path)
-                <img src="{{ asset($creator->company->logo_path) }}" alt="" loading="lazy" width="22" height="22">
+            @if ($creator->company->hasImage())
+                <img src="{{ $creator->company->logo_thumb_url }}" alt="" loading="lazy" width="22" height="22">
             @endif
             <span>{{ $creator->company->name }}</span>
         </div>

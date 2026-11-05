@@ -12,6 +12,7 @@
         "laravel/sanctum": "^4.3",
         "laravel/tinker": "^3.0",
         "mcamara/laravel-localization": "^2.4",
+        "spatie/laravel-medialibrary": "^11.23",
         "spatie/laravel-translatable": "^6.15"
     },
     "require-dev": {

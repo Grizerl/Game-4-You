@@ -10,7 +10,6 @@ use App\Models\Company;
 use App\Models\Game;
 use App\Models\Tag;
 use App\Services\Search\SearchSync;
-use App\Support\ImageVariants;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -52,12 +51,12 @@ class ArticleController extends Controller
     {
         $article = new Article($this->payload($request->validated()));
 
+        $article->save();
+
         if ($request->hasFile('cover_image')) {
-            $article->cover_image = $request->file('cover_image')->store('news', 'public');
-            ImageVariants::generate($article->cover_image);
+            $article->replaceImageFromRequest('cover_image');
         }
 
-        $article->save();
         $this->syncRelations($article, $request->validated());
 
         return redirect()->route('news.index');
@@ -80,13 +79,12 @@ class ArticleController extends Controller
     {
         $article->fill($this->payload($request->validated()));
 
+        $article->save();
+
         if ($request->hasFile('cover_image')) {
-            $this->deleteFile($article->cover_image);
-            $article->cover_image = $request->file('cover_image')->store('news', 'public');
-            ImageVariants::generate($article->cover_image);
+            $article->replaceImageFromRequest('cover_image');
         }
 
-        $article->save();
         $this->syncRelations($article, $request->validated());
 
         return redirect()->route('news.index');

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\Pages\ArticleController;
+use App\Http\Controllers\Dashboard\Pages\ImageSettingsController;
 use App\Http\Controllers\Dashboard\Pages\CategoryController;
 use App\Http\Controllers\Dashboard\Pages\CompanyController;
 use App\Http\Controllers\Dashboard\Pages\CreatorController;
@@ -72,6 +73,10 @@ Route::middleware(['auth', 'verified'])->prefix('control')->group(function () {
     Route::resource('category', CategoryController::class);
 
     Route::resource('game', GameController::class);
+
+    Route::get('settings/images', [ImageSettingsController::class, 'edit'])->name('settings.images');
+    Route::put('settings/images', [ImageSettingsController::class, 'update'])->name('settings.images.update');
+    Route::post('settings/images/regenerate', [ImageSettingsController::class, 'regenerate'])->name('settings.images.regenerate');
 
     Route::resource('news', ArticleController::class)->parameters(['news' => 'article']);
 });
