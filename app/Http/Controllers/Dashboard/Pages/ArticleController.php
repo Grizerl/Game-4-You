@@ -51,11 +51,12 @@ class ArticleController extends Controller
     {
         $article = new Article($this->payload($request->validated()));
 
+        $article->save();
+
         if ($request->hasFile('cover_image')) {
-            $article->cover_image = $request->file('cover_image')->store('news', 'public');
+            $article->replaceImageFromRequest('cover_image');
         }
 
-        $article->save();
         $this->syncRelations($article, $request->validated());
 
         return redirect()->route('news.index');
@@ -78,12 +79,12 @@ class ArticleController extends Controller
     {
         $article->fill($this->payload($request->validated()));
 
+        $article->save();
+
         if ($request->hasFile('cover_image')) {
-            $this->deleteFile($article->cover_image);
-            $article->cover_image = $request->file('cover_image')->store('news', 'public');
+            $article->replaceImageFromRequest('cover_image');
         }
 
-        $article->save();
         $this->syncRelations($article, $request->validated());
 
         return redirect()->route('news.index');

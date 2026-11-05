@@ -9,7 +9,6 @@ use App\Models\Company;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 
 class CompanyController extends Controller
@@ -50,11 +49,11 @@ class CompanyController extends Controller
     {
         $company = new Company($this->payload($request->validated()));
 
-        if ($request->hasFile('logo_path')) {
-            $company->logo_path = $this->storeLogo($request->file('logo_path'));
-        }
-
         $company->save();
+
+        if ($request->hasFile('logo_path')) {
+            $company->replaceImageFromRequest('logo_path');
+        }
 
         return redirect()->route('companies.index');
     }
@@ -68,12 +67,11 @@ class CompanyController extends Controller
     {
         $company->fill($this->payload($request->validated()));
 
-        if ($request->hasFile('logo_path')) {
-            $this->deleteLogo($company->logo_path);
-            $company->logo_path = $this->storeLogo($request->file('logo_path'));
-        }
-
         $company->save();
+
+        if ($request->hasFile('logo_path')) {
+            $company->replaceImageFromRequest('logo_path');
+        }
 
         return redirect()->route('companies.index');
     }
@@ -110,14 +108,6 @@ class CompanyController extends Controller
         }
 
         return $data;
-    }
-
-    private function storeLogo(UploadedFile $file): string
-    {
-        $filename = time().'_'.Str::random(6).'.'.$file->extension();
-        $file->move(public_path(self::LOGO_DIR), $filename);
-
-        return self::LOGO_DIR.'/'.$filename;
     }
 
     private function deleteLogo(?string $path): void

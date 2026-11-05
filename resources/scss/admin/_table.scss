@@ -1,0 +1,56 @@
+// Таблиця списків; кнопки та дії «Edit»/«Delete» — глобально в admin.scss.
+@use '../abstracts/variables' as *;
+@use 'empty';
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: $surface;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid $line-soft;
+    color: $text;
+    font-size: 14px;
+
+    thead {
+        background: $surface-head;
+    }
+
+    th {
+        text-align: left;
+        padding: 14px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        color: $muted;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        white-space: nowrap;
+    }
+
+    td {
+        padding: 14px 16px;
+        border-top: 1px solid $line-soft;
+        vertical-align: middle;
+    }
+
+    tbody tr {
+        transition: background 0.2s;
+
+        &:hover {
+            background: $blue-hover;
+        }
+    }
+
+    td strong {
+        color: $subtle;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    td:last-child {
+        white-space: nowrap;
+    }
+}

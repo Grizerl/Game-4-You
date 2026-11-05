@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard\Pages;
 
-use App\Models\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Category\StoreRequest;
 use App\Http\Requests\Admin\Category\UpdateRequest;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -15,6 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
+
         return view('dashboard.catergory.index', compact('category'));
     }
 
@@ -31,7 +32,7 @@ class CategoryController extends Controller
      */
     public function store(StoreRequest $request)
     {
-        $category = new Category();
+        $category = new Category;
         $category->setTranslations('title', $request->input('title'));
         $category->save();
 
@@ -53,7 +54,7 @@ class CategoryController extends Controller
     {
         $category->setTranslations('title', $request->input('title'));
         $category->save();
-        
+
         return redirect()->route('category.index');
     }
 
@@ -63,6 +64,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+
         return redirect()->route('category.index');
     }
 }

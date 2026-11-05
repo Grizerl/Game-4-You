@@ -83,7 +83,7 @@ class DocumentMapper
             'card' => [
                 'summary' => $this->summary($this->translations($game, 'description')),
                 'label' => $this->translations($game->category, 'title'),
-                'image' => $game->cover_image,
+                'image' => $game->imageSearchPath(),
                 'rating' => $game->rating,
             ],
         ], $game->released_at?->toIso8601String());
@@ -118,7 +118,7 @@ class DocumentMapper
             'card' => [
                 'summary' => $this->summary($this->translations($creator, 'bio')),
                 'label' => $roles,
-                'image' => $creator->avatar,
+                'image' => $creator->imageSearchPath(),
             ],
         ]);
     }
@@ -137,7 +137,7 @@ class DocumentMapper
             'card' => [
                 'summary' => $this->summary($this->translations($company, 'description')),
                 'label' => $country,
-                'image' => $company->logo_path,
+                'image' => $company->imageSearchPath(),
             ],
         ]);
     }
@@ -172,7 +172,7 @@ class DocumentMapper
             'card' => [
                 'summary' => $this->summary($excerpt),
                 'label' => $this->translations($article->tags->first(), 'name'),
-                'image' => $article->cover_image,
+                'image' => $article->imageSearchPath(),
             ],
         ], $article->published_at?->toIso8601String());
     }

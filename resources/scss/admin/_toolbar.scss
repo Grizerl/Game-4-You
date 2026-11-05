@@ -1,0 +1,40 @@
+// Панель над списком: кнопка додавання, пошук, мініатюри.
+@use '../abstracts/variables' as *;
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    gap: 8px;
+
+    input {
+        min-width: 240px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid $line;
+        background: $surface;
+        color: $text;
+        font: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 0 3px $blue-glow;
+        }
+    }
+}
+
+.thumb {
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid $line-soft;
+}

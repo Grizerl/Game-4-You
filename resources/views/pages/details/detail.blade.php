@@ -44,7 +44,7 @@
     <div class="gm-page gm-game">
         <header class="gm-hero">
             <div class="gm-hero__bg" aria-hidden="true">
-                <img src="{{ $game->cover_url }}" alt="">
+                <x-cover :model="$game" kind="large" alt="" />
             </div>
 
             <div class="container gm-hero__inner">
@@ -57,7 +57,7 @@
                 </nav>
 
                 <div class="gm-hero__grid">
-                    <img class="gm-hero__poster" src="{{ $game->cover_url }}" alt="{{ $game->name }}" width="300" height="450">
+                    <x-cover :model="$game" kind="thumb" class="gm-hero__poster" alt="{{ $game->name }}" width="300" height="450" />
 
                     <div class="gm-hero__info">
                         <div class="gm-hero__tags">

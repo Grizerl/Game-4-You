@@ -1,0 +1,4 @@
+// Форма творця.
+@use 'form';
+
+@include form.admin-form(avatar-preview);

@@ -78,7 +78,7 @@ class CompanyController extends Controller
             '@type' => 'Organization',
             'name' => (string) $company->name,
             'url' => route('company.show.page', $company),
-            'logo' => $company->logo_path ? $company->logo_url : null,
+            'logo' => $company->hasImage() ? $company->logo_url : null,
             'description' => $company->description ?: null,
             'foundingDate' => $company->founded_year ? (string) $company->founded_year : null,
             'address' => filled($company->country)

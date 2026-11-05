@@ -1,0 +1,16 @@
+// Форма користувача.
+@use 'form';
+
+@include form.admin-form(user-preview);
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+@media (max-width: 720px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

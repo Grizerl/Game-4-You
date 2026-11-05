@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Support\PublicImage;
+use App\Models\Concerns\HasImageMedia;
 use App\Support\SocialLinks;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -12,15 +12,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Translatable\HasTranslations;
 
 /**
  * Лічильник ігор береться лише через `withCount('games')`: його аліас `games_count`
  * збігається з назвою застарілої колонки і перекриває збережене значення.
  */
-class Creator extends Model
+class Creator extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations;
+    use HasFactory, HasImageMedia, HasTranslations;
 
     public const SOCIAL_KEYS = SocialLinks::KEYS;
 
@@ -85,15 +86,6 @@ class Creator extends Model
     protected function fullName(): Attribute
     {
         return Attribute::get(fn (): string => trim($this->first_name.' '.$this->last_name));
-    }
-
-    /**
-     * Єдине місце, де визначається URL фото: плейсхолдер, статичний файл із
-     * `public/` (сід-дані) або файл, завантажений з адмінки на диск `public`.
-     */
-    protected function avatarUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::url($this->avatar, self::PLACEHOLDER_AVATAR));
     }
 
     /**
@@ -179,5 +171,40 @@ class Creator extends Model
             'name' => $query->orderBy('first_name')->orderBy('last_name'),
             default => $query->orderByDesc('id'),
         };
+    }
+
+    public static function imageCollectionName(): string
+    {
+        return 'avatar';
+    }
+
+    public function legacyImageColumn(): string
+    {
+        return 'avatar';
+    }
+
+    /** @return array<string, string> */
+    protected function imageSizeKeys(): array
+    {
+        return [
+            'thumb' => 'avatar.thumb',
+        ];
+    }
+
+    protected function imagePlaceholder(): string
+    {
+        return self::PLACEHOLDER_AVATAR;
+    }
+
+    /** Оригінал (для og:image та структурованих даних). */
+    protected function avatarUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl());
+    }
+
+    /** Легкий WebP для карток, списків і мініатюр. */
+    protected function avatarThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('thumb'));
     }
 }

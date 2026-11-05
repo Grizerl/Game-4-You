@@ -53,7 +53,7 @@
         <label>Role ({{ $label }})</label>
         <input type="text" name="role[{{ $locale }}]" value="{{ old("role.$locale", $translated('role', $locale)) }}"
                class="@error("role.$locale") error-input @enderror"
-               placeholder="{{ $locale === 'uk' ? 'Роль українською (кілька — через кому)' : 'Role in English (separate several with commas)' }}">
+               placeholder="{{ $locale === 'uk' ? 'Role in Ukrainian (separate several with commas)' : 'Role in English (separate several with commas)' }}">
         @error("role.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -65,7 +65,7 @@
         <label>Country ({{ $label }})</label>
         <input type="text" name="country[{{ $locale }}]" value="{{ old("country.$locale", $translated('country', $locale)) }}"
                class="@error("country.$locale") error-input @enderror"
-               placeholder="{{ $locale === 'uk' ? 'Країна українською' : 'Country in English' }}">
+               placeholder="{{ $locale === 'uk' ? 'Country in Ukrainian' : 'Country in English' }}">
         @error("country.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -85,7 +85,7 @@
     <div class="form-group">
         <label>Bio ({{ $label }})</label>
         <textarea name="bio[{{ $locale }}]" class="@error("bio.$locale") error-input @enderror"
-                  placeholder="{{ $locale === 'uk' ? 'Біографія українською' : 'Biography in English' }}">{{ old("bio.$locale", $translated('bio', $locale)) }}</textarea>
+                  placeholder="{{ $locale === 'uk' ? 'Biography in Ukrainian' : 'Biography in English' }}">{{ old("bio.$locale", $translated('bio', $locale)) }}</textarea>
         @error("bio.$locale")
             <div class="error-text">{{ $message }}</div>
         @enderror
@@ -113,7 +113,7 @@
     <label>Avatar</label>
 
     <div class="avatar-preview">
-        <img data-avatar-preview src="{{ $c?->avatar ? $c->avatar_url : '' }}" alt="Avatar preview" width="100" height="100" @if (! $c?->avatar) hidden @endif>
+        <img data-avatar-preview src="{{ $c?->hasImage() ? $c->avatar_thumb_url : '' }}" alt="Avatar preview" width="100" height="100" @if (! $c?->avatar) hidden @endif>
     </div>
 
     <input type="file" name="avatar" accept="image/*" data-avatar-input class="@error('avatar') error-input @enderror">
@@ -125,7 +125,10 @@
 
 <br>
 
-<button class="btn">{{ $c ? 'Update Creator' : 'Create Creator' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $c ? 'Update Creator' : 'Create Creator' }}</button>
+    <a href="{{ route('creator.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
 <script>
     document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {
@@ -139,93 +142,6 @@
     });
 </script>
 
-<style>
-    .form-group {
-        margin-bottom: 18px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 6px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    input, textarea, select {
-        width: 100%;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.1);
-        background: rgba(15, 23, 42, 0.6);
-        color: #e2e8f0;
-        outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-        border-color: #3b82f6;
-    }
-
-    textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    .error-input {
-        border-color: #ef4444 !important;
-    }
-
-    .error-text {
-        color: #ef4444;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .hint {
-        color: #64748b;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .social-row {
-        display: grid;
-        grid-template-columns: 110px 1fr;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 8px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    .avatar-preview {
-        margin-bottom: 10px;
-    }
-
-    .avatar-preview img {
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .btn {
-        background: linear-gradient(135deg, #3b82f6, #6366f1);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s;
-    }
-
-    .btn:hover {
-        transform: translateY(-1px);
-    }
-
-    select {
-        color: #e2e8f0;
-    }
-
-    select option {
-        background: #0f172a;
-        color: #e2e8f0;
-    }
-</style>
+@push('styles')
+    @vite('resources/scss/admin/form-creator.scss')
+@endpush

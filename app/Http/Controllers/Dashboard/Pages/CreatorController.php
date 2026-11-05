@@ -51,11 +51,11 @@ class CreatorController extends Controller
     {
         $creator = new Creator($this->payload($request->validated()));
 
-        if ($request->hasFile('avatar')) {
-            $creator->avatar = $request->file('avatar')->store('creators', 'public');
-        }
-
         $creator->save();
+
+        if ($request->hasFile('avatar')) {
+            $creator->replaceImageFromRequest('avatar');
+        }
 
         return redirect()->route('creator.index');
     }
@@ -77,15 +77,11 @@ class CreatorController extends Controller
     {
         $creator->fill($this->payload($request->validated()));
 
-        if ($request->hasFile('avatar')) {
-            if ($creator->avatar) {
-                Storage::disk('public')->delete($creator->avatar);
-            }
-
-            $creator->avatar = $request->file('avatar')->store('creators', 'public');
-        }
-
         $creator->save();
+
+        if ($request->hasFile('avatar')) {
+            $creator->replaceImageFromRequest('avatar');
+        }
 
         return redirect()->route('creator.index');
     }

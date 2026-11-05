@@ -1,0 +1,9 @@
+// Список категорій.
+@use '../abstracts/variables' as *;
+@use 'toolbar';
+@use 'table';
+
+// Роздільник між назвами мовами
+.sep {
+    color: $subtle;
+}

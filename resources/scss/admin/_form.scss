@@ -1,0 +1,107 @@
+// Спільні стилі форм створення/редагування. $preview — клас блоку з прев'ю зображення
+// (у студій — logo-preview, у творців, ігор і новин — avatar-preview).
+// Кнопки (.btn) — глобально в admin.scss.
+@use '../abstracts/variables' as *;
+
+@mixin admin-form($preview) {
+    // Форма — картка в контенті (форми в шапці/сайдбарі не зачіпаємо)
+    .content > form:not(.inline-form) {
+        max-width: 960px;
+        padding: 28px;
+        background: $surface;
+        border: 1px solid $line-soft;
+        border-radius: 18px;
+        backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: $muted;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid $line;
+        background: rgba(2, 6, 23, 0.45);
+        color: $text;
+        font: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: $blue;
+        box-shadow: 0 0 0 3px $blue-glow;
+    }
+
+    input[type='checkbox'], input[type='radio'] {
+        width: auto;
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .error-input {
+        border-color: $red !important;
+    }
+
+    .error-text {
+        color: $red-light;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .hint {
+        color: $subtle;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .social-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 8px;
+        color: $muted;
+        font-size: 13px;
+    }
+
+    .#{$preview} {
+        margin-bottom: 10px;
+
+        img {
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+
+    .form-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 8px;
+        padding-top: 20px;
+        border-top: 1px solid $line-soft;
+    }
+
+    select {
+        color: $text;
+
+        option {
+            background: $bg-deep;
+            color: $text;
+        }
+    }
+}

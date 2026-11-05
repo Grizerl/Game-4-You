@@ -55,7 +55,7 @@
     <label>Cover Image</label>
 
     <div class="avatar-preview">
-        <img data-avatar-preview src="{{ $a?->cover_image ? $a->cover_url : '' }}" alt="Cover preview" width="220" height="124" @if (! $a?->cover_image) hidden @endif>
+        <img data-avatar-preview src="{{ $a?->hasImage() ? $a->cover_thumb_url : '' }}" alt="Cover preview" width="220" height="124" @if (! $a?->cover_image) hidden @endif>
     </div>
 
     <input type="file" name="cover_image" accept="image/*" data-avatar-input class="@error('cover_image') error-input @enderror">
@@ -121,33 +121,14 @@
 
 <br>
 
-<button class="btn">{{ $a ? 'Update Article' : 'Create Article' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $a ? 'Update Article' : 'Create Article' }}</button>
+    <a href="{{ route('news.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
-<style>
-    textarea.short {
-        min-height: 80px;
-    }
-
-    textarea.tall {
-        min-height: 260px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 14px;
-    }
-
-    select[multiple] {
-        padding: 8px;
-    }
-
-    .md-hint {
-        margin: -8px 0 18px;
-    }
-
-    .hint code {
-        padding: 1px 5px;
-        border-radius: 4px;
-        background: rgba(255, 255, 255, 0.08);
-    }
-</style>
+@push('styles')
+    @vite('resources/scss/admin/form-news.scss')
+@endpush
 
 <script>
     document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {
@@ -161,93 +142,3 @@
     });
 </script>
 
-<style>
-    .form-group {
-        margin-bottom: 18px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 6px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    input, textarea, select {
-        width: 100%;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.1);
-        background: rgba(15, 23, 42, 0.6);
-        color: #e2e8f0;
-        outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-        border-color: #3b82f6;
-    }
-
-    textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    .error-input {
-        border-color: #ef4444 !important;
-    }
-
-    .error-text {
-        color: #ef4444;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .hint {
-        color: #64748b;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .social-row {
-        display: grid;
-        grid-template-columns: 110px 1fr;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 8px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    .avatar-preview {
-        margin-bottom: 10px;
-    }
-
-    .avatar-preview img {
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .btn {
-        background: linear-gradient(135deg, #3b82f6, #6366f1);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s;
-    }
-
-    .btn:hover {
-        transform: translateY(-1px);
-    }
-
-    select {
-        color: #e2e8f0;
-    }
-
-    select option {
-        background: #0f172a;
-        color: #e2e8f0;
-    }
-</style>

@@ -42,7 +42,7 @@
     <label>Cover Image</label>
 
     <div class="avatar-preview">
-        <img data-avatar-preview src="{{ $g?->cover_image ? $g->cover_url : '' }}" alt="Cover preview" width="100" height="150" @if (! $g?->cover_image) hidden @endif>
+        <img data-avatar-preview src="{{ $g?->hasImage() ? $g->cover_thumb_url : '' }}" alt="Cover preview" width="100" height="150" @if (! $g?->cover_image) hidden @endif>
     </div>
 
     <input type="file" name="cover_image" accept="image/*" data-avatar-input class="@error('cover_image') error-input @enderror">
@@ -161,42 +161,14 @@
 
 <br>
 
-<button class="btn">{{ $g ? 'Update Game' : 'Create Game' }}</button>
+<div class="form-actions">
+    <button class="btn">{{ $g ? 'Update Game' : 'Create Game' }}</button>
+    <a href="{{ route('game.index') }}" class="btn btn-secondary">Cancel</a>
+</div>
 
-<style>
-    .shot-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin: 0 0 12px;
-        padding: 0;
-        list-style: none;
-    }
-
-    .shot-list li {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        align-items: flex-start;
-    }
-
-    .shot-list img {
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .shot-list .remove {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        margin: 0;
-        cursor: pointer;
-    }
-
-    .shot-list .remove input {
-        width: auto;
-    }
-</style>
+@push('styles')
+    @vite('resources/scss/admin/form-game.scss')
+@endpush
 
 <script>
     document.querySelector('[data-avatar-input]')?.addEventListener('change', (event) => {
@@ -210,93 +182,3 @@
     });
 </script>
 
-<style>
-    .form-group {
-        margin-bottom: 18px;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 6px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    input, textarea, select {
-        width: 100%;
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.1);
-        background: rgba(15, 23, 42, 0.6);
-        color: #e2e8f0;
-        outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-        border-color: #3b82f6;
-    }
-
-    textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    .error-input {
-        border-color: #ef4444 !important;
-    }
-
-    .error-text {
-        color: #ef4444;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .hint {
-        color: #64748b;
-        font-size: 12px;
-        margin-top: 6px;
-    }
-
-    .social-row {
-        display: grid;
-        grid-template-columns: 110px 1fr;
-        gap: 12px;
-        align-items: center;
-        margin-bottom: 8px;
-        color: #94a3b8;
-        font-size: 13px;
-    }
-
-    .avatar-preview {
-        margin-bottom: 10px;
-    }
-
-    .avatar-preview img {
-        object-fit: cover;
-        border-radius: 12px;
-    }
-
-    .btn {
-        background: linear-gradient(135deg, #3b82f6, #6366f1);
-        color: #fff;
-        padding: 12px 18px;
-        border-radius: 10px;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: 0.2s;
-    }
-
-    .btn:hover {
-        transform: translateY(-1px);
-    }
-
-    select {
-        color: #e2e8f0;
-    }
-
-    select option {
-        background: #0f172a;
-        color: #e2e8f0;
-    }
-</style>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\HasImageMedia;
 use App\Support\PublicImage;
 use App\Support\YouTube;
 use Illuminate\Database\Eloquent\Builder;
@@ -12,11 +13,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\Translatable\HasTranslations;
 
-class Game extends Model
+class Game extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations;
+    use HasFactory, HasImageMedia, HasTranslations;
 
     public const SORTS = ['new', 'rating', 'name'];
 
@@ -98,11 +100,6 @@ class Game extends Model
         }
 
         return $game;
-    }
-
-    protected function coverUrl(): Attribute
-    {
-        return Attribute::get(fn (): string => PublicImage::url($this->cover_image, self::PLACEHOLDER_COVER));
     }
 
     /**
@@ -210,5 +207,49 @@ class Game extends Model
             'name' => $query->orderByRaw('JSON_UNQUOTE(JSON_EXTRACT(games.name, ?)) COLLATE utf8mb4_unicode_ci', [self::jsonPath()]),
             default => $query->orderByRaw('COALESCE(released_at, DATE(created_at)) DESC')->orderByDesc('id'),
         };
+    }
+
+    public static function imageCollectionName(): string
+    {
+        return 'cover';
+    }
+
+    public function legacyImageColumn(): string
+    {
+        return 'cover_image';
+    }
+
+    /** @return array<string, string> */
+    protected function imageSizeKeys(): array
+    {
+        return [
+            'thumb' => 'cover.thumb.desktop',
+            'thumb_mobile' => 'cover.thumb.mobile',
+            'large' => 'cover.large.desktop',
+            'large_mobile' => 'cover.large.mobile',
+        ];
+    }
+
+    protected function imagePlaceholder(): string
+    {
+        return self::PLACEHOLDER_COVER;
+    }
+
+    /** Оригінал (для og:image та структурованих даних). */
+    protected function coverUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl());
+    }
+
+    /** Легкий WebP для карток, списків і мініатюр. */
+    protected function coverThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('thumb'));
+    }
+
+    /** Легкий WebP для великих банерів. */
+    protected function coverLargeUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => $this->imageUrl('large'));
     }
 }

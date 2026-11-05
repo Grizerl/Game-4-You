@@ -40,7 +40,7 @@
             <a class="cr-back" href="{{ route('company.page') }}">← {{ __('companies.back_to_list') }}</a>
 
             <header class="cr-hero">
-                <img class="co-hero__logo" src="{{ $company->logo_url }}" alt="{{ $company->name }}" width="200" height="200">
+                <img class="co-hero__logo" src="{{ $company->logo_thumb_url }}" alt="{{ $company->name }}" width="200" height="200">
 
                 <div class="cr-hero__body">
                     <h1 class="cr-hero__name">{{ $company->name }}</h1>
@@ -140,7 +140,7 @@
                         @foreach ($games as $game)
                             <li>
                                 <a class="cr-game" href="{{ route('games.show.page', $game) }}">
-                                    <img src="{{ $game->cover_url }}" alt="{{ $game->name }}" loading="lazy" width="96" height="64">
+                                    <img src="{{ $game->cover_thumb_url }}" alt="{{ $game->name }}" loading="lazy" width="96" height="64">
                                     <span class="cr-game__body">
                                         <span class="cr-game__name">{{ $game->name }}</span>
                                         <span class="cr-game__meta">

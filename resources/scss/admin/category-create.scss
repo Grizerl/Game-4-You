@@ -1,0 +1,4 @@
+// Форма категорії (create).
+@use 'form';
+
+@include form.admin-form(category-preview);

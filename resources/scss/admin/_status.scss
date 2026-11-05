@@ -1,0 +1,35 @@
+// Бейджі статусів (новини, користувачі).
+@use '../abstracts/variables' as *;
+
+.status {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.status-published,
+.status-verified {
+    background: rgba(34, 197, 94, 0.18);
+    color: $green-light;
+}
+
+.status-draft,
+.status-unverified {
+    background: rgba(148, 163, 184, 0.2);
+    color: #cbd5e1;
+}
+
+.status-scheduled {
+    background: rgba(250, 204, 21, 0.18);
+    color: #facc15;
+}
+
+.status-you {
+    margin-left: 8px;
+    padding: 2px 9px;
+    background: rgba(99, 102, 241, 0.25);
+    color: #a5b4fc;
+}

@@ -134,10 +134,10 @@
         {{-- ============ SPOTLIGHT ============ --}}
         @if ($spotlight)
             <section class="hm-spot hm-reveal" aria-labelledby="spot-title">
-                <div class="hm-spot__bg" aria-hidden="true"><img src="{{ $spotlight->cover_url }}" alt="" loading="lazy"></div>
+                <div class="hm-spot__bg" aria-hidden="true"><x-cover :model="$spotlight" kind="large"  alt="" loading="lazy" /></div>
                 <div class="container hm-spot__grid">
                     <a class="hm-spot__poster" href="{{ route('games.show.page', $spotlight) }}" tabindex="-1" aria-hidden="true">
-                        <img src="{{ $spotlight->cover_url }}" alt="" loading="lazy" width="300" height="450">
+                        <x-cover :model="$spotlight" kind="thumb"  alt="" loading="lazy" width="300" height="450" />
                     </a>
                     <div class="hm-spot__body">
                         <p class="hm-label">{{ __('home.spotlight_label') }}</p>
@@ -227,8 +227,8 @@
                                     @foreach ($companies as $company)
                                         <li @if ($copy === 2) aria-hidden="true" class="hm-marquee__dup" @endif>
                                             <a class="hm-logo" href="{{ route('company.show.page', $company) }}" @if ($copy === 2) tabindex="-1" @endif title="{{ $company->name }}">
-                                                @if ($company->logo_path)
-                                                    <img src="{{ $company->logo_url }}" alt="{{ $copy === 1 ? $company->name : '' }}" loading="lazy" height="44">
+                                                @if ($company->hasImage())
+                                                    <img src="{{ $company->logo_thumb_url }}" alt="{{ $copy === 1 ? $company->name : '' }}" loading="lazy" height="44">
                                                 @else
                                                     <span>{{ $company->name }}</span>
                                                 @endif
@@ -251,7 +251,7 @@
                         <div class="hm-people">
                             @foreach ($creators as $i => $creator)
                                 <a class="hm-person hm-reveal" style="--d: {{ $i * 70 }}ms" href="{{ route('creator.show.page', $creator) }}">
-                                    <img src="{{ $creator->avatar_url }}" alt="" loading="lazy" width="64" height="64">
+                                    <img src="{{ $creator->avatar_thumb_url }}" alt="" loading="lazy" width="64" height="64">
                                     <span class="hm-person__body">
                                         <strong>{{ $creator->full_name }}</strong>
                                         <small>{{ implode(', ', array_slice($creator->roleList(), 0, 2)) }}</small>

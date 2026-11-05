@@ -54,10 +54,13 @@ class GameController extends Controller
     {
         $game = new Game($this->payload($request->validated()));
 
-        $game->cover_image = $request->file('cover_image')->store('games', 'public');
         $game->screenshots = $this->storeScreenshots($request->file('screenshots', []), []) ?: null;
 
         $game->save();
+
+        if ($request->hasFile('cover_image')) {
+            $game->replaceImageFromRequest('cover_image');
+        }
 
         // Збій Telegram не повинен блокувати збереження гри.
         try {
@@ -84,11 +87,6 @@ class GameController extends Controller
     {
         $game->fill($this->payload($request->validated()));
 
-        if ($request->hasFile('cover_image')) {
-            $this->deleteFile($game->cover_image);
-            $game->cover_image = $request->file('cover_image')->store('games', 'public');
-        }
-
         $existing = $game->screenshots ?? [];
         $remove = array_intersect($existing, (array) $request->input('remove_screenshots', []));
 
@@ -100,6 +98,10 @@ class GameController extends Controller
         $game->screenshots = $this->storeScreenshots($request->file('screenshots', []), $kept) ?: null;
 
         $game->save();
+
+        if ($request->hasFile('cover_image')) {
+            $game->replaceImageFromRequest('cover_image');
+        }
 
         return redirect()->route('game.index');
     }
