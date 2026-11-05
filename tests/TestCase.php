@@ -21,6 +21,15 @@ abstract class TestCase extends BaseTestCase
         // без фейкового диска тести перезаписували б і видаляли справжні зображення.
         Storage::fake('public');
 
+        // Тести з workspace-84 йдуть від root: скомпільовані ними Blade-файли в storage/framework/views
+        // ставали недоступними для php-fpm (`touch(): Utime failed`, 500 в адмінці). Тому тести
+        // компілюють шаблони в окрему теку.
+        $compiled = storage_path('framework/testing/views');
+        $this->app['config']->set('view.compiled', $compiled);
+        $this->app->forgetInstance('blade.compiler');
+        $this->app->forgetInstance('view.engine.resolver');
+        $this->app->forgetInstance('view');
+
         // Без Accept-Language локалізація редіректить на /en; тести працюють у дефолтній (uk) локалі.
         $this->withHeader('Accept-Language', config('app.locale'));
 
