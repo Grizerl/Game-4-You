@@ -1,0 +1,37 @@
+// Форма гри.
+@use 'form';
+
+.shot-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: flex-start;
+    }
+
+    img {
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .remove {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0;
+        cursor: pointer;
+
+        input {
+            width: auto;
+        }
+    }
+}
+
+@include form.admin-form(avatar-preview);

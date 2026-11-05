@@ -278,11 +278,11 @@ class HomePageTest extends TestCase
     {
         $this->get(route('home.page'))->assertSee("document.documentElement.classList.add('hm-js')", false);
 
-        $css = file_get_contents(public_path('assets/css/home.css'));
+        $css = file_get_contents(resource_path('scss/public/home.scss'));
 
         $this->assertStringContainsString('.hm-js .hm-reveal', $css);
         $this->assertDoesNotMatchRegularExpression('/^\.hm-reveal\s*\{/m', $css);
-        $this->assertStringContainsString('prefers-reduced-motion: reduce', $css);
+        $this->assertStringContainsString('@include reduced-motion', $css);
     }
 
     #[Test]

@@ -1,0 +1,28 @@
+// Форма новини.
+@use 'form';
+
+textarea.short {
+    min-height: 80px;
+}
+
+textarea.tall {
+    min-height: 260px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+}
+
+select[multiple] {
+    padding: 8px;
+}
+
+.md-hint {
+    margin: -8px 0 18px;
+}
+
+.hint code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+@include form.admin-form(avatar-preview);

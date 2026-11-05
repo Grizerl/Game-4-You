@@ -1,0 +1,8 @@
+// Список категорій.
+@use '../abstracts/variables' as *;
+@use 'table';
+
+// Роздільник між посиланнями дій
+.sep {
+    color: $subtle;
+}

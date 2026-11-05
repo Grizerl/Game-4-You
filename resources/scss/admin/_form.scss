@@ -1,0 +1,94 @@
+// Спільні стилі форм створення/редагування. $preview — клас блоку з прев'ю зображення
+// (у студій — logo-preview, у творців, ігор і новин — avatar-preview).
+@use '../abstracts/variables' as *;
+
+@mixin admin-form($preview) {
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: $muted;
+        font-size: 13px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid $line;
+        background: $surface;
+        color: $text;
+        outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: $blue;
+    }
+
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .error-input {
+        border-color: $red !important;
+    }
+
+    .error-text {
+        color: $red;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .hint {
+        color: $subtle;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .social-row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 8px;
+        color: $muted;
+        font-size: 13px;
+    }
+
+    .#{$preview} {
+        margin-bottom: 10px;
+
+        img {
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+
+    .btn {
+        background: linear-gradient(135deg, $blue, $indigo);
+        color: #fff;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
+    select {
+        color: $text;
+
+        option {
+            background: $bg-deep;
+            color: $text;
+        }
+    }
+}

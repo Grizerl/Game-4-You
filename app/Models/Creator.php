@@ -96,6 +96,12 @@ class Creator extends Model
         return Attribute::get(fn (): string => PublicImage::url($this->avatar, self::PLACEHOLDER_AVATAR));
     }
 
+    /** Легкий WebP 640 px для карток (поки не згенеровано — оригінал). */
+    protected function avatarThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => PublicImage::variant($this->avatar, 640, self::PLACEHOLDER_AVATAR));
+    }
+
     /**
      * Ролі як список (значення `role` — перелік через кому).
      *

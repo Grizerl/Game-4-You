@@ -1,0 +1,33 @@
+// Панель над списком: пошук, мініатюри.
+@use '../abstracts/variables' as *;
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.search {
+    display: flex;
+    gap: 8px;
+
+    input {
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid $line;
+        background: $surface;
+        color: $text;
+    }
+
+    .btn {
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.thumb {
+    object-fit: cover;
+    border-radius: 10px;
+}

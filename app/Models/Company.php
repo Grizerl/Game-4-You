@@ -91,6 +91,12 @@ class Company extends Model
         return Attribute::get(fn (): string => PublicImage::url($this->logo_path, self::PLACEHOLDER_LOGO));
     }
 
+    /** Легкий WebP 640 px для карток (поки не згенеровано — оригінал). */
+    protected function logoThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => PublicImage::variant($this->logo_path, 640, self::PLACEHOLDER_LOGO));
+    }
+
     /**
      * @return array<string, string>
      */

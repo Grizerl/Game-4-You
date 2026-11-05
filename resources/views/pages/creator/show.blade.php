@@ -40,7 +40,7 @@
             <a class="cr-back" href="{{ route('creator.page') }}">← {{ __('creators.back_to_list') }}</a>
 
             <header class="cr-hero">
-                <img class="cr-hero__avatar" src="{{ $creator->avatar_url }}" alt="{{ $creator->full_name }}" width="220" height="220">
+                <img class="cr-hero__avatar" src="{{ $creator->avatar_thumb_url }}" alt="{{ $creator->full_name }}" width="220" height="220">
 
                 <div class="cr-hero__body">
                     <h1 class="cr-hero__name">{{ $creator->full_name }}</h1>
@@ -155,7 +155,7 @@
                         @foreach ($games as $game)
                             <li class="cr-timeline__item">
                                 <a class="cr-game" href="{{ route('games.show.page', $game) }}">
-                                    <img src="{{ $game->cover_url }}" alt="{{ $game->name }}" loading="lazy" width="96" height="64">
+                                    <img src="{{ $game->cover_thumb_url }}" alt="{{ $game->name }}" loading="lazy" width="96" height="64">
                                     <span class="cr-game__body">
                                         <span class="cr-game__name">{{ $game->name }}</span>
                                         <span class="cr-game__meta">

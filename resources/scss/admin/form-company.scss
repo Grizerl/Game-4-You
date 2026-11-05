@@ -1,0 +1,4 @@
+// Форма компанії.
+@use 'form';
+
+@include form.admin-form(logo-preview);

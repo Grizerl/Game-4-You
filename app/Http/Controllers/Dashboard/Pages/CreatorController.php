@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Creator\StoreRequest;
 use App\Http\Requests\Admin\Creator\UpdateRequest;
 use App\Models\Company;
 use App\Models\Creator;
+use App\Support\ImageVariants;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -53,6 +54,7 @@ class CreatorController extends Controller
 
         if ($request->hasFile('avatar')) {
             $creator->avatar = $request->file('avatar')->store('creators', 'public');
+            ImageVariants::generate($creator->avatar);
         }
 
         $creator->save();
@@ -83,6 +85,7 @@ class CreatorController extends Controller
             }
 
             $creator->avatar = $request->file('avatar')->store('creators', 'public');
+            ImageVariants::generate($creator->avatar);
         }
 
         $creator->save();

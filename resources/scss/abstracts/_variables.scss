@@ -1,0 +1,32 @@
+// Спільні SCSS-змінні. Палітра сторінок (--gm-*, --cr-*, --clr-*) лишається
+// CSS custom properties — вона потрібна в runtime. Тут — лише значення, які
+// повторюються в кількох місцях і компілюються в ті самі літерали.
+
+// Брейкпоїнти (max-width), що повторюються
+$bp-sm: 720px;
+$bp-md: 900px;
+$bp-lg: 1000px;
+
+// Публічний сайт
+$pink-light: rgb(239, 151, 232);
+$ink: #04121a;
+
+// Адмінка /control
+$text: #e2e8f0;
+$muted: #94a3b8;
+$subtle: #64748b;
+$bg-deep: #0f172a;
+$blue: #3b82f6;
+$blue-light: #60a5fa;
+$indigo: #6366f1;
+$red: #ef4444;
+$red-light: #f87171;
+$surface: rgba(15, 23, 42, 0.6);
+$surface-head: rgba(30, 41, 59, 0.8);
+$line: rgba(255, 255, 255, 0.1);
+$line-soft: rgba(255, 255, 255, 0.05);
+$blue-glow: rgba(59, 130, 246, 0.25);
+$blue-hover: rgba(59, 130, 246, 0.08);
+$red-soft: rgba(239, 68, 68, 0.2);
+$red-hover: rgba(239, 68, 68, 0.35);
+$red-line: rgba(239, 68, 68, 0.4);

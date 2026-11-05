@@ -159,7 +159,7 @@ class NewsListingTest extends TestCase
         $this->get(route('news.page'))
             ->assertSee('type="application/rss+xml"', false)
             ->assertSee('href="'.route('news.feed.page').'"', false)
-            ->assertSee('assets/css/news.css', false)
+            ->assertSee('resources/scss/public/news.scss', false)
             ->assertSee('family=Oswald', false)
             ->assertSee('rel="canonical" href="'.route('news.page').'"', false)
             ->assertSee('hreflang="en"', false);

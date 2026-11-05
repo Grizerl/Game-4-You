@@ -74,8 +74,8 @@ class CompanyListingTest extends TestCase
             $this->get($url)->assertOk()
                 ->assertSee('family=Manrope', false)
                 ->assertSee('family=Unbounded', false)
-                ->assertSee('assets/css/creators.css', false)
-                ->assertSee('assets/css/companies.css', false);
+                ->assertSee('resources/scss/public/creators.scss', false)
+                ->assertSee('resources/scss/public/companies.scss', false);
         }
     }
 

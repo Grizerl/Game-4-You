@@ -62,7 +62,7 @@
             @if ($featured)
                 @php($featuredTag = $featured->tags->first())
                 <article class="nw-featured">
-                    <img class="nw-featured__bg" src="{{ $featured->cover_url }}" alt="" width="1280" height="720">
+                    <img class="nw-featured__bg" src="{{ $featured->cover_large_url }}" alt="" width="1280" height="720">
                     <div class="nw-featured__shade" aria-hidden="true"></div>
                     <div class="nw-featured__body">
                         <p class="nw-featured__badge">{{ __('news.featured_badge') }}</p>

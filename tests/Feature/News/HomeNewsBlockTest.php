@@ -33,7 +33,7 @@ class HomeNewsBlockTest extends TestCase
             ->assertDontSee('Home draft')
             ->assertDontSee('Home scheduled')
             ->assertSee('href="'.route('news.page').'"', false)
-            ->assertSee('assets/css/news.css', false);
+            ->assertSee('resources/scss/public/news.scss', false);
     }
 
     #[Test]

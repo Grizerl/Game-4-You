@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Company\StoreRequest;
 use App\Http\Requests\Admin\Company\UpdateRequest;
 use App\Models\Company;
+use App\Support\ImageVariants;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -116,6 +117,7 @@ class CompanyController extends Controller
     {
         $filename = time().'_'.Str::random(6).'.'.$file->extension();
         $file->move(public_path(self::LOGO_DIR), $filename);
+        ImageVariants::generate(self::LOGO_DIR.'/'.$filename);
 
         return self::LOGO_DIR.'/'.$filename;
     }

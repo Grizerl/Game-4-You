@@ -48,7 +48,7 @@ class GameCatalogTest extends TestCase
         $this->get(route('games.page'))->assertOk()
             ->assertSee('family=Oswald', false)
             ->assertSee('family=Manrope', false)
-            ->assertSee('assets/css/games.css', false)
+            ->assertSee('resources/scss/public/games.scss', false)
             ->assertSee('assets/js/games/games.js', false);
     }
 

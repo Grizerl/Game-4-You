@@ -105,6 +105,18 @@ class Game extends Model
         return Attribute::get(fn (): string => PublicImage::url($this->cover_image, self::PLACEHOLDER_COVER));
     }
 
+    /** Легкий WebP 640 px для карток і постерів (поки не згенеровано — оригінал). */
+    protected function coverThumbUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => PublicImage::variant($this->cover_image, 640, self::PLACEHOLDER_COVER));
+    }
+
+    /** Легкий WebP 1280 px для великих банерів. */
+    protected function coverLargeUrl(): Attribute
+    {
+        return Attribute::get(fn (): string => PublicImage::variant($this->cover_image, 1280, self::PLACEHOLDER_COVER));
+    }
+
     /**
      * @return list<string>
      */

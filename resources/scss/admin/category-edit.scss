@@ -1,0 +1,40 @@
+// Форма категорії (edit).
+@use '../abstracts/variables' as *;
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: $muted;
+    font-size: 13px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid $line;
+    background: $surface;
+    color: $text;
+}
+
+.error-input {
+    border-color: $red !important;
+}
+
+.error-text {
+    color: $red;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.btn {
+    background: linear-gradient(135deg, $blue, $indigo);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: none;
+}

@@ -1,3 +1,3 @@
-{{-- Шрифти й стилі сторінок студій: спільні cr-* зі сторінок творців + companies.css. --}}
+{{-- Шрифти й стилі сторінок студій: спільні cr-* зі сторінок творців + companies.scss. --}}
 @include('pages.creator.partials.assets')
-<link rel="stylesheet" href="{{ asset('assets/css/companies.css') }}">
+@vite('resources/scss/public/companies.scss')

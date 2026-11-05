@@ -1,7 +1,8 @@
-/*
- * Шапка сайту (.sh-*): логотип + пошук на всю ширину + бургер зі шторкою; пошук із випадаючим
- * списком (.hs-*). Кольори — з палітри сайту (index.css).
- */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* * Шапка сайту (.sh-*): логотип + пошук на всю ширину + бургер зі шторкою; пошук із випадаючим
+ * списком (.hs-*). Кольори — з палітри сайту (index.css). */
 
 :root {
     --sh-bg: #090624;
@@ -35,10 +36,10 @@
     font-size: 30px;
     line-height: 1;
     white-space: nowrap;
-}
 
-.sh-brand span {
-    font-size: inherit;
+    span {
+        font-size: inherit;
+    }
 }
 
 .sh-iconbtn {
@@ -68,8 +69,7 @@
     display: none;
 }
 
-.sh-ico--close,
-.sh-search-toggle[aria-expanded="true"] .sh-ico--search {
+.sh-ico--close, .sh-search-toggle[aria-expanded="true"] .sh-ico--search {
     display: none;
 }
 
@@ -77,9 +77,7 @@
     display: block;
 }
 
-.sh-iconbtn:hover,
-.sh-iconbtn:focus-visible,
-.sh-search-toggle[aria-expanded="true"] {
+.sh-iconbtn:hover, .sh-iconbtn:focus-visible, .sh-search-toggle[aria-expanded="true"] {
     border-color: var(--sh-accent);
     background: rgba(185, 25, 142, 0.18);
     outline: 0;
@@ -89,18 +87,18 @@
     display: grid;
     gap: 5px;
     width: 20px;
-}
 
-.sh-burger__lines i {
-    display: block;
-    height: 2px;
-    border-radius: 2px;
-    background: currentColor;
-}
+    i {
+        display: block;
+        height: 2px;
+        border-radius: 2px;
+        background: currentColor;
 
-.sh-burger__lines i:nth-child(2) {
-    width: 70%;
-    margin-left: auto;
+        &:nth-child(2) {
+            width: 70%;
+            margin-left: auto;
+        }
+    }
 }
 
 /* ---------- шторка ---------- */
@@ -113,10 +111,10 @@
     backdrop-filter: blur(3px);
     opacity: 0;
     transition: opacity 0.3s ease;
-}
 
-.sh-overlay.is-open {
-    opacity: 1;
+    &.is-open {
+        opacity: 1;
+    }
 }
 
 .sh-drawer {
@@ -140,30 +138,30 @@
     transform: translateX(100%);
     visibility: hidden;
     transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1), visibility 0s linear 0.35s;
-}
 
-.sh-drawer.is-open {
-    transform: translateX(0);
-    visibility: visible;
-    transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1);
-}
+    &.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.3, 1);
+    }
 
-.sh-drawer:focus {
-    outline: 0;
-}
+    &:focus {
+        outline: 0;
+    }
 
-.sh-drawer__head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.sh-drawer__title {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sh-muted);
+    &__title {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sh-muted);
+    }
 }
 
 .sh-close {
@@ -180,8 +178,7 @@
     transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.sh-close:hover,
-.sh-close:focus-visible {
+.sh-close:hover, .sh-close:focus-visible {
     border-color: var(--sh-accent);
     background: rgba(185, 25, 142, 0.18);
     outline: 0;
@@ -205,8 +202,7 @@
     transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
 }
 
-.sh-link:hover,
-.sh-link:focus-visible {
+.sh-link:hover, .sh-link:focus-visible {
     padding-left: 24px;
     background: rgba(255, 255, 255, 0.07);
     color: var(--sh-accent-light);
@@ -216,32 +212,32 @@
 .sh-link.is-active {
     background: rgba(185, 25, 142, 0.22);
     color: var(--sh-text);
-}
 
-.sh-link.is-active::before {
-    content: "";
-    position: absolute;
-    top: 14px;
-    bottom: 14px;
-    left: 0;
-    width: 4px;
-    border-radius: 0 4px 4px 0;
-    background: var(--sh-accent);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 14px;
+        bottom: 14px;
+        left: 0;
+        width: 4px;
+        border-radius: 0 4px 4px 0;
+        background: var(--sh-accent);
+    }
 }
 
 .sh-connect {
     margin-top: auto;
     padding-top: 22px;
     border-top: 1px solid var(--sh-line);
-}
 
-.sh-connect__title {
-    margin-bottom: 14px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sh-muted);
+    &__title {
+        margin-bottom: 14px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sh-muted);
+    }
 }
 
 .sh-socials {
@@ -261,15 +257,14 @@
     background: rgba(255, 255, 255, 0.06);
     color: var(--sh-text);
     transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
 }
 
-.sh-social svg {
-    width: 22px;
-    height: 22px;
-}
-
-.sh-social:hover,
-.sh-social:focus-visible {
+.sh-social:hover, .sh-social:focus-visible {
     transform: translateY(-3px);
     border-color: var(--sh-accent);
     background: var(--sh-accent);
@@ -303,57 +298,56 @@ body.sh-locked {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.06);
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &:focus-within {
+        border-color: var(--sh-accent);
+        background: rgba(255, 255, 255, 0.09);
+        box-shadow: 0 0 0 4px rgba(185, 25, 142, 0.22);
+    }
+
+    input {
+        flex: 1;
+        min-width: 0;
+        height: 100%;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: var(--sh-text);
+        font-family: var(--font-family-barlow, inherit);
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+
+        &::placeholder {
+            color: var(--sh-muted);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+        }
+
+        &::-webkit-search-cancel-button {
+            display: none;
+        }
+    }
+
+    &__btn {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--sh-accent);
+        color: var(--sh-text);
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
 }
 
-.hs-search:focus-within {
-    border-color: var(--sh-accent);
-    background: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 0 0 4px rgba(185, 25, 142, 0.22);
-}
-
-.hs-search input {
-    flex: 1;
-    min-width: 0;
-    height: 100%;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    color: var(--sh-text);
-    font-family: var(--font-family-barlow, inherit);
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
-.hs-search input::placeholder {
-    color: var(--sh-muted);
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-}
-
-.hs-search input::-webkit-search-cancel-button {
-    display: none;
-}
-
-.hs-search__btn {
-    flex: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border: 0;
-    border-radius: 50%;
-    background: var(--sh-accent);
-    color: var(--sh-text);
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.hs-search__btn:hover,
-.hs-search__btn:focus-visible {
+.hs-search__btn:hover, .hs-search__btn:focus-visible {
     background: #d11fa4;
     transform: scale(1.06);
     outline: 0;
@@ -372,25 +366,24 @@ body.sh-locked {
     border-radius: 18px;
     background: var(--sh-bg-soft);
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.5);
+
+    &[hidden] {
+        display: none;
+    }
+
+    a {
+        display: grid;
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 2px 12px;
+        align-items: baseline;
+        padding: 10px 12px;
+        border-radius: 12px;
+        color: var(--sh-text);
+        font-size: 16px;
+    }
 }
 
-.hs-search__list[hidden] {
-    display: none;
-}
-
-.hs-search__list a {
-    display: grid;
-    grid-template-columns: 76px minmax(0, 1fr);
-    gap: 2px 12px;
-    align-items: baseline;
-    padding: 10px 12px;
-    border-radius: 12px;
-    color: var(--sh-text);
-    font-size: 16px;
-}
-
-.hs-search__list li.is-active a,
-.hs-search__list a:hover {
+.hs-search__list li.is-active a, .hs-search__list a:hover {
     background: rgba(185, 25, 142, 0.24);
 }
 
@@ -403,10 +396,10 @@ body.sh-locked {
     padding: 12px 14px;
     font-size: 15px;
     color: var(--sh-muted);
-}
 
-.hs-search__msg.is-error {
-    color: #ff8fb1;
+    &.is-error {
+        color: #ff8fb1;
+    }
 }
 
 .hs-search__title {
@@ -430,7 +423,7 @@ body.sh-locked {
 
 /* ---------- адаптив шапки ---------- */
 
-@media (max-width: 767px) {
+@include respond-max(767px) {
     .sh-bar {
         flex-wrap: wrap;
         gap: 12px 10px;
@@ -451,30 +444,30 @@ body.sh-locked {
         display: inline-flex;
     }
 
-    .sh-burger,
-    .hs-search ~ .sh-burger {
+    .sh-burger, .hs-search ~ .sh-burger {
         margin-left: 0;
     }
 
     /* Поле пошуку на мобільному ховається; по кліку на іконку виїжджає окремим рядком знизу. */
+
     .hs-search {
         display: none;
         order: 3;
         flex: 1 1 100%;
         height: 48px;
-    }
 
-    .hs-search input {
-        font-size: 16px;
-    }
+        input {
+            font-size: 16px;
 
-    .hs-search input::placeholder {
-        font-size: 16px;
-    }
+            &::placeholder {
+                font-size: 16px;
+            }
+        }
 
-    .hs-search__btn {
-        width: 36px;
-        height: 36px;
+        &__btn {
+            width: 36px;
+            height: 36px;
+        }
     }
 
     .sh.is-search-open .hs-search {
@@ -488,14 +481,13 @@ body.sh-locked {
         opacity: 0;
         transform: translateY(-8px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media (max-width: 400px) {
+@include respond-max(400px) {
     .sh-brand {
         font-size: 23px;
     }
@@ -510,11 +502,8 @@ body.sh-locked {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .sh-drawer,
-    .sh-overlay,
-    .sh-link,
-    .sh-social {
+@include reduced-motion {
+    .sh-drawer, .sh-overlay, .sh-link, .sh-social {
         transition: none;
     }
 }

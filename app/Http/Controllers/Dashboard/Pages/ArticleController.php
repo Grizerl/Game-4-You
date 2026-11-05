@@ -10,6 +10,7 @@ use App\Models\Company;
 use App\Models\Game;
 use App\Models\Tag;
 use App\Services\Search\SearchSync;
+use App\Support\ImageVariants;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -53,6 +54,7 @@ class ArticleController extends Controller
 
         if ($request->hasFile('cover_image')) {
             $article->cover_image = $request->file('cover_image')->store('news', 'public');
+            ImageVariants::generate($article->cover_image);
         }
 
         $article->save();
@@ -81,6 +83,7 @@ class ArticleController extends Controller
         if ($request->hasFile('cover_image')) {
             $this->deleteFile($article->cover_image);
             $article->cover_image = $request->file('cover_image')->store('news', 'public');
+            ImageVariants::generate($article->cover_image);
         }
 
         $article->save();

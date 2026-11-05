@@ -1,0 +1,37 @@
+// Пагінація Laravel у списках.
+@use '../abstracts/variables' as *;
+
+.pager {
+    margin-top: 20px;
+    color: $muted;
+    font-size: 13px;
+
+    nav > div:first-child {
+        display: none;
+    }
+
+    .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        list-style: none;
+    }
+
+    .page-link {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid $line;
+        color: $text;
+        text-decoration: none;
+    }
+
+    .active .page-link {
+        background: $blue;
+        border-color: $blue;
+    }
+
+    .disabled .page-link {
+        opacity: 0.4;
+    }
+}
