@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
-    private const PER_PAGE = 12;
+    private const PER_PAGE = 15;
 
     private const STRIP_LIMIT = 6;
 
